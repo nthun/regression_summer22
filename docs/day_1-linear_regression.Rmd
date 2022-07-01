@@ -1,0 +1,517 @@
+---
+title: "DAY 1 - LINEAR REGRESSION"
+author: "Tamas Nagy"
+date: '2022-06-27'
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup}
+# Sets global chunk options
+knitr::opts_chunk$set(echo = TRUE)
+
+# Load these packages
+library(tidyverse)
+library(broom)
+library(performance)
+library(sjPlot)
+library(here)
+
+theme_set(theme_light()) # Setting the default ggplot2 theme
+
+```
+
+```{r}
+# Read the cocktails dataset
+# Read from data folder of the project
+cocktails <- read_tsv(here("data/cocktail_data.tsv"))
+
+# Or Read from internet
+# cocktails <- read_tsv("https://raw.github.com/nthun/cocktail-balance/master/cocktail_data.tsv")
+# cocktails <- read_tsv("http://bit.ly/2zbj7kA") # Same stuff, but shortened url
+
+```
+
+
+# Using the lm() formula
+
+Doing a regression in R is super easy. Just use the lm() function.
+The first argument is the formula, thus if you want to pipe something in lm()
+you need to expicitly name the data argument. E.g. data %>% lm(y ~ x, data = .)
+
+The **formula** is symbolic expression that defines a model.
+
+It takes a format like this:
+
+`y ~ 1 + x + z*w - z:w`
+
+The elements of the formula are:
+~ : on the left hand side, there is the outcome (y), on the right hand, the predictors.
+- `1` : refers to the intercept that does not have to be written out as it is added by default. If you want to remove the intercept, you have to use 0 instead of 1.
+- `+` : you can add predictors using the + sign.
+- `*` : means to take two (or more) pradictors, and use their main effect AND also their interaction. `z*w` translates into `z + w + z:w`.
+- `:` : referes to an interaction, without the main effects of the predictors.
+- `-` : removes a predictor. For e.g. `z*w - z:w` translates into: `z + w`
+
+Creating a simple linear regression of cocktail acidity on alcohol content
+
+```{r}
+lm(abv ~ acid, data = cocktails)
+```
+
+This returns just the formula, the estimated intercept and the slope of the model.
+However a lot is stored in the lm object. To be able to get them, store it in a variable.
+
+```{r}
+acid_lm <- lm(abv ~ acid, data = cocktails)
+```
+
+The summary function shows the most important output from the model that are needed for reporting.
+
+```{r}
+summary(acid_lm)
+```
+
+This also works without storing the results. However when you use pipes, mind that in lm(), data is not the first parameter
+
+```{r}
+cocktails %>% 
+  lm(abv ~ acid, data = .) %>% 
+  summary()
+```
+
+## Plotting a linear model
+Plot the linear regression using the bulit in modeling of ggplot2
+
+```{r}
+cocktails %>% 
+  ggplot() +
+  aes(y = abv, x = acid) +
+  # geom_point() +
+  geom_smooth(method = "lm", se = FALSE) 
+```
+
+Instead, we can also use the model parameters with geom_abline()
+
+```{r}
+ggplot() +
+  aes(intercept = coef(acid_lm)[1], 
+      slope = coef(acid_lm)[2]) +
+  geom_abline()
+```
+
+The lm object is a large list, with lots of special information that we only need occasionally. 
+
+## Getting clean results
+
+To get clean results, use the broom package.
+The broom package creates tidy tibbles from the most important information of statistical result objects. It works for most regression types and other statistical outputs. 
+The broom package has three important functions.
+
+- tidy() returns the model summary about the parameters in a neat data frame.
+
+```{r}
+tidy(acid_lm)
+```
+
+- glance() returns important model performance metrics.
+
+```{r}
+glance(acid_lm)
+```
+
+- augment() adds important new columns to your data frames, such as the residuals (.resid), and predicted values corresponding your independent variables. These can be useful for residual diagnostics, and plotting model predictions.
+
+```{r}
+augment(acid_lm)
+```
+
+## Getting standardized coefficients
+
+To get the standardized coefficients (scale free), you need to standardize the output and predictor variables. Use the scale() function on all variables in the model
+ 
+```{r}
+acid_lm_std <- lm(scale(abv) ~ scale(acid), data = cocktails)
+summary(acid_lm_std)
+```
+ 
+You can check that the slope of acid now matches the correlation between abv and acid. Mind that correlation and linear regression finds the same slope in a different way!
+
+```{r}
+cor(cocktails$abv, cocktails$acid)
+```
+
+
+## Predicting values based on the model
+
+Create predictions with new data. predict() returns a vector of predictions
+```{r}
+newdata <- tibble(acid = c(0.2, 0.3, 0.4))
+predict(acid_lm, newdata)
+```
+
+## Updating the model 
+
+Add more predictors using the update function
+You don't need to write out all things in your formula. By using the . you can tell the function to leave everything as it was. All other parts of the formula work the same way.
+Note: your original data is also kept in the lm object, so you don't even need to define that!
+
+
+```{r}
+new_mod <- update(acid_lm, . ~ . + sugar)
+```
+
+# Checking the assumptions for linear regression
+
+There are multiple ways to plot and investigate model assumptions in R
+I prefer to use solutions that make everything in one go.
+To explore the residuals, the performance package makes diagnostic plots, using the check_model() function.
+
+```{r}
+library(performance)
+```
+
+Sidenote: the performance package is part of the easystats package family, that is geared towards making the reporting of statistics more seamless and standardized. It can save a lot of time to use these packages!
+To install easystats, use the following line. Mind that easystats is not from CRAN!
+
+```{r}
+# install.packages("easystats", repos = "https://easystats.r-universe.dev")
+# easystats::install_suggested() # This will take a lot of time!!
+```
+
+This will plot 5 different diagnostic plots that are all useful to tell if the prediction is reliable
+See explanation on the slides.
+
+```{r}
+check_model(new_mod)
+```
+
+To check heteroscetasticity inspect the residual diagnostic plots.
+Multicollinearity is also displayed if you have more than one predictor in your model.
+Measure multicollinearity using the variance inflaction factor (VIF)
+Values for any varible should not be larger than 5.
+
+```{r}
+car::vif(new_mod)
+```
+
+If the average VIF is larger than 5, it means that multicollineratity is biasing the model. 
+
+```{r}
+mean(car::vif(new_mod))
+```
+
+Measuring the independence of residuals
+
+```{r}
+car::dwt(new_mod)
+```
+
+The homoscedasticity assumption can also be checked using the Bausch-Pagan test from the lmtest package.
+
+
+```{r}
+lmtest::bptest()
+```
+
+It seems like model has some significant autocorrelation, so the residuals are not independent.
+
+You can also pull out the residuals from the model and check the normality of residuals by running a normality test.
+
+```{r}
+augment(new_mod) %>% 
+  pull(.resid) %>% 
+  shapiro.test()
+```
+
+The Shapiro-Wilks test shows that the residuals are normally distributed.
+
+# Let's store the diagnostic values in a variable
+
+```{r}
+acid_lm_diag <- augment(new_mod)
+```
+
+# Using multiple predictions 
+
+Let's create multiple modelts with several predictors
+
+```{r}
+lm1 <- lm(abv ~ acid + sugar, data = cocktails)
+lm2 <- lm(abv ~ acid * sugar, data = cocktails)
+lm3 <- lm(abv ~ acid : sugar, data = cocktails)
+```
+
+Get the confidence intervals for parameters
+```{r}
+confint(lm1, level = 0.95)
+```
+
+Preferably, you can also get the confint using broom::tidy()
+
+```{r}
+tidy(lm1, conf.int = TRUE, conf.level = .95)
+
+```
+
+## Using categorical predictors
+
+R can also deal with categorical variables, as they are automatically dummied, and the first level is taken as baseline.
+
+```{r}
+lm_cat <- lm(abv ~ type, data = cocktails)
+```
+
+Changing the baseline  
+
+To change the baseline, you need to convert the character type variable to factor and change the factor levels to set the baseline. E.g. change it to carbonated. I recommend using the tidyverse `fct_relevel()` function from the `forcats` package (it is automatically loaded when you load tidyverse).
+
+```{r}
+lm4 <- 
+  cocktails %>% 
+  mutate(type = fct_relevel(type, "carbonated")) %>% 
+  lm(abv ~ acid : sugar + type, data = .)
+```
+
+Let's check the model
+
+```{r}
+tidy(lm4)
+```
+
+
+# Model selection
+
+You can compare models if you use the same data and same estimation method (e.g. OLS in the case of regression).  
+There are 3 widely-used metrics, all provided in broom::glance()
+All of them have the similar underlying principle.  
+You could use R2 or adj. R2 for model comparison, but those are usually not sensitive enough, and/or can be biased.  
+It is preferable to use the smallest AIC and BIC value. If there are less than two units of difference between models, then the models can be considered equally good/bad. In this case, the rule of parsimony should be applied, meaning that you should prefer the simpler model, i.e. that has the fewer predictors (model df).
+
+
+```{r}
+glance(lm1)
+glance(lm2)
+glance(lm3)
+glance(lm4)
+```
+
+You can also compare the logLik of models using the anova() function. It returns an F value, which is significant if there is a difference.
+
+```{r}
+anova(lm1, lm3)
+```
+
+This tells us that the more complicated model is not significantly better, so we should not use it.  
+You can have more then 2 models, and the comparison refers to the _PREVIOUS_ model (so not the baseline). Pair-wise comparisons are thus preferable.
+
+```{r}
+anova(lm1, lm2, lm3, lm4)
+```
+
+Based on the comparisons, there is no significant difference. So we should choose the simplest model, that has the smallest df! It is model number 3!  
+
+To report the results of regression, you have to use a table, according to APA. To create such a table, the easiest is to use the sjPlot package, that collects all information from the models (predictors and model summary), and creates a nice table.  
+
+To get the table in the console, use the type = "text" argument.
+```{r}
+library(sjPlot)
+tab_model(lm1, lm2, title = "Results")
+
+```
+
+You can also have the table in different formats, e.g. html. If you do this, you can save the object and view the results using your web browser. We will later learn a way to include those tables to your manuscripts.  
+
+Let's also add standardized coefficients
+
+
+```{r}
+results_table_html <-
+  tab_model(lm1,lm2,lm3,lm4, 
+            show.std = TRUE, 
+            show.est = FALSE
+  )
+```
+
+You can also specify the file name in the function, which will write the results in a file. 
+
+```{r}
+tab_model(lm1,lm2,lm3,lm4, 
+          show.std = TRUE, 
+          show.est = FALSE,
+          file = "coctail_models.html")
+```
+
+Or you can write the results manually into a file.
+
+```{r}
+# write_file(results_table_html, "results_table.html")
+```
+
+
+# Dealing with assumption breaches 
+
+## Multicollinearity
+
+### Data multicollinearity 
+
+For data multicollinearity, you can choose to:  
+- use only one of the correlating predictors
+- or use some data aggregating method, e.g. PCA to aggregate similar variables. 
+
+### Structural multicollinearity 
+
+Happens if you use the same variable in different forms in your model. This happens with interactions, and with transformations of the variable (e.g. using polynomials, see later). Structural multicollinearity only happens with continuous variables, so you usually don't need to do anything with categorical variables. 
+
+
+For structural multicollinearity, you need to center (or standardize) your variables (standardization = centering + scaling).
+
+```{r}
+model_multi <- lm(abv ~ sugar * acid, data = cocktails)
+check_collinearity(model_multi)
+
+# Let's standardize the predictors
+
+model_std <- lm(abv ~ scale(sugar) * scale(acid), data = cocktails)
+check_collinearity(model_std)
+
+# Multicollinearity went away, and we didn't have to take out anything!
+
+```
+
+
+## Non-linearity of the relationship
+
+If we suspect that the relationship between our outcome and predictor is not linear, we can use polynomials. This means that we also include x^2 as a predictor. However, there are two problems with this. One is that by using the original variable and it's second exponential will introduce structural multicollinearity.
+
+```{r}
+# TODO: add polynomials vs ^2-s
+# Generate random normal numbers with a mean of 10 and sd 1
+set.seed(123) # random seed for reproducibility
+x <- rnorm(10, mean = 10, sd = 1)
+x
+# What happens with x if we just raise to the power 2 vs. using poly(x, 2)?
+x^2
+
+# The poly() function returns all polynomials up to the specified number
+poly(x, 2)[,2] # We only look at the second order polynomial for now
+
+# Compare this to the numbers that are standardized and raised to power 2.
+as.numeric(scale(x)^2)
+```
+
+The difference is that poly creates so called "orthogonal" polynomials instead of raw polynomials. https://en.wikipedia.org/wiki/Orthogonal_polynomials
+It is better to use orthogonal polynomials than raw ones.
+
+## Heteroscedasticity
+
+TODO: sandwich estimation
+
+One of the easiest way to 
+
+```{r}
+
+```
+
+
+
+## Normality of residuals
+One of the ways to deal with normality breaches if you transform the outcome or predictor variable. Rank transform or log transform can often turn the distribution of residuals to normal.  
+However, mind that when you use a transformation, the interpretation of the predictor parameters will change. For e.g. when you use rank(), the slope value will refer to the unit change in x affecting the _rank_ of the outcome.  
+Often, it can be useful to choose a log value that is easier to interpret in everyday terms. Using log2() on the predictor show how much the outcome will change if the value of the predictor doubles. Mind that the base of the log is irrelevant in terms of the resulting. distribution!
+
+```{r}
+# Try these two things to generate a log normal distribution, than 
+x_ln <- rlnorm(1000)
+qplot(x_ln)
+
+# This is natural log
+log(x_ln) %>% 
+  qplot()
+
+# This is log2. They yield the same distribution!
+log2(x_ln) %>% 
+  qplot()
+```
+
+On the other hand, the rank transform will make the distribution to be uniform. This in itself is not necessarily a problem for the distribution of residuals in lm!
+
+```{r}
+rank(x_ln) %>% 
+  qplot()
+```
+
+You can also use bootstrapping to estimate the residuals. 
+There are several ways to do this. For e.g. the tab_model() function has a bootstrap argument.
+
+```{r}
+library(parameters)
+parameters(lm1, bootstrap = TRUE)
+```
+
+```{r}
+tab_model(lm1, bootstrap = TRUE)
+```
+
+TODO: add robust regression
+
+```{r}
+
+```
+
+
+
+
+## Dealing with outliers 
+
+Outliers can only influence your model if you have a small dataset. In general, you should only remove outliers and influential cases if you can prove that the data points are erroneous. You cannot simply remove outliers because they don't fit your model.
+
+You can single out observations with the slice() function
+
+```{r}
+cocktails %>% 
+  slice(c(9, 41, 42, 44, 45))
+```
+
+Or use the update() function to change the dataset underneath the model.
+We can rerun the lm without cases that have zero acid
+
+```{r}
+acid_lm_clean <-
+  cocktails %>% 
+  filter(acid != 0) %>% 
+  update(new_mod, data = .)
+
+summary(acid_lm_clean)
+
+check_model(acid_lm_clean)
+```
+
+We can see that the distribution of residuals are still not perfect, which makes the reliability of the model shaky.
+
+We can also check the dfbeta and DFFit values to see how much the model changes when we remove a case
+
+```{r}
+dfbeta(acid_lm) # Change in model parameters
+dffits(acid_lm) # Change in residual
+```
+
+## Non-independent observations
+Non-independence can take multiple forms. When your data is nested (e.g. you measure the math performance of students in a class in a school), you have a nested dependence. When you have multiple measurements from the same person, you have a crossed dependence. In general, these cases should be handled by using Linear Mixed-Effect Models (LMEMs). 
+  However, by calculating aggregated statistics, you may be able to analyze the data using linear regression.
+  For example, if you have a pre-post within subject design, you can use the change scores (i.e. post - pre values), and use it as an outcome variable in lm.
+  
+```{r}
+# TODO: pre-post example!
+```
+
+## The outcome is not continuous
+Unless you can make your outcome variable continuous, you cannot use linear regression. You should use Generalized Linear Regression (see later material)
+
+
+
+
+
+
+
