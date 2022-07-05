@@ -1,0 +1,104 @@
+---
+title: "Multiple linear regressions"
+output: html_document
+---
+
+# Background
+In this study, we investigated if subjective sleep quality on the previous night was associated with decreased executive functions or implicit learning. We measured sleep quality, executive functions and implicit learning in several ways. in this task, you need to run several linear regressions.
+
+## Original study
+https://www.nature.com/articles/s41598-020-61627-6
+
+## Codebook
+`codebooks/sleep_exec_codebook.txt`
+
+# Task
+
+1) Build models
+Check the codebook for the names of outcomes, predictors, and confounders.  
+You need to build linear regression models for each outcome. The models should contain each subjective sleep variable separately, i.e. you need separate models for each outcome and each predictor. Moreover, all confounders must be added to each model.
+An examle mode would look like: `acc_avg ~ psqi + age + sex + meq_all`
+
+2) Create a single table that contains all parameter estimates, std. errors, t statistics, and p values.
+
+# Solution
+```{r setup}
+library(tidyverse)
+sleep <- read_csv(here::here("data/sleep_exec.csv"))
+```
+
+```{r}
+# Put variables in sets so it will be easy to refer to them
+# Confounders
+confounders <-
+  c("sex" = "sex of participant",
+    "age" = "age in years",
+    "meq_all" = "Morningness-Eveningness Questionnaire overall score")
+
+# Executive function and implicit learning variables
+outcomes <-
+  c("acc_avg" = "Average accuracy in the ASRT task",
+    "acc_gs" = "General skill learning in ACC in the ASRT task",
+    "cs_avg" = "Counting Span Task score",
+    "highrer_order_acc" = "Average higher order sequence learning in the ASRT task in accuracy",
+    "highrer_order_rt" = "Average higher order sequence learning in the ASRT task in reaction time",
+    "wcst_pers_error" = "Wisconsin Card Sorting Test - Number of Perseveration Error",
+    "trip_learn_all_rt" = "Average triplet learning in the ASRT task in reaction time",
+    "trip_learn_all_acc" = "Average triplet learning in the ASRT task in accuracy",
+    "rt_avg" = "Average reaction time in the ASRT task",
+    "rt_gs_1min4" = "General skill learning in RT in the ASRT task",
+    "stat_learn_acc" = "Average statistical learning in the ASRT task in accuracy",
+    "stat_learn_rt" = "Average statistical learning in the ASRT task in reaction time"
+  )
+
+# Subjective sleep variables
+predictors <- 
+  c("ais" = "Athens Insomnia Scale overall score",
+    "psqi" = "Pittsburg Sleep Quality Index score")
+
+```
+
+# Building the models
+```{r}
+# Creating a dataset that contains all data and models
+sleep_models <-
+  sleep %>% 
+  # We put outcomes and predictors in long format
+  pivot_longer(cols = one_of(names(outcomes)), 
+               names_to = "outcome_name", 
+               values_to = "outcome_value") %>% 
+  pivot_longer(cols = one_of(names(predictors)), 
+               names_to = "predictor_name", 
+               values_to = "predictor_value") %>%
+  # Nesting will create separate datasets for all outcome x predictor combinations
+  group_by(outcome_name, predictor_name) %>% 
+  nest() %>% 
+  # Creating models for all datasets, then tidying coefficients
+  mutate(model = map(data, 
+                     ~lm(outcome_value ~ predictor_value + 
+                                         age + meq_all + sex, 
+                         data = .x) %>% 
+                      broom::tidy()))
+```
+
+# Printing the results in a table
+```{r}
+# Printing results using the gt package
+library(gt) 
+
+sleep_models %>% 
+  select(-data) %>% 
+  unnest(model) %>% 
+  # Rename the predictor, so model terms will be more specific
+  mutate(term = str_replace(term, "predictor_value", predictor_name),
+  # Use the full name of outcomes and predictors
+         outcome_name = recode(outcome_name, !!!outcomes),
+         predictor_name = recode(predictor_name, !!!predictors)) %>%
+  gt() %>% 
+  # Formatting numers to be 2 digits, except for p value (3 digits)
+  fmt_number(c("estimate", "std.error", "statistic"), decimals = 2) %>% 
+  fmt_number("p.value", decimals = 3) %>% 
+  tab_options(row_group.background.color = "grey50")
+
+```
+

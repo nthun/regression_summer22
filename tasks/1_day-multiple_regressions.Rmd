@@ -1,0 +1,41 @@
+---
+title: "Multiple linear regressions"
+output: html_document
+---
+
+# Background
+In this study, we investigated if subjective sleep quality on the previous night was associated with decreased executive functions or implicit learning. We measured sleep quality, executive functions and implicit learning in several ways. in this task, you need to run several linear regressions.
+
+## Original study
+https://www.nature.com/articles/s41598-020-61627-6
+
+## Codebook
+`codebooks/sleep_exec_codebook.txt`
+
+# Task
+
+1) Build models
+Check the codebook for the names of outcomes, predictors, and confounders.  
+You need to build linear regression models for each outcome. The models should contain each subjective sleep variable separately, i.e. you need separate models for each outcome and each predictor. Moreover, all confounders must be added to each model.
+An examle mode would look like: `acc_avg ~ psqi + age + sex + meq_all`
+
+2) Create a single table that contains all parameter estimates, std. errors, t statistics, and p values.
+
+# Solution
+```{r setup}
+library(tidyverse)
+sleep <- read_csv(here::here("data/sleep_exec.csv"))
+```
+
+# Building the models
+```{r}
+# Creating a dataset that contains all data and models
+
+```
+
+# Printing the results in a table
+```{r}
+
+
+```
+

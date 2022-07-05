@@ -1,10 +1,17 @@
 ---
 title: "DAY 1 - LINEAR REGRESSION"
 author: "Tamas Nagy"
-date: '2022-06-27'
-output: html_document
+date: '2022-07-12'
+output: 
+  html_document:
+   theme: spacelab
+   code_download: true
+   toc: true
+   toc_float: true
 editor_options: 
   chunk_output_type: console
+  markdown: 
+    wrap: sentence
 ---
 
 ```{r setup}
@@ -12,13 +19,14 @@ editor_options:
 knitr::opts_chunk$set(echo = TRUE)
 
 # Load these packages
-library(tidyverse)
-library(broom)
-library(performance)
-library(sjPlot)
-library(here)
+suppressPackageStartupMessages(library(tidyverse))
+library(broom, quietly = TRUE)
+library(performance, quietly = TRUE)
+library(sjPlot, quietly = TRUE)
+library(here, quietly = TRUE)
 
-theme_set(theme_light()) # Setting the default ggplot2 theme
+# Setting the default ggplot2 theme
+theme_set(theme_light()) 
 
 ```
 
@@ -46,13 +54,13 @@ It takes a format like this:
 
 `y ~ 1 + x + z*w - z:w`
 
-The elements of the formula are:
-~ : on the left hand side, there is the outcome (y), on the right hand, the predictors.
-- `1` : refers to the intercept that does not have to be written out as it is added by default. If you want to remove the intercept, you have to use 0 instead of 1.
-- `+` : you can add predictors using the + sign.
-- `*` : means to take two (or more) pradictors, and use their main effect AND also their interaction. `z*w` translates into `z + w + z:w`.
-- `:` : referes to an interaction, without the main effects of the predictors.
-- `-` : removes a predictor. For e.g. `z*w - z:w` translates into: `z + w`
+The elements of the formula are:  
+~ : on the left hand side, there is the outcome (y), on the right hand, the predictors.  
+- `1` : refers to the intercept that does not have to be written out as it is added by default. If you want to remove the intercept, you have to use 0 instead of 1.  
+- `+` : you can add predictors using the + sign.  
+- `*` : means to take two (or more) pradictors, and use their main effect AND also their interaction. `z*w` translates into `z + w + z:w`.  
+- `:` : referes to an interaction, without the main effects of the predictors.  
+- `-` : removes a predictor. For e.g. `z*w - z:w` translates into: `z + w`  
 
 Creating a simple linear regression of cocktail acidity on alcohol content
 
@@ -88,17 +96,8 @@ Plot the linear regression using the bulit in modeling of ggplot2
 cocktails %>% 
   ggplot() +
   aes(y = abv, x = acid) +
-  # geom_point() +
+  geom_point() +
   geom_smooth(method = "lm", se = FALSE) 
-```
-
-Instead, we can also use the model parameters with geom_abline()
-
-```{r}
-ggplot() +
-  aes(intercept = coef(acid_lm)[1], 
-      slope = coef(acid_lm)[2]) +
-  geom_abline()
 ```
 
 The lm object is a large list, with lots of special information that we only need occasionally. 
@@ -166,7 +165,7 @@ new_mod <- update(acid_lm, . ~ . + sugar)
 
 There are multiple ways to plot and investigate model assumptions in R
 I prefer to use solutions that make everything in one go.
-To explore the residuals, the performance package makes diagnostic plots, using the check_model() function.
+To explore the residuals, the performance package makes diagnostic plots, using the `check_model()` function.
 
 ```{r}
 library(performance)
@@ -183,7 +182,7 @@ To install easystats, use the following line. Mind that easystats is not from CR
 This will plot 5 different diagnostic plots that are all useful to tell if the prediction is reliable
 See explanation on the slides.
 
-```{r}
+```{r fig.height=9, fig.width=8}
 check_model(new_mod)
 ```
 
@@ -212,7 +211,8 @@ The homoscedasticity assumption can also be checked using the Bausch-Pagan test 
 
 
 ```{r}
-lmtest::bptest()
+lmtest::bptest(new_mod)
+
 ```
 
 It seems like model has some significant autocorrelation, so the residuals are not independent.
@@ -364,7 +364,6 @@ For data multicollinearity, you can choose to:
 
 Happens if you use the same variable in different forms in your model. This happens with interactions, and with transformations of the variable (e.g. using polynomials, see later). Structural multicollinearity only happens with continuous variables, so you usually don't need to do anything with categorical variables. 
 
-
 For structural multicollinearity, you need to center (or standardize) your variables (standardization = centering + scaling).
 
 ```{r}
@@ -386,7 +385,6 @@ check_collinearity(model_std)
 If we suspect that the relationship between our outcome and predictor is not linear, we can use polynomials. This means that we also include x^2 as a predictor. However, there are two problems with this. One is that by using the original variable and it's second exponential will introduce structural multicollinearity.
 
 ```{r}
-# TODO: add polynomials vs ^2-s
 # Generate random normal numbers with a mean of 10 and sd 1
 set.seed(123) # random seed for reproducibility
 x <- rnorm(10, mean = 10, sd = 1)
@@ -406,11 +404,12 @@ It is better to use orthogonal polynomials than raw ones.
 
 ## Heteroscedasticity
 
-TODO: sandwich estimation
-
-One of the easiest way to 
+One of the easiest way to calculate hereoscedasticity consistent standard errors is to use the `vcov.type` argument in the `sjPlot::tab_model()` function.
+There are several different robust estimation types. See help file for details.
 
 ```{r}
+# Use heteroscedasticity consistent standard errors.
+tab_model(model_std, vcov.type = "HC3")
 
 ```
 
@@ -442,26 +441,34 @@ rank(x_ln) %>%
   qplot()
 ```
 
-You can also use bootstrapping to estimate the residuals. 
-There are several ways to do this. For e.g. the tab_model() function has a bootstrap argument.
+You can also use bootstrapping to estimate the residuals. There are several ways to do this. For e.g. the parameters::parameters() and sjPlot::tab_model() function has a bootstrap argument.
 
 ```{r}
 library(parameters)
-parameters(lm1, bootstrap = TRUE)
+parameters(lm1, bootstrap = TRUE) %>% 
+  print_html()
+
 ```
+
+You can also get bootstrapped confidence intervals using the `rsample::reg_intervals()` function.
 
 ```{r}
-tab_model(lm1, bootstrap = TRUE)
+library(rsample)
+
+reg_intervals(abv ~ acid + sugar, 
+              data = cocktails, 
+              model_fn = "lm",
+              times = 1000)
+
 ```
 
-TODO: add robust regression
+You can also use "robust regression". Instead of OLS, robust regression uses iterated re-weighted least squares (IRLS) estimation. It is especially useful for smaller datasets with outliers and influential cases.
 
 ```{r}
-
+library(MASS)
+rlm(abv ~ acid + sugar, data = cocktails) %>% 
+  summary()
 ```
-
-
-
 
 ## Dealing with outliers 
 
@@ -477,7 +484,7 @@ cocktails %>%
 Or use the update() function to change the dataset underneath the model.
 We can rerun the lm without cases that have zero acid
 
-```{r}
+```{r fig.height=9, fig.width=8}
 acid_lm_clean <-
   cocktails %>% 
   filter(acid != 0) %>% 
@@ -500,13 +507,56 @@ dffits(acid_lm) # Change in residual
 ## Non-independent observations
 Non-independence can take multiple forms. When your data is nested (e.g. you measure the math performance of students in a class in a school), you have a nested dependence. When you have multiple measurements from the same person, you have a crossed dependence. In general, these cases should be handled by using Linear Mixed-Effect Models (LMEMs). 
   However, by calculating aggregated statistics, you may be able to analyze the data using linear regression.
-  For example, if you have a pre-post within subject design, you can use the change scores (i.e. post - pre values), and use it as an outcome variable in lm.
+  For example, if you have a pre-post within subject design, you can use the change scores (i.e. post - pre values), and use it as an outcome variable in lm. 
   
+For analyzing pre-post designs, you can either use the "Difference-in-Differences approach, or use the baseline value as a covariate. https://learncuriously.wordpress.com/2021/06/18/pre-post-analysis/ 
+
+## Difference in differences approach
+
+Subtract the pre value from the post value will yield a change score. We can use this as the outcome. We are not including any predictors, and investigate if the the intercept is different from zero.
+
 ```{r}
-# TODO: pre-post example!
+# Dataset about effects of reality TV watching on self-esteem (source: https://teachpsychscience.org/),
+
+reality_raw <- read_csv(here::here("data/reality.csv"))
+
+reality <-
+  reality_raw %>% 
+  mutate(se_change = se_posttest - se_pretest)
+
+lm(se_change ~ 1, data = reality) %>% 
+  summary()
+
+# Check visually
+lm(se_change ~ 1, data = reality) %>% 
+  tidy(conf.int = TRUE, bootstrap = TRUE) %>% 
+  ggplot() +
+  aes(y = term, x = estimate, xmin = conf.low, xmax = conf.high) +
+  geom_vline(xintercept = 0, color = "red") +
+  geom_pointrange()
+
+reality %>% 
+  ggplot() +
+  aes(x = se_change) +
+  geom_density(fill = "blue", alpha = .5) +
+  geom_vline(xintercept = 0)
+
 ```
 
-## The outcome is not continuous
+## Covariate approach
+
+As you can see, the results are not completely the same, but t values are in the same ballpark.
+```{r}
+lm(se_posttest ~ 1 + se_pretest, data = reality) %>% 
+  summary()
+  
+  
+
+```
+
+
+## The outcome is not continuous  
+
 Unless you can make your outcome variable continuous, you cannot use linear regression. You should use Generalized Linear Regression (see later material)
 
 

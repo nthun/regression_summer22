@@ -1,0 +1,29 @@
+id: ID of the subject
+
+#Confounders
+sex: sex of participant
+age: in years
+meq_all: Morningness–Eveningness Questionnaire overall score
+
+# Executive function and implicit learning variables
+acc_avg: Average accuracy in the ASRT task
+acc_gs: General skill learning in ACC in the ASRT task
+cs_avg: Counting Span Task score
+highrer_order_acc: Average higher order sequence learning in the ASRT task in accuracy
+highrer_order_rt: Average higher order sequence learning in the ASRT task in reaction time
+wcst_pers_error: Wisconsin Card Sorting Test - Number of Perseveration Error
+trip_learn_all_rt: Average triplet learning in the ASRT task in reaction time
+trip_learn_all_acc: Average triplet learning in the ASRT task in accuracy
+rt_avg: Average reaction time in the ASRT task
+rt_gs_1min4: General skill learning in RT in the ASRT task
+stat_learn_acc: Average statistical learning in the ASRT task in accuracy
+stat_learn_rt: Average statistical learning in the ASRT task in reaction time
+
+# Subjective sleep variables
+ais: Athens Insomnia Scale overall score
+gsqs: Gröningen Sleep Quality Scale overall score
+psqi: Pittsburg Sleep Quality Index score (3 components: Subjective sleep quality, Sleep latency, Sleep disturbances, see items and components in the end of the dataset)
+
+
+
+
