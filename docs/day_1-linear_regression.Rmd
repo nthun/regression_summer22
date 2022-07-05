@@ -88,17 +88,8 @@ Plot the linear regression using the bulit in modeling of ggplot2
 cocktails %>% 
   ggplot() +
   aes(y = abv, x = acid) +
-  # geom_point() +
-  geom_smooth(method = "lm", se = FALSE) 
-```
-
-Instead, we can also use the model parameters with geom_abline()
-
-```{r}
-ggplot() +
-  aes(intercept = coef(acid_lm)[1], 
-      slope = coef(acid_lm)[2]) +
-  geom_abline()
+  geom_point() +
+  geom_smooth(method = "lm") 
 ```
 
 The lm object is a large list, with lots of special information that we only need occasionally. 
@@ -364,7 +355,6 @@ For data multicollinearity, you can choose to:
 
 Happens if you use the same variable in different forms in your model. This happens with interactions, and with transformations of the variable (e.g. using polynomials, see later). Structural multicollinearity only happens with continuous variables, so you usually don't need to do anything with categorical variables. 
 
-
 For structural multicollinearity, you need to center (or standardize) your variables (standardization = centering + scaling).
 
 ```{r}
@@ -443,7 +433,7 @@ rank(x_ln) %>%
 ```
 
 You can also use bootstrapping to estimate the residuals. 
-There are several ways to do this. For e.g. the tab_model() function has a bootstrap argument.
+There are several ways to do this. For e.g. the parameters::parameters() and sjPlot::tab_model() function has a bootstrap argument.
 
 ```{r}
 library(parameters)
@@ -518,12 +508,19 @@ reality <-
 lm(se_change ~ 1, data = reality) %>% 
   summary()
 
+# Check visually
+reality %>% 
+  ggplot() +
+  aes(x = se_change) +
+  geom_density(fill = "blue", alpha = .5) +
+  geom_vline(xintercept = 0)
+
 ```
 
 ## Covariate approach
 
 ```{r}
-# TODO: chack difference
+# TODO: check difference
 lm(se_posttest ~ 1 + se_pretest, data = reality) %>% 
   summary()
 
