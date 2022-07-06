@@ -14,16 +14,15 @@ editor_options:
     wrap: sentence
 ---
 
-```{r setup}
+```{r setup, results='hide'}
 # Sets global chunk options
 knitr::opts_chunk$set(echo = TRUE)
 
 # Load these packages
 suppressPackageStartupMessages(library(tidyverse))
-library(broom, quietly = TRUE)
-library(performance, quietly = TRUE)
-library(sjPlot, quietly = TRUE)
-library(here, quietly = TRUE)
+library(broom)
+library(performance)
+library(sjPlot)
 
 # Setting the default ggplot2 theme
 theme_set(theme_light()) 
@@ -33,7 +32,7 @@ theme_set(theme_light())
 ```{r}
 # Read the cocktails dataset
 # Read from data folder of the project
-cocktails <- read_tsv(here("data/cocktail_data.tsv"))
+cocktails <- read_tsv(here::here("data/cocktail_data.tsv"))
 
 # Or Read from internet
 # cocktails <- read_tsv("https://raw.github.com/nthun/cocktail-balance/master/cocktail_data.tsv")
@@ -55,14 +54,14 @@ It takes a format like this:
 `y ~ 1 + x + z*w - z:w`
 
 The elements of the formula are:  
-~ : on the left hand side, there is the outcome (y), on the right hand, the predictors.  
+- `~` : on the left hand side, there is the outcome (y), on the right hand, the predictors.  
 - `1` : refers to the intercept that does not have to be written out as it is added by default. If you want to remove the intercept, you have to use 0 instead of 1.  
 - `+` : you can add predictors using the + sign.  
 - `*` : means to take two (or more) pradictors, and use their main effect AND also their interaction. `z*w` translates into `z + w + z:w`.  
 - `:` : referes to an interaction, without the main effects of the predictors.  
-- `-` : removes a predictor. For e.g. `z*w - z:w` translates into: `z + w`  
+- `-` : removes a predictor. For e.g. `z*w - z:w` translates into: `z + w`
 
-Creating a simple linear regression of cocktail acidity on alcohol content
+Creating a simple linear regression of cocktail acidity on alcohol content.
 
 ```{r}
 lm(abv ~ acid, data = cocktails)
@@ -97,7 +96,7 @@ cocktails %>%
   ggplot() +
   aes(y = abv, x = acid) +
   geom_point() +
-  geom_smooth(method = "lm", se = FALSE) 
+  geom_smooth(method = "lm") 
 ```
 
 The lm object is a large list, with lots of special information that we only need occasionally. 
@@ -120,7 +119,7 @@ tidy(acid_lm)
 glance(acid_lm)
 ```
 
-- augment() adds important new columns to your data frames, such as the residuals (.resid), and predicted values corresponding your independent variables. These can be useful for residual diagnostics, and plotting model predictions.
+- augment() adds important new columns to your data frames, such as the residuals (.resid), and predicted values corresponding your independent variables. These can be useful for residual diagnostics, and plotting model predictions.í
 
 ```{r}
 augment(acid_lm)
@@ -248,7 +247,7 @@ Get the confidence intervals for parameters
 confint(lm1, level = 0.95)
 ```
 
-Preferably, you can also get the confint using broom::tidy()
+Preferably, you can also get the confint using `broom::tidy()`
 
 ```{r}
 tidy(lm1, conf.int = TRUE, conf.level = .95)
@@ -284,7 +283,7 @@ tidy(lm4)
 # Model selection
 
 You can compare models if you use the same data and same estimation method (e.g. OLS in the case of regression).  
-There are 3 widely-used metrics, all provided in broom::glance()
+There are 3 widely-used metrics, all provided in `broom::glance()`
 All of them have the similar underlying principle.  
 You could use R2 or adj. R2 for model comparison, but those are usually not sensitive enough, and/or can be biased.  
 It is preferable to use the smallest AIC and BIC value. If there are less than two units of difference between models, then the models can be considered equally good/bad. In this case, the rule of parsimony should be applied, meaning that you should prefer the simpler model, i.e. that has the fewer predictors (model df).
@@ -441,7 +440,7 @@ rank(x_ln) %>%
   qplot()
 ```
 
-You can also use bootstrapping to estimate the residuals. There are several ways to do this. For e.g. the parameters::parameters() and sjPlot::tab_model() function has a bootstrap argument.
+You can also use bootstrapping to estimate the residuals. There are several ways to do this. For e.g. the `parameters::parameters()` and `sjPlot::tab_model()` function has a bootstrap argument.
 
 ```{r}
 library(parameters)
