@@ -1,0 +1,28 @@
+name,type,definition
+participant_id,character,unique identifier of the participant
+age,integer,age of the participant in years
+gender,factor,"gender of the participant (1 = female, 2 = male, 3 = other)"
+climate_believer,factor,"Whether the participant believes in humanmade climate change or not (believer, denier)"
+climate_risk,integer,How much risk is associated with climate change (0 = none - 10 = extreme)
+dem_rep,factor,Political affiliation of the respondent (1 = democrat - 6 = republican)
+condition,factor,Which condition the participant was assigned to (0 = control; 1 = experimental manipulation)
+crt_score,numeric,CRT overall score
+science1,integer,Question regarding the belief in a scientific statement (0 = not true at all; 6 = totally true)
+science2,integer,Question regarding the belief in a scientific statement (0 = not true at all; 6 = totally true)
+science3,integer,Question regarding the belief in a scientific statement (0 = not true at all; 6 = totally true)
+science4,integer,Question regarding the belief in a scientific statement (0 = not true at all; 6 = totally true)
+science5,integer,Question regarding the belief in a scientific statement (0 = not true at all; 6 = totally true)
+science6,integer,Question regarding the belief in a scientific statement (0 = not true at all; 6 = totally true)
+science7,integer,Question regarding the belief in a scientific statement (0 = not true at all; 6 = totally true)
+science8,integer,Question regarding the belief in a scientific statement (0 = not true at all; 6 = totally true)
+science9,integer,Question regarding the belief in a scientific statement (0 = not true at all; 6 = totally true)
+science10,integer,Question regarding the belief in a scientific statement (0 = not true at all; 6 = totally true)
+science11,integer,Question regarding the belief in a scientific statement (0 = not true at all; 6 = totally true)
+science12,integer,Question regarding the belief in a scientific statement (0 = not true at all; 6 = totally true)
+science13,integer,Question regarding the belief in a scientific statement (0 = not true at all; 6 = totally true)
+science14,integer,Question regarding the belief in a scientific statement (0 = not true at all; 6 = totally true)
+science15,integer,Question regarding the belief in a scientific statement (0 = not true at all; 6 = totally true)
+science16,integer,Question regarding the belief in a scientific statement (0 = not true at all; 6 = totally true)
+science17,integer,Question regarding the belief in a scientific statement (0 = not true at all; 6 = totally true)
+mean_agree,numeric,Mean score of how much the participant agrees with the arguments from a scale 0 (not agreeing) - 100 (agreeing). 
+consistency,factor,"Consistency means whether the presented argument is consistent with the participants affiliation. Pro climate change argument is consistent with climate believer, while climate change denial is consistent with climate denier affiliation."

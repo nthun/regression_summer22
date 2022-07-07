@@ -1,0 +1,84 @@
+---
+title: "Multiple linear regressions: climate belief study"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# Background
+In this study, we investigated how politically motivated reasoning influence people's belief in human-made climate change. Participants were be assigned to either an experimental group or a control group(_condition_). In the experimental group we asked participants to read arguments in favor or against the existence of human made climate change trough a political lens and indicate how much they agree with each statement from 0 to a 100 (_`mean_agree`_). Participants in the control group had the same task but they were not instructed to read the statements through a political lens.
+
+We also asked the participants to indicate whether they believe in anthropogenic climate change or not (_`climate_believer`_) in order to decide whether each argument is consistent with their beliefs (_consistency_). For example, an argument in favor of the existence of human-made climate change would be consistent with the beliefs of someone who believes in anthropogenic climate change but inconsistent with someone who does not believe in it. 
+
+Our hypothesis is that there will be an interaction between the group membership and the consistency of the arguments. In other words, participants in the experimental group will agree more with consistent arguments and agree less with inconsistent arguments than participants in the control group.
+
+We also collected several variables that can influence the investigated effect (_`crt_score`_, _science_sum_, _climate_risk_, _age_, _gender_).
+
+In this task, you will have to test the main hypothesis while controlling for the confounding variables using a linear regression.
+
+## Original study
+
+
+## Codebook
+`codebooks/climatebeliefs_codebook.txt`
+
+# Task
+1) Clean data
+Clean and transform the data to be able to use a multiple linear regression for the analysis. You might have to create new variables. Check the codebook for help.
+
+2) Build models
+You need to build linear regression model testing our hypothesis. Use correlation to check which confounders should be included in the linear model. Confounders with an _r_ value less than .1 should be left out.
+
+3) Report results
+Create a single table that contains all parameter estimates, std. errors, t statistics, and p values.
+
+# Solution
+```{r setup}
+library(tidyverse)
+climate_data <- read_csv(here::here("data/climatebeliefs_data.csv"))
+```
+
+# Data cleaning
+```{r}
+# Cleaning the raw data
+climate_data_clean <- 
+  climate_data %>% 
+  # Create a composit variable for belief in science in general
+  pivot_longer(contains("science"), values_drop_na = TRUE) %>% 
+  group_by(participant_id) %>% 
+  summarise(science_sum = sum(value)) %>% 
+  left_join(climate_data, by = "participant_id") %>% 
+  # Drop science belief individual variables to help undesirability
+  select(-matches("science(\\d+)")) %>% 
+  # Calculate difference score from consistent and inconsistent arguments
+  pivot_wider(
+    names_from = consistency,
+    values_from = mean_agree
+  ) %>% 
+  mutate(
+    # The direction of the difference does not matter
+    difference = abs(consistent - inconsistent)
+  ) %>% 
+  # Exclude participants with missing data
+  filter_all(all_vars(!is.na(.)))
+```
+
+# Building the models
+```{r}
+# Creating a dataset that contains the result of the model in a tidy way
+# Creating the model with just the control variables
+confound_model <- lm(difference ~ crt_score + science_sum + climate_risk + age + gender, data = climate_data_clean)
+
+# Create full model
+full_model <- lm(difference ~ condition + crt_score + science_sum + climate_risk + age + gender, data = climate_data_clean)
+
+# Comparing models
+anova(confound_model, full_model)
+```
+
+# Printing the results in a table
+```{r}
+
+
+```
+
