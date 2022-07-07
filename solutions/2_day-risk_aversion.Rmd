@@ -1,0 +1,70 @@
+---
+title: "Risk aversion"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# Background
+In this study, we investigated how age and religion influences risk aversion. Studies show that older adults make safer choices than younger adults and religious people people also make safer choices than non religious people. We do not assume an interaction between age and religiosity. We will try to confirm these previous findings in this study.
+
+In the study, the participants had to complete a two-choice risky decision making paradigm, a gambling task. The two choices that were presented to the participants had different risk-gain proportions. One choice was always more risky than the other with higher benefit.
+
+We measured religiosity with a 10 point Likert-type scale.
+
+In this task, you will have to test the main hypothesis a generalized linear regression.
+
+## Codebook
+`codebooks/riskeversion_codebook.txt`
+
+# Task
+1) Build models
+You need to build generalized linear regression model testing our hypothesis.
+
+2) Report results
+Create a single table that contains all parameter estimates, std. errors, t statistics, and p values.
+
+# Solution
+```{r setup}
+library(tidyverse)
+risk_data <- read_csv(here::here("data/riskaversion_data.csv"))
+```
+
+# Building the models
+```{r}
+# Creating a dataset that contains the result of the model in a tidy way
+# Data manipulation
+risk_models <- 
+  risk_data %>% 
+  mutate(
+    choice = as.factor(choice),
+    choice = fct_relevel(choice, "safe", "risky")
+  ) %>%
+  pivot_longer(cols = religion:age, names_to = "predictor_name", values_to = "predictor_value") %>% 
+  group_by(predictor_name) %>% 
+  nest() %>% 
+  mutate(
+    model = map(data,
+                ~ glm(choice ~ predictor_value, family = "binomial", data = .x) %>% 
+                  broom::tidy()
+                )
+    )
+```
+
+# Printing the results in a table
+```{r}
+# Printing results using the gt package
+library(gt) 
+
+risk_models %>% 
+  select(-data) %>% 
+  unnest(model) %>% 
+  # Rename the predictor, so model terms will be more specific
+  mutate(term = str_replace(term, "predictor_value", predictor_name)) %>%
+  gt() %>% 
+  # Formatting numers to be 2 digits, except for p value (3 digits)
+  fmt_number(c("estimate", "std.error", "statistic"), decimals = 2) %>% 
+  fmt_number("p.value", decimals = 3) %>% 
+  tab_options(row_group.background.color = "grey50")
+```
+
