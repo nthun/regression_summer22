@@ -1,7 +1,7 @@
 ---
-title: "DAY 1 - LINEAR REGRESSION"
+title: "DAY 1-2 - LINEAR REGRESSION"
 author: "Tamas Nagy"
-date: '2022-07-12'
+date: '2022-07-12-13'
 output: 
   html_document:
    theme: spacelab
@@ -226,7 +226,7 @@ augment(new_mod) %>%
 
 The Shapiro-Wilks test shows that the residuals are normally distributed.
 
-# Let's store the diagnostic values in a variable
+Let's store the diagnostic values in a variable
 
 ```{r}
 acid_lm_diag <- augment(new_mod)
@@ -499,8 +499,8 @@ We can see that the distribution of residuals are still not perfect, which makes
 We can also check the dfbeta and DFFit values to see how much the model changes when we remove a case
 
 ```{r}
-dfbeta(acid_lm) # Change in model parameters
-dffits(acid_lm) # Change in residual
+dfbeta(acid_lm) %>% head() # Change in model parameters
+dffits(acid_lm) %>% head() # Change in residual
 ```
 
 ## Non-independent observations
@@ -526,30 +526,15 @@ reality <-
 lm(se_change ~ 1, data = reality) %>% 
   summary()
 
-# Check visually
-lm(se_change ~ 1, data = reality) %>% 
-  tidy(conf.int = TRUE, bootstrap = TRUE) %>% 
-  ggplot() +
-  aes(y = term, x = estimate, xmin = conf.low, xmax = conf.high) +
-  geom_vline(xintercept = 0, color = "red") +
-  geom_pointrange()
-
-reality %>% 
-  ggplot() +
-  aes(x = se_change) +
-  geom_density(fill = "blue", alpha = .5) +
-  geom_vline(xintercept = 0)
-
 ```
 
 ## Covariate approach
 
-As you can see, the results are not completely the same, but t values are in the same ballpark.
+As you can see, the results are not completely the same, but t values are in the same ballpark. 
+
 ```{r}
 lm(se_posttest ~ 1 + se_pretest, data = reality) %>% 
   summary()
-  
-  
 
 ```
 

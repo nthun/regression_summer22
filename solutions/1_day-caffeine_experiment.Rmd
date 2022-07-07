@@ -1,0 +1,38 @@
+---
+title: "Caffeine experiment"
+output: html_document
+---
+
+# Background
+
+
+## Original study
+
+
+## Codebook
+`codebooks/`
+
+# Task
+
+1) Build models
+
+
+
+# Solution
+```{r setup}
+library(tidyverse)
+sleep <- read_csv(here::here("data/sleep_exec.csv"))
+```
+
+# Building the models
+```{r}
+# Creating a dataset that contains all data and models
+
+```
+
+# Printing the results in a table
+```{r}
+
+
+```
+
