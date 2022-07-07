@@ -1,0 +1,1249 @@
+participant_id,age,gender,climate_believer,climate_risk,dem_rep,condition,crt_score,science1,science2,science3,science4,science5,science6,science7,science8,science9,science10,science11,science12,science13,science14,science15,science16,science17,consistency,mean_agree
+id_525,63,2,Believer,10,Lean Democratic,1,0.166666667,6,5,1,6,6,4,5,3,2,1,3,3,2,3,3,1,3,consistent,96
+id_525,63,2,Believer,10,Lean Democratic,1,0.166666667,6,5,1,6,6,4,5,3,2,1,3,3,2,3,3,1,3,inconsistent,0
+id_526,67,2,Denier,10,Strongly Democratic,1,0.166666667,6,1,6,6,6,5,5,2,6,1,4,3,5,5,5,4,5,consistent,100
+id_526,67,2,Denier,10,Strongly Democratic,1,0.166666667,6,1,6,6,6,5,5,2,6,1,4,3,5,5,5,4,5,inconsistent,26
+id_528,68,2,Believer,10,Lean Democratic,1,0.5,6,3,4,3,3,4,4,1,4,2,NA,3,3,4,2,2,1,consistent,50
+id_528,68,2,Believer,10,Lean Democratic,1,0.5,6,3,4,3,3,4,4,1,4,2,NA,3,3,4,2,2,1,inconsistent,50
+id_529,66,2,Believer,6,Strongly Republican,1,0.333333333,4,4,2,4,5,4,4,4,4,1,3,3,4,3,2,5,3,consistent,48.66666667
+id_529,66,2,Believer,6,Strongly Republican,1,0.333333333,4,4,2,4,5,4,4,4,4,1,3,3,4,3,2,5,3,inconsistent,47.66666667
+id_530,52,2,Believer,4,Strongly Republican,1,0.5,2,4,3,1,4,4,4,4,6,2,4,3,4,1,1,6,2,consistent,55
+id_530,52,2,Believer,4,Strongly Republican,1,0.5,2,4,3,1,4,4,4,4,6,2,4,3,4,1,1,6,2,inconsistent,44
+id_531,70,1,Believer,7,Lean Republican,1,0.5,6,5,1,5,5,5,6,1,6,1,5,5,6,6,1,1,1,consistent,66.66666667
+id_531,70,1,Believer,7,Lean Republican,1,0.5,6,5,1,5,5,5,6,1,6,1,5,5,6,6,1,1,1,inconsistent,100
+id_532,62,1,Believer,5,Lean Republican,1,0.833333333,4,6,2,4,5,4,4,4,4,1,4,2,3,4,1,6,3,consistent,50
+id_532,62,1,Believer,5,Lean Republican,1,0.833333333,4,6,2,4,5,4,4,4,4,1,4,2,3,4,1,6,3,inconsistent,50
+id_533,79,2,Denier,2,Strongly Republican,1,0.333333333,1,5,2,1,5,6,4,4,1,1,5,4,6,1,4,6,3,consistent,61
+id_533,79,2,Denier,2,Strongly Republican,1,0.333333333,1,5,2,1,5,6,4,4,1,1,5,4,6,1,4,6,3,inconsistent,33
+id_534,62,2,Believer,8,Democratic,1,0.333333333,5,4,3,5,4,5,5,4,4,1,5,5,4,4,3,6,3,consistent,75
+id_534,62,2,Believer,8,Democratic,1,0.333333333,5,4,3,5,4,5,5,4,4,1,5,5,4,4,3,6,3,inconsistent,70
+id_535,71,2,Denier,6,Lean Republican,1,0.333333333,5,4,4,4,4,3,5,2,3,1,5,4,4,3,4,2,3,consistent,61
+id_535,71,2,Denier,6,Lean Republican,1,0.333333333,5,4,4,4,4,3,5,2,3,1,5,4,4,3,4,2,3,inconsistent,74
+id_536,63,1,Believer,3,Lean Republican,1,0.5,2,4,3,4,4,5,4,3,6,5,6,4,4,2,3,6,5,consistent,88.66666667
+id_536,63,1,Believer,3,Lean Republican,1,0.5,2,4,3,4,4,5,4,3,6,5,6,4,4,2,3,6,5,inconsistent,61.66666667
+id_537,55,2,Believer,10,Democratic,1,0,6,3,6,1,1,6,1,6,5,4,6,6,5,1,6,6,6,consistent,83.33333333
+id_537,55,2,Believer,10,Democratic,1,0,6,3,6,1,1,6,1,6,5,4,6,6,5,1,6,6,6,inconsistent,50
+id_541,25,2,Believer,9,Democratic,1,0.5,5,4,5,5,4,4,4,5,5,2,4,5,6,3,5,4,5,consistent,81
+id_541,25,2,Believer,9,Democratic,1,0.5,5,4,5,5,4,4,4,5,5,2,4,5,6,3,5,4,5,inconsistent,76.66666667
+id_543,71,2,Believer,8,Republican,1,0,3,3,4,3,5,4,3,3,3,4,3,4,5,5,3,3,3,consistent,77.66666667
+id_543,71,2,Believer,8,Republican,1,0,3,3,4,3,5,4,3,3,3,4,3,4,5,5,3,3,3,inconsistent,80
+id_544,57,1,Believer,9,Republican,1,0.333333333,6,1,6,6,6,2,1,3,3,3,6,2,4,2,1,6,2,consistent,41.66666667
+id_544,57,1,Believer,9,Republican,1,0.333333333,6,1,6,6,6,2,1,3,3,3,6,2,4,2,1,6,2,inconsistent,66.66666667
+id_545,64,1,Denier,3,Strongly Republican,1,0.666666667,1,5,5,1,1,2,5,5,4,2,3,4,4,3,4,6,5,consistent,44
+id_545,64,1,Denier,3,Strongly Republican,1,0.666666667,1,5,5,1,1,2,5,5,4,2,3,4,4,3,4,6,5,inconsistent,25.33333333
+id_546,82,2,Believer,8,Democratic,1,0.5,6,5,4,3,4,4,5,2,4,1,4,4,2,3,3,2,2,consistent,82
+id_546,82,2,Believer,8,Democratic,1,0.5,6,5,4,3,4,4,5,2,4,1,4,4,2,3,3,2,2,inconsistent,44.33333333
+id_547,71,2,Believer,3,Democratic,1,0.333333333,5,3,6,4,4,5,6,2,1,1,5,1,4,6,2,5,4,consistent,51.33333333
+id_547,71,2,Believer,3,Democratic,1,0.333333333,5,3,6,4,4,5,6,2,1,1,5,1,4,6,2,5,4,inconsistent,74.5
+id_548,67,2,Believer,10,Strongly Democratic,1,0.166666667,6,4,5,5,4,6,5,3,5,2,6,5,4,2,4,6,3,consistent,73
+id_548,67,2,Believer,10,Strongly Democratic,1,0.166666667,6,4,5,5,4,6,5,3,5,2,6,5,4,2,4,6,3,inconsistent,40.66666667
+id_549,79,1,Believer,8,Lean Democratic,1,0.5,4,4,3,3,4,4,4,3,4,3,4,3,3,4,3,3,3,consistent,58.33333333
+id_549,79,1,Believer,8,Lean Democratic,1,0.5,4,4,3,3,4,4,4,3,4,3,4,3,3,4,3,3,3,inconsistent,58
+id_550,59,1,Believer,10,Strongly Democratic,1,0,6,4,4,5,6,5,5,4,5,2,5,5,4,2,5,3,3,consistent,80
+id_550,59,1,Believer,10,Strongly Democratic,1,0,6,4,4,5,6,5,5,4,5,2,5,5,4,2,5,3,3,inconsistent,50.66666667
+id_551,58,2,Believer,10,Democratic,1,0,6,4,4,3,6,3,5,3,3,1,2,4,5,6,6,5,6,consistent,69.66666667
+id_551,58,2,Believer,10,Democratic,1,0,6,4,4,3,6,3,5,3,3,1,2,4,5,6,6,5,6,inconsistent,36
+id_552,61,2,Denier,1,Strongly Republican,1,0,1,6,2,1,1,5,4,1,5,3,5,4,3,3,3,6,4,consistent,NA
+id_552,61,2,Denier,1,Strongly Republican,1,0,1,6,2,1,1,5,4,1,5,3,5,4,3,3,3,6,4,inconsistent,30.5
+id_553,58,2,Believer,10,Strongly Democratic,1,0.166666667,6,3,2,4,6,4,3,4,5,1,4,2,2,4,2,1,1,consistent,72.33333333
+id_553,58,2,Believer,10,Strongly Democratic,1,0.166666667,6,3,2,4,6,4,3,4,5,1,4,2,2,4,2,1,1,inconsistent,26
+id_554,75,1,Denier,0,Strongly Republican,1,1,1,6,6,6,6,4,5,6,6,1,4,2,4,5,1,6,6,consistent,100
+id_554,75,1,Denier,0,Strongly Republican,1,1,1,6,6,6,6,4,5,6,6,1,4,2,4,5,1,6,6,inconsistent,0.3333333333
+id_555,64,1,Denier,1,Strongly Republican,1,0.5,2,6,1,4,3,5,4,2,6,1,3,4,3,6,1,6,2,consistent,96.66666667
+id_555,64,1,Denier,1,Strongly Republican,1,0.5,2,6,1,4,3,5,4,2,6,1,3,4,3,6,1,6,2,inconsistent,18
+id_557,54,2,Believer,8,Lean Republican,1,1,6,4,5,2,6,5,6,1,5,1,2,4,1,6,5,2,5,consistent,20
+id_557,54,2,Believer,8,Lean Republican,1,1,6,4,5,2,6,5,6,1,5,1,2,4,1,6,5,2,5,inconsistent,97.5
+id_558,70,2,Believer,9,Lean Democratic,1,0.166666667,6,5,3,5,5,4,5,3,3,2,4,3,4,3,4,3,3,consistent,92
+id_558,70,2,Believer,9,Lean Democratic,1,0.166666667,6,5,3,5,5,4,5,3,3,2,4,3,4,3,4,3,3,inconsistent,29
+id_559,61,2,Denier,2,Lean Republican,1,0.5,3,1,6,5,1,6,5,4,4,4,6,4,4,6,3,5,5,consistent,88.33333333
+id_559,61,2,Denier,2,Lean Republican,1,0.5,3,1,6,5,1,6,5,4,4,4,6,4,4,6,3,5,5,inconsistent,22.66666667
+id_560,75,1,Believer,10,Strongly Democratic,1,0.333333333,6,4,3,4,5,3,4,3,6,1,4,4,3,5,4,3,3,consistent,73.33333333
+id_560,75,1,Believer,10,Strongly Democratic,1,0.333333333,6,4,3,4,5,3,4,3,6,1,4,4,3,5,4,3,3,inconsistent,77.66666667
+id_562,67,1,Believer,8,Lean Republican,1,0.666666667,6,6,2,6,6,3,6,5,5,1,4,4,3,6,3,3,2,consistent,40
+id_562,67,1,Believer,8,Lean Republican,1,0.666666667,6,6,2,6,6,3,6,5,5,1,4,4,3,6,3,3,2,inconsistent,63.33333333
+id_563,48,2,Believer,8,Lean Democratic,1,0.666666667,5,4,3,3,5,4,4,4,3,3,4,3,3,4,3,2,4,consistent,69.33333333
+id_563,48,2,Believer,8,Lean Democratic,1,0.666666667,5,4,3,3,5,4,4,4,3,3,4,3,3,4,3,2,4,inconsistent,51
+id_564,42,1,Denier,4,Lean Republican,1,0.333333333,5,4,4,4,4,3,4,4,5,2,3,3,2,4,3,3,5,consistent,69.66666667
+id_564,42,1,Denier,4,Lean Republican,1,0.333333333,5,4,4,4,4,3,4,4,5,2,3,3,2,4,3,3,5,inconsistent,41.33333333
+id_565,79,2,Believer,NA,Lean Republican,1,0.333333333,4,4,2,4,6,4,4,2,6,1,4,1,3,3,1,2,1,consistent,53.66666667
+id_565,79,2,Believer,NA,Lean Republican,1,0.333333333,4,4,2,4,6,4,4,2,6,1,4,1,3,3,1,2,1,inconsistent,50
+id_566,71,2,Denier,NA,Lean Republican,1,0.5,2,1,6,5,6,3,4,5,5,6,6,5,4,6,6,6,5,consistent,75
+id_566,71,2,Denier,NA,Lean Republican,1,0.5,2,1,6,5,6,3,4,5,5,6,6,5,4,6,6,6,5,inconsistent,58.66666667
+id_567,67,2,Believer,10,Strongly Democratic,1,0.333333333,6,4,5,6,6,6,6,5,5,1,6,5,5,2,1,2,1,consistent,100
+id_567,67,2,Believer,10,Strongly Democratic,1,0.333333333,6,4,5,6,6,6,6,5,5,1,6,5,5,2,1,2,1,inconsistent,53.66666667
+id_568,65,1,Denier,0,Lean Democratic,1,0.166666667,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,consistent,0
+id_568,65,1,Denier,0,Lean Democratic,1,0.166666667,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,inconsistent,0
+id_569,61,2,Believer,9,Strongly Republican,1,1,6,4,1,5,5,5,4,3,6,1,5,2,2,6,5,6,3,consistent,48.33333333
+id_569,61,2,Believer,9,Strongly Republican,1,1,6,4,1,5,5,5,4,3,6,1,5,2,2,6,5,6,3,inconsistent,85.66666667
+id_573,22,2,Denier,0,Lean Republican,1,0.166666667,2,2,6,1,1,4,2,6,6,6,6,5,3,3,4,6,1,consistent,35
+id_573,22,2,Denier,0,Lean Republican,1,0.166666667,2,2,6,1,1,4,2,6,6,6,6,5,3,3,4,6,1,inconsistent,54.33333333
+id_574,73,1,Denier,0,Strongly Republican,1,0.666666667,2,5,2,1,1,4,5,6,5,1,4,2,4,6,1,6,1,consistent,99.66666667
+id_574,73,1,Denier,0,Strongly Republican,1,0.666666667,2,5,2,1,1,4,5,6,5,1,4,2,4,6,1,6,1,inconsistent,3
+id_576,68,1,Believer,10,Strongly Democratic,1,0.666666667,6,5,1,6,6,5,5,4,6,1,5,3,1,4,6,3,3,consistent,98.33333333
+id_576,68,1,Believer,10,Strongly Democratic,1,0.666666667,6,5,1,6,6,5,5,4,6,1,5,3,1,4,6,3,3,inconsistent,16
+id_577,73,1,Denier,0,Strongly Republican,1,0.166666667,1,6,2,4,3,2,5,1,4,1,2,2,1,3,1,6,2,consistent,46
+id_577,73,1,Denier,0,Strongly Republican,1,0.166666667,1,6,2,4,3,2,5,1,4,1,2,2,1,3,1,6,2,inconsistent,48
+id_579,76,2,Believer,9,Lean Republican,1,0.5,6,4,5,5,6,5,5,1,6,2,6,6,6,6,6,4,3,consistent,88.66666667
+id_579,76,2,Believer,9,Lean Republican,1,0.5,6,4,5,5,6,5,5,1,6,2,6,6,6,6,6,4,3,inconsistent,100
+id_580,81,1,Denier,8,Lean Republican,1,0.333333333,6,6,1,6,4,5,6,2,5,1,1,1,1,2,2,6,1,consistent,79
+id_580,81,1,Denier,8,Lean Republican,1,0.333333333,6,6,1,6,4,5,6,2,5,1,1,1,1,2,2,6,1,inconsistent,66
+id_581,53,2,Denier,4,Republican,1,0.5,4,5,2,1,1,1,2,4,5,1,2,3,1,5,2,6,4,consistent,23
+id_581,53,2,Denier,4,Republican,1,0.5,4,5,2,1,1,1,2,4,5,1,2,3,1,5,2,6,4,inconsistent,27.33333333
+id_582,65,1,Believer,9,Lean Democratic,1,0.5,6,5,4,6,1,4,5,4,5,1,4,5,6,3,6,6,3,consistent,87.33333333
+id_582,65,1,Believer,9,Lean Democratic,1,0.5,6,5,4,6,1,4,5,4,5,1,4,5,6,3,6,6,3,inconsistent,87
+id_584,71,2,Denier,0,Republican,1,0,4,3,5,5,5,6,2,4,5,4,6,4,5,5,3,3,3,consistent,96.66666667
+id_584,71,2,Denier,0,Republican,1,0,4,3,5,5,5,6,2,4,5,4,6,4,5,5,3,3,3,inconsistent,0
+id_585,69,1,Believer,10,Lean Republican,1,0.833333333,6,4,1,6,6,5,5,3,6,6,3,3,1,5,1,5,2,consistent,53.33333333
+id_585,69,1,Believer,10,Lean Republican,1,0.833333333,6,4,1,6,6,5,5,3,6,6,3,3,1,5,1,5,2,inconsistent,73.33333333
+id_586,65,2,Believer,9,Lean Democratic,1,1,6,4,1,5,4,3,3,3,3,1,3,3,3,4,3,2,2,consistent,92.66666667
+id_586,65,2,Believer,9,Lean Democratic,1,1,6,4,1,5,4,3,3,3,3,1,3,3,3,4,3,2,2,inconsistent,18.66666667
+id_587,65,2,Believer,3,Strongly Democratic,1,0,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,consistent,74
+id_587,65,2,Believer,3,Strongly Democratic,1,0,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,inconsistent,80.66666667
+id_588,64,2,Believer,9,Lean Democratic,1,1,5,3,2,NA,5,5,5,4,5,2,5,1,3,NA,NA,1,3,consistent,63.33333333
+id_588,64,2,Believer,9,Lean Democratic,1,1,5,3,2,NA,5,5,5,4,5,2,5,1,3,NA,NA,1,3,inconsistent,46.66666667
+id_589,63,2,Believer,8,Lean Republican,1,0.666666667,6,5,4,2,2,4,5,4,4,1,4,4,3,5,2,4,3,consistent,14.5
+id_589,63,2,Believer,8,Lean Republican,1,0.666666667,6,5,4,2,2,4,5,4,4,1,4,4,3,5,2,4,3,inconsistent,71
+id_590,73,2,Believer,4,Strongly Republican,1,0,4,1,6,1,5,5,3,3,1,6,5,5,3,6,3,6,1,consistent,32
+id_590,73,2,Believer,4,Strongly Republican,1,0,4,1,6,1,5,5,3,3,1,6,5,5,3,6,3,6,1,inconsistent,4.5
+id_591,59,2,Believer,6,Lean Republican,1,0.666666667,4,4,4,4,4,3,3,2,4,3,4,3,3,3,2,3,2,consistent,58.66666667
+id_591,59,2,Believer,6,Lean Republican,1,0.666666667,4,4,4,4,4,3,3,2,4,3,4,3,3,3,2,3,2,inconsistent,71
+id_593,67,1,Believer,10,Lean Democratic,1,0.166666667,5,4,3,1,1,5,4,3,3,1,3,4,3,2,3,3,2,consistent,99.66666667
+id_593,67,1,Believer,10,Lean Democratic,1,0.166666667,5,4,3,1,1,5,4,3,3,1,3,4,3,2,3,3,2,inconsistent,0.3333333333
+id_594,74,1,Believer,2,Republican,1,0.333333333,4,5,2,2,1,5,1,1,5,2,4,5,1,1,2,6,5,consistent,76.66666667
+id_594,74,1,Believer,2,Republican,1,0.333333333,4,5,2,2,1,5,1,1,5,2,4,5,1,1,2,6,5,inconsistent,63.33333333
+id_595,30,2,Denier,7,Republican,1,0.666666667,5,5,5,5,5,5,5,5,4,5,5,5,5,4,5,5,4,consistent,87
+id_595,30,2,Denier,7,Republican,1,0.666666667,5,5,5,5,5,5,5,5,4,5,5,5,5,4,5,5,4,inconsistent,77.66666667
+id_597,35,2,Believer,10,Lean Republican,1,0.833333333,5,4,1,6,6,4,4,4,4,1,4,1,1,6,1,2,3,consistent,48.33333333
+id_597,35,2,Believer,10,Lean Republican,1,0.833333333,5,4,1,6,6,4,4,4,4,1,4,1,1,6,1,2,3,inconsistent,80.33333333
+id_600,64,1,Believer,7,Strongly Republican,1,0.333333333,6,3,4,3,4,2,5,2,4,2,4,3,4,3,3,6,5,consistent,73.66666667
+id_600,64,1,Believer,7,Strongly Republican,1,0.333333333,6,3,4,3,4,2,5,2,4,2,4,3,4,3,3,6,5,inconsistent,61
+id_602,77,2,Believer,10,Lean Republican,1,0,6,3,4,5,6,3,6,3,5,1,6,3,4,6,5,6,5,consistent,NA
+id_602,77,2,Believer,10,Lean Republican,1,0,6,3,4,5,6,3,6,3,5,1,6,3,4,6,5,6,5,inconsistent,100
+id_603,39,2,Denier,0,Strongly Republican,1,1,1,3,1,1,1,3,4,4,6,2,6,6,4,3,1,6,1,consistent,34.66666667
+id_603,39,2,Denier,0,Strongly Republican,1,1,1,3,1,1,1,3,4,4,6,2,6,6,4,3,1,6,1,inconsistent,2
+id_604,45,2,Believer,10,Strongly Democratic,1,0.333333333,6,2,3,5,6,3,6,2,5,1,5,3,5,6,4,1,5,consistent,98.33333333
+id_604,45,2,Believer,10,Strongly Democratic,1,0.333333333,6,2,3,5,6,3,6,2,5,1,5,3,5,6,4,1,5,inconsistent,22
+id_606,72,1,Believer,7,Lean Democratic,1,0,6,4,2,4,5,5,1,2,5,1,4,2,2,3,5,5,4,consistent,77.33333333
+id_606,72,1,Believer,7,Lean Democratic,1,0,6,4,2,4,5,5,1,2,5,1,4,2,2,3,5,5,4,inconsistent,55.33333333
+id_607,69,2,Believer,9,Lean Republican,1,0,6,1,5,5,5,5,5,1,6,1,5,5,5,6,1,5,5,consistent,44
+id_607,69,2,Believer,9,Lean Republican,1,0,6,1,5,5,5,5,5,1,6,1,5,5,5,6,1,5,5,inconsistent,80
+id_608,42,1,Believer,7,Lean Republican,1,0,4,4,4,1,1,4,5,2,4,4,4,1,6,3,2,6,5,consistent,NA
+id_608,42,1,Believer,7,Lean Republican,1,0,4,4,4,1,1,4,5,2,4,4,4,1,6,3,2,6,5,inconsistent,7
+id_609,65,2,Denier,4,Strongly Republican,1,0.166666667,3,3,6,1,1,6,5,5,6,5,6,6,5,3,6,6,3,consistent,58.33333333
+id_609,65,2,Denier,4,Strongly Republican,1,0.166666667,3,3,6,1,1,6,5,5,6,5,6,6,5,3,6,6,3,inconsistent,43
+id_611,71,2,Denier,1,Strongly Republican,1,0.833333333,1,5,5,1,1,5,4,6,6,3,5,6,5,4,1,6,3,consistent,91.33333333
+id_611,71,2,Denier,1,Strongly Republican,1,0.833333333,1,5,5,1,1,5,4,6,6,3,5,6,5,4,1,6,3,inconsistent,26.33333333
+id_613,77,2,Believer,6,Lean Republican,1,0,4,5,1,6,6,4,5,4,4,1,4,3,4,4,4,5,2,consistent,52.33333333
+id_613,77,2,Believer,6,Lean Republican,1,0,4,5,1,6,6,4,5,4,4,1,4,3,4,4,4,5,2,inconsistent,47.33333333
+id_614,81,2,Believer,8,Strongly Democratic,1,0.166666667,6,1,3,3,1,5,2,4,5,1,5,2,4,3,5,4,2,consistent,77.33333333
+id_614,81,2,Believer,8,Strongly Democratic,1,0.166666667,6,1,3,3,1,5,2,4,5,1,5,2,4,3,5,4,2,inconsistent,46.66666667
+id_616,33,2,Believer,8,Lean Republican,1,0.5,4,3,4,4,3,4,4,4,4,3,4,3,4,4,3,4,3,consistent,74
+id_616,33,2,Believer,8,Lean Republican,1,0.5,4,3,4,4,3,4,4,4,4,3,4,3,4,4,3,4,3,inconsistent,70.33333333
+id_617,48,2,Believer,7,Lean Republican,1,0,1,1,5,4,3,4,4,3,3,4,4,4,3,1,4,3,3,consistent,50
+id_617,48,2,Believer,7,Lean Republican,1,0,1,1,5,4,3,4,4,3,3,4,4,4,3,1,4,3,3,inconsistent,60
+id_620,74,2,Denier,2,Lean Republican,1,0.833333333,2,5,4,5,5,5,5,5,2,2,4,4,2,4,2,5,1,consistent,NA
+id_620,74,2,Denier,2,Lean Republican,1,0.833333333,2,5,4,5,5,5,5,5,2,2,4,4,2,4,2,5,1,inconsistent,78
+id_621,66,2,Believer,10,Democratic,1,0.666666667,6,2,6,5,3,5,4,2,2,1,5,1,2,1,5,2,5,consistent,88.33333333
+id_621,66,2,Believer,10,Democratic,1,0.666666667,6,2,6,5,3,5,4,2,2,1,5,1,2,1,5,2,5,inconsistent,10
+id_623,38,1,Believer,8,Republican,1,0.5,6,5,6,1,1,5,5,2,6,1,4,4,4,5,4,5,2,consistent,70
+id_623,38,1,Believer,8,Republican,1,0.5,6,5,6,1,1,5,5,2,6,1,4,4,4,5,4,5,2,inconsistent,78.33333333
+id_624,70,2,Believer,9,Lean Democratic,1,0.833333333,6,1,4,4,6,6,5,1,4,2,4,4,6,2,6,1,3,consistent,87.33333333
+id_624,70,2,Believer,9,Lean Democratic,1,0.833333333,6,1,4,4,6,6,5,1,4,2,4,4,6,2,6,1,3,inconsistent,45
+id_625,66,1,Denier,1,Strongly Republican,1,1,1,5,1,4,4,4,5,2,6,1,3,3,3,5,1,6,2,consistent,94.33333333
+id_625,66,1,Denier,1,Strongly Republican,1,1,1,5,1,4,4,4,5,2,6,1,3,3,3,5,1,6,2,inconsistent,9.333333333
+id_626,47,2,Believer,10,Lean Democratic,1,0,6,4,1,4,4,4,4,3,4,1,4,1,5,5,6,2,3,consistent,65
+id_626,47,2,Believer,10,Lean Democratic,1,0,6,4,1,4,4,4,4,3,4,1,4,1,5,5,6,2,3,inconsistent,37.66666667
+id_627,37,2,Believer,7,Republican,1,0.166666667,6,5,6,6,6,6,6,1,6,1,6,6,6,6,6,5,6,consistent,100
+id_627,37,2,Believer,7,Republican,1,0.166666667,6,5,6,6,6,6,6,1,6,1,6,6,6,6,6,5,6,inconsistent,100
+id_630,46,2,Believer,10,Democratic,1,0,6,3,3,4,6,6,4,1,3,1,4,4,5,6,3,4,3,consistent,96.66666667
+id_630,46,2,Believer,10,Democratic,1,0,6,3,3,4,6,6,4,1,3,1,4,4,5,6,3,4,3,inconsistent,35.33333333
+id_632,53,1,Believer,8,Strongly Republican,1,NA,5,3,4,5,4,3,6,2,4,2,4,3,4,3,5,6,2,consistent,40
+id_632,53,1,Believer,8,Strongly Republican,1,NA,5,3,4,5,4,3,6,2,4,2,4,3,4,3,5,6,2,inconsistent,65
+id_633,50,2,Believer,9,Strongly Democratic,1,0.5,6,5,1,6,6,1,6,3,2,1,1,2,1,6,3,1,3,consistent,95
+id_633,50,2,Believer,9,Strongly Democratic,1,0.5,6,5,1,6,6,1,6,3,2,1,1,2,1,6,3,1,3,inconsistent,11
+id_634,70,2,Believer,7,Republican,1,0.166666667,4,3,4,1,1,4,4,4,4,4,4,4,4,4,3,6,4,consistent,69
+id_634,70,2,Believer,7,Republican,1,0.166666667,4,3,4,1,1,4,4,4,4,4,4,4,4,4,3,6,4,inconsistent,73.66666667
+id_635,55,2,Believer,8,Republican,1,0.666666667,4,4,2,1,1,4,5,3,4,1,5,3,2,3,1,4,3,consistent,53.66666667
+id_635,55,2,Believer,8,Republican,1,0.666666667,4,4,2,1,1,4,5,3,4,1,5,3,2,3,1,4,3,inconsistent,80
+id_639,42,2,Believer,6,Republican,1,0.333333333,6,5,4,4,2,6,6,3,4,3,6,4,5,2,3,1,3,consistent,50
+id_639,42,2,Believer,6,Republican,1,0.333333333,6,5,4,4,2,6,6,3,4,3,6,4,5,2,3,1,3,inconsistent,86.66666667
+id_641,66,1,Believer,10,Lean Democratic,1,0.166666667,6,2,1,6,6,1,6,3,4,1,2,3,1,3,4,1,3,consistent,76.66666667
+id_641,66,1,Believer,10,Lean Democratic,1,0.166666667,6,2,1,6,6,1,6,3,4,1,2,3,1,3,4,1,3,inconsistent,36.66666667
+id_642,72,2,Believer,10,Democratic,1,0.166666667,6,3,5,4,5,4,5,3,1,1,5,4,6,6,6,3,1,consistent,92.33333333
+id_642,72,2,Believer,10,Democratic,1,0.166666667,6,3,5,4,5,4,5,3,1,1,5,4,6,6,6,3,1,inconsistent,43.66666667
+id_643,80,2,Believer,8,Democratic,1,0.166666667,6,4,1,1,1,4,5,3,4,1,5,3,5,4,2,3,1,consistent,73.33333333
+id_643,80,2,Believer,8,Democratic,1,0.166666667,6,4,1,1,1,4,5,3,4,1,5,3,5,4,2,3,1,inconsistent,26.66666667
+id_645,36,2,Believer,8,Lean Democratic,1,0.5,5,4,3,5,5,4,4,2,5,1,4,2,2,4,3,2,1,consistent,81.66666667
+id_645,36,2,Believer,8,Lean Democratic,1,0.5,5,4,3,5,5,4,4,2,5,1,4,2,2,4,3,2,1,inconsistent,55.33333333
+id_646,62,2,Believer,6,Lean Republican,1,0.333333333,4,4,3,3,4,4,6,4,4,2,4,3,3,3,3,1,1,consistent,75
+id_646,62,2,Believer,6,Lean Republican,1,0.333333333,4,4,3,3,4,4,6,4,4,2,4,3,3,3,3,1,1,inconsistent,28.33333333
+id_647,68,2,Believer,8,Lean Republican,1,0.166666667,6,5,2,5,5,4,5,2,5,2,4,4,5,2,5,2,4,consistent,37
+id_647,68,2,Believer,8,Lean Republican,1,0.166666667,6,5,2,5,5,4,5,2,5,2,4,4,5,2,5,2,4,inconsistent,93
+id_648,29,1,Believer,3,Lean Republican,1,0.833333333,4,3,3,2,3,5,6,6,2,3,5,5,4,2,5,4,5,consistent,70
+id_648,29,1,Believer,3,Lean Republican,1,0.833333333,4,3,3,2,3,5,6,6,2,3,5,5,4,2,5,4,5,inconsistent,40
+id_649,71,1,Denier,4,Lean Democratic,1,0.333333333,4,4,4,4,4,4,3,4,4,2,4,3,4,5,4,3,2,consistent,50
+id_649,71,1,Denier,4,Lean Democratic,1,0.333333333,4,4,4,4,4,4,3,4,4,2,4,3,4,5,4,3,2,inconsistent,50
+id_651,48,1,Believer,9,Lean Republican,1,0.5,5,5,4,5,5,4,5,5,5,2,4,4,4,3,3,3,3,consistent,50.66666667
+id_651,48,1,Believer,9,Lean Republican,1,0.5,5,5,4,5,5,4,5,5,5,2,4,4,4,3,3,3,3,inconsistent,50.66666667
+id_652,52,1,Believer,9,Democratic,1,0.833333333,6,5,4,5,5,4,3,1,6,1,5,4,4,5,5,1,4,consistent,62
+id_652,52,1,Believer,9,Democratic,1,0.833333333,6,5,4,5,5,4,3,1,6,1,5,4,4,5,5,1,4,inconsistent,45.66666667
+id_653,79,1,Believer,8,Lean Democratic,1,0.5,4,4,3,3,4,4,4,3,4,3,4,4,3,4,3,4,4,consistent,64.33333333
+id_653,79,1,Believer,8,Lean Democratic,1,0.5,4,4,3,3,4,4,4,3,4,3,4,4,3,4,3,4,4,inconsistent,51
+id_655,67,1,Denier,1,Lean Republican,1,0.166666667,1,5,4,1,1,5,5,2,6,2,4,3,1,1,5,6,2,consistent,89.66666667
+id_655,67,1,Denier,1,Lean Republican,1,0.166666667,1,5,4,1,1,5,5,2,6,2,4,3,1,1,5,6,2,inconsistent,35
+id_657,77,1,Believer,7,Lean Republican,1,0.5,6,5,1,6,6,5,4,2,4,1,3,2,2,4,2,5,2,consistent,6.666666667
+id_657,77,1,Believer,7,Lean Republican,1,0.5,6,5,1,6,6,5,4,2,4,1,3,2,2,4,2,5,2,inconsistent,90.66666667
+id_658,18,2,Believer,9,Lean Democratic,1,1,6,2,5,4,4,4,4,4,4,2,2,3,4,5,6,1,6,consistent,82
+id_658,18,2,Believer,9,Lean Democratic,1,1,6,2,5,4,4,4,4,4,4,2,2,3,4,5,6,1,6,inconsistent,54.66666667
+id_659,69,1,Denier,1,Strongly Republican,1,0.5,1,6,2,6,1,4,4,4,6,3,4,4,4,3,2,6,3,consistent,48
+id_659,69,1,Denier,1,Strongly Republican,1,0.5,1,6,2,6,1,4,4,4,6,3,4,4,4,3,2,6,3,inconsistent,8.666666667
+id_660,63,1,Believer,9,Strongly Democratic,1,0.833333333,5,2,1,6,6,2,5,1,6,1,1,2,1,6,2,1,4,consistent,79.66666667
+id_660,63,1,Believer,9,Strongly Democratic,1,0.833333333,5,2,1,6,6,2,5,1,6,1,1,2,1,6,2,1,4,inconsistent,40
+id_661,68,1,Believer,10,Lean Democratic,1,0.5,6,5,4,4,5,4,4,4,4,2,5,4,4,4,5,4,6,consistent,71
+id_661,68,1,Believer,10,Lean Democratic,1,0.5,6,5,4,4,5,4,4,4,4,2,5,4,4,4,5,4,6,inconsistent,19.33333333
+id_662,53,2,Believer,10,Lean Democratic,1,0.333333333,6,1,6,1,1,6,6,6,6,1,6,1,6,1,1,1,1,consistent,100
+id_662,53,2,Believer,10,Lean Democratic,1,0.333333333,6,1,6,1,1,6,6,6,6,1,6,1,6,1,1,1,1,inconsistent,0
+id_663,62,1,Believer,10,Lean Democratic,1,0.666666667,6,4,4,6,6,5,5,2,6,1,4,4,4,5,6,2,4,consistent,77
+id_663,62,1,Believer,10,Lean Democratic,1,0.666666667,6,4,4,6,6,5,5,2,6,1,4,4,4,5,6,2,4,inconsistent,27
+id_664,23,1,Believer,6,Lean Democratic,1,0.5,6,6,1,6,6,1,4,6,5,1,1,1,1,6,6,1,3,consistent,83.66666667
+id_664,23,1,Believer,6,Lean Democratic,1,0.5,6,6,1,6,6,1,4,6,5,1,1,1,1,6,6,1,3,inconsistent,58
+id_666,48,2,Believer,10,Strongly Democratic,1,1,6,2,1,1,3,4,5,1,2,1,6,1,5,2,1,2,1,consistent,49
+id_666,48,2,Believer,10,Strongly Democratic,1,1,6,2,1,1,3,4,5,1,2,1,6,1,5,2,1,2,1,inconsistent,50
+id_667,40,2,Believer,10,Strongly Republican,1,0.333333333,6,3,4,1,1,5,6,5,4,4,4,3,5,6,3,6,1,consistent,56
+id_667,40,2,Believer,10,Strongly Republican,1,0.333333333,6,3,4,1,1,5,6,5,4,4,4,3,5,6,3,6,1,inconsistent,80
+id_668,67,1,Denier,3,Strongly Republican,1,0.833333333,5,6,4,6,6,4,6,5,6,1,4,4,5,2,1,3,2,consistent,73.66666667
+id_668,67,1,Denier,3,Strongly Republican,1,0.833333333,5,6,4,6,6,4,6,5,6,1,4,4,5,2,1,3,2,inconsistent,39.33333333
+id_669,42,2,Denier,6,Lean Democratic,1,0,4,5,3,3,3,4,3,3,4,5,3,4,3,4,3,5,3,consistent,76
+id_669,42,2,Denier,6,Lean Democratic,1,0,4,5,3,3,3,4,3,3,4,5,3,4,3,4,3,5,3,inconsistent,67.33333333
+id_670,76,1,Believer,10,Lean Democratic,1,0.5,6,1,1,6,6,5,2,1,5,1,4,1,1,6,6,1,3,consistent,100
+id_670,76,1,Believer,10,Lean Democratic,1,0.5,6,1,1,6,6,5,2,1,5,1,4,1,1,6,6,1,3,inconsistent,0
+id_671,65,1,Believer,3,Strongly Democratic,1,0.333333333,5,4,2,2,2,3,4,3,4,2,2,2,3,5,2,6,3,consistent,54
+id_671,65,1,Believer,3,Strongly Democratic,1,0.333333333,5,4,2,2,2,3,4,3,4,2,2,2,3,5,2,6,3,inconsistent,46.66666667
+id_672,62,2,Believer,8,Lean Democratic,1,0.166666667,6,2,1,5,6,5,5,3,5,1,2,2,2,5,2,6,4,consistent,58
+id_672,62,2,Believer,8,Lean Democratic,1,0.166666667,6,2,1,5,6,5,5,3,5,1,2,2,2,5,2,6,4,inconsistent,50
+id_673,63,2,Denier,4,Lean Republican,1,1,4,3,4,3,2,5,4,3,4,3,4,5,3,3,4,3,3,consistent,64
+id_673,63,2,Denier,4,Lean Republican,1,1,4,3,4,3,2,5,4,3,4,3,4,5,3,3,4,3,3,inconsistent,55.33333333
+id_674,18,1,Believer,8,Lean Democratic,1,0,6,2,3,6,6,4,4,4,3,2,3,1,2,3,4,3,6,consistent,86.5
+id_674,18,1,Believer,8,Lean Democratic,1,0,6,2,3,6,6,4,4,4,3,2,3,1,2,3,4,3,6,inconsistent,82.66666667
+id_676,60,1,Believer,10,Lean Democratic,1,0.666666667,6,5,2,6,5,4,5,2,5,2,3,3,2,5,5,3,4,consistent,90
+id_676,60,1,Believer,10,Lean Democratic,1,0.666666667,6,5,2,6,5,4,5,2,5,2,3,3,2,5,5,3,4,inconsistent,63.33333333
+id_677,65,1,Believer,10,Lean Democratic,1,0.666666667,6,5,1,6,1,4,5,4,6,1,5,1,5,6,5,5,5,consistent,100
+id_677,65,1,Believer,10,Lean Democratic,1,0.666666667,6,5,1,6,1,4,5,4,6,1,5,1,5,6,5,5,5,inconsistent,18
+id_678,26,1,Believer,10,Strongly Democratic,1,0,6,3,6,4,3,3,4,4,4,3,4,1,5,3,3,6,5,consistent,NA
+id_678,26,1,Believer,10,Strongly Democratic,1,0,6,3,6,4,3,3,4,4,4,3,4,1,5,3,3,6,5,inconsistent,53
+id_679,73,2,Denier,7,Lean Democratic,1,0.5,5,5,3,5,3,4,5,4,6,2,5,4,5,2,2,5,2,consistent,80
+id_679,73,2,Denier,7,Lean Democratic,1,0.5,5,5,3,5,3,4,5,4,6,2,5,4,5,2,2,5,2,inconsistent,53.33333333
+id_680,69,1,Believer,9,Democratic,1,0,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,consistent,76
+id_680,69,1,Believer,9,Democratic,1,0,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,inconsistent,73
+id_681,20,2,Denier,5,Republican,1,0.166666667,6,3,6,1,3,6,6,4,5,1,6,6,6,4,6,6,3,consistent,39.66666667
+id_681,20,2,Denier,5,Republican,1,0.166666667,6,3,6,1,3,6,6,4,5,1,6,6,6,4,6,6,3,inconsistent,39.66666667
+id_682,71,1,Believer,10,Democratic,1,0.666666667,6,1,4,6,6,6,5,1,5,1,5,2,4,5,6,3,4,consistent,96
+id_682,71,1,Believer,10,Democratic,1,0.666666667,6,1,4,6,6,6,5,1,5,1,5,2,4,5,6,3,4,inconsistent,36
+id_683,61,2,Believer,8,Lean Democratic,1,0.833333333,5,4,4,1,1,4,4,4,5,4,4,4,4,4,4,4,2,consistent,71.33333333
+id_683,61,2,Believer,8,Lean Democratic,1,0.833333333,5,4,4,1,1,4,4,4,5,4,4,4,4,4,4,4,2,inconsistent,52
+id_684,69,2,Believer,10,Lean Democratic,1,0,6,1,1,6,6,4,1,1,6,1,1,1,1,1,1,1,6,consistent,93.33333333
+id_684,69,2,Believer,10,Lean Democratic,1,0,6,1,1,6,6,4,1,1,6,1,1,1,1,1,1,1,6,inconsistent,17
+id_687,61,2,Believer,10,Strongly Democratic,1,0,6,4,4,6,6,6,4,6,1,1,6,5,6,4,6,6,1,consistent,92.66666667
+id_687,61,2,Believer,10,Strongly Democratic,1,0,6,4,4,6,6,6,4,6,1,1,6,5,6,4,6,6,1,inconsistent,73.5
+id_689,78,1,Believer,8,Republican,1,0,6,5,4,5,5,4,5,6,3,2,5,5,5,2,3,6,4,consistent,81.33333333
+id_689,78,1,Believer,8,Republican,1,0,6,5,4,5,5,4,5,6,3,2,5,5,5,2,3,6,4,inconsistent,71.66666667
+id_691,65,1,Denier,0,Lean Democratic,1,0.166666667,1,1,1,1,1,1,NA,1,1,1,1,1,1,1,1,1,1,consistent,0
+id_691,65,1,Denier,0,Lean Democratic,1,0.166666667,1,1,1,1,1,1,NA,1,1,1,1,1,1,1,1,1,1,inconsistent,0
+id_692,59,1,Believer,9,Strongly Democratic,1,0,5,3,3,5,6,4,4,4,4,2,4,4,4,5,4,2,3,consistent,73
+id_692,59,1,Believer,9,Strongly Democratic,1,0,5,3,3,5,6,4,4,4,4,2,4,4,4,5,4,2,3,inconsistent,57.5
+id_693,60,2,Believer,10,Republican,1,1,6,1,6,1,1,6,6,2,6,1,NA,1,1,6,6,6,6,consistent,33.33333333
+id_693,60,2,Believer,10,Republican,1,1,6,1,6,1,1,6,6,2,6,1,NA,1,1,6,6,6,6,inconsistent,66.66666667
+id_694,73,2,Denier,4,Lean Republican,1,0.166666667,4,5,4,4,3,4,5,3,4,3,5,4,5,3,5,6,4,consistent,68
+id_694,73,2,Denier,4,Lean Republican,1,0.166666667,4,5,4,4,3,4,5,3,4,3,5,4,5,3,5,6,4,inconsistent,39
+id_696,44,2,Believer,10,Strongly Democratic,1,0,6,4,6,4,3,6,1,6,4,6,6,6,6,1,1,1,4,consistent,100
+id_696,44,2,Believer,10,Strongly Democratic,1,0,6,4,6,4,3,6,1,6,4,6,6,6,6,1,1,1,4,inconsistent,26.66666667
+id_697,54,1,Believer,10,Lean Democratic,1,0.333333333,6,1,4,3,3,3,4,2,4,4,4,2,4,4,4,6,4,consistent,100
+id_697,54,1,Believer,10,Lean Democratic,1,0.333333333,6,1,4,3,3,3,4,2,4,4,4,2,4,4,4,6,4,inconsistent,33.33333333
+id_698,31,2,Believer,7,Republican,1,0.333333333,6,1,4,2,2,4,5,2,6,6,4,1,4,4,4,6,5,consistent,62
+id_698,31,2,Believer,7,Republican,1,0.333333333,6,1,4,2,2,4,5,2,6,6,4,1,4,4,4,6,5,inconsistent,43
+id_699,65,2,Believer,9,Lean Republican,1,0,1,5,1,3,3,5,4,5,6,2,5,5,2,3,4,3,5,consistent,72
+id_699,65,2,Believer,9,Lean Republican,1,0,1,5,1,3,3,5,4,5,6,2,5,5,2,3,4,3,5,inconsistent,100
+id_700,60,2,Believer,7,Lean Republican,1,0.833333333,4,3,4,2,2,4,3,4,3,3,5,4,5,3,3,4,4,consistent,61
+id_700,60,2,Believer,7,Lean Republican,1,0.833333333,4,3,4,2,2,4,3,4,3,3,5,4,5,3,3,4,4,inconsistent,71.33333333
+id_701,58,1,Believer,8,Lean Democratic,1,1,4,4,3,4,4,4,4,4,3,3,3,3,3,3,3,3,4,consistent,76.66666667
+id_701,58,1,Believer,8,Lean Democratic,1,1,4,4,3,4,4,4,4,4,3,3,3,3,3,3,3,3,4,inconsistent,56.66666667
+id_702,54,2,Believer,8,Strongly Republican,1,0.5,5,2,5,4,6,4,5,4,3,4,5,3,4,4,4,4,3,consistent,43
+id_702,54,2,Believer,8,Strongly Republican,1,0.5,5,2,5,4,6,4,5,4,3,4,5,3,4,4,4,4,3,inconsistent,64.66666667
+id_703,29,2,Denier,1,Strongly Republican,1,0.166666667,2,1,6,1,1,5,3,6,6,6,6,6,2,5,2,6,1,consistent,49.33333333
+id_703,29,2,Denier,1,Strongly Republican,1,0.166666667,2,1,6,1,1,5,3,6,6,6,6,6,2,5,2,6,1,inconsistent,47.33333333
+id_704,75,1,Believer,10,Strongly Democratic,1,0.333333333,6,6,4,5,5,3,6,3,6,1,2,4,2,3,5,4,3,consistent,91.66666667
+id_704,75,1,Believer,10,Strongly Democratic,1,0.333333333,6,6,4,5,5,3,6,3,6,1,2,4,2,3,5,4,3,inconsistent,86.66666667
+id_705,67,1,Believer,7,Strongly Democratic,1,0.5,6,4,1,5,6,4,5,2,4,1,4,3,4,6,6,1,5,consistent,92.33333333
+id_705,67,1,Believer,7,Strongly Democratic,1,0.5,6,4,1,5,6,4,5,2,4,1,4,3,4,6,6,1,5,inconsistent,75.33333333
+id_706,68,2,Denier,0,Lean Republican,1,0.333333333,1,4,5,1,3,6,5,6,6,6,5,5,5,2,2,6,4,consistent,57.66666667
+id_706,68,2,Denier,0,Lean Republican,1,0.333333333,1,4,5,1,3,6,5,6,6,6,5,5,5,2,2,6,4,inconsistent,28
+id_707,70,2,Believer,7,Strongly Republican,1,0.5,6,3,6,4,5,3,4,3,4,5,4,3,4,4,4,6,5,consistent,61.33333333
+id_707,70,2,Believer,7,Strongly Republican,1,0.5,6,3,6,4,5,3,4,3,4,5,4,3,4,4,4,6,5,inconsistent,58.66666667
+id_708,63,1,Denier,2,Republican,1,1,1,6,3,4,1,3,4,4,6,1,3,4,1,5,2,6,2,consistent,99.66666667
+id_708,63,1,Denier,2,Republican,1,1,1,6,3,4,1,3,4,4,6,1,3,4,1,5,2,6,2,inconsistent,0
+id_709,20,2,Believer,NA,Republican,1,0.166666667,5,3,1,1,1,4,3,1,1,1,3,3,1,2,3,6,3,consistent,53.66666667
+id_709,20,2,Believer,NA,Republican,1,0.166666667,5,3,1,1,1,4,3,1,1,1,3,3,1,2,3,6,3,inconsistent,80.66666667
+id_710,72,2,Denier,3,Strongly Republican,1,0.5,4,5,4,5,5,4,5,3,6,1,4,4,4,4,1,6,2,consistent,84.33333333
+id_710,72,2,Denier,3,Strongly Republican,1,0.5,4,5,4,5,5,4,5,3,6,1,4,4,4,4,1,6,2,inconsistent,24.66666667
+id_711,82,1,Believer,10,Strongly Republican,1,0.166666667,6,3,6,1,6,4,6,1,6,1,4,4,5,4,4,6,3,consistent,75.33333333
+id_711,82,1,Believer,10,Strongly Republican,1,0.166666667,6,3,6,1,6,4,6,1,6,1,4,4,5,4,4,6,3,inconsistent,83.66666667
+id_712,63,1,Denier,2,Lean Republican,1,0.166666667,2,5,2,5,4,4,5,2,5,2,6,4,2,3,1,6,2,consistent,91.33333333
+id_712,63,1,Denier,2,Lean Republican,1,0.166666667,2,5,2,5,4,4,5,2,5,2,6,4,2,3,1,6,2,inconsistent,12
+id_714,48,2,Believer,8,Lean Democratic,1,0.666666667,5,4,3,3,4,4,4,4,3,3,4,4,3,4,3,2,4,consistent,71.33333333
+id_714,48,2,Believer,8,Lean Democratic,1,0.666666667,5,4,3,3,4,4,4,4,3,3,4,4,3,4,3,2,4,inconsistent,55
+id_715,70,2,Believer,9,Strongly Democratic,1,0.666666667,6,5,2,6,6,6,4,5,5,4,6,5,3,3,1,4,3,consistent,69.33333333
+id_715,70,2,Believer,9,Strongly Democratic,1,0.666666667,6,5,2,6,6,6,4,5,5,4,6,5,3,3,1,4,3,inconsistent,57.66666667
+id_716,73,1,Believer,2,Democratic,1,0.333333333,4,3,3,4,4,3,4,4,4,2,2,3,4,3,5,5,2,consistent,35
+id_716,73,1,Believer,2,Democratic,1,0.333333333,4,3,3,4,4,3,4,4,4,2,2,3,4,3,5,5,2,inconsistent,29
+id_717,76,1,Believer,4,Strongly Republican,1,0.5,4,4,3,1,1,4,2,3,4,1,4,3,2,5,1,6,2,consistent,55.33333333
+id_717,76,1,Believer,4,Strongly Republican,1,0.5,4,4,3,1,1,4,2,3,4,1,4,3,2,5,1,6,2,inconsistent,33
+id_718,79,2,Denier,1,Lean Republican,1,0.333333333,1,6,1,1,1,5,5,5,6,1,6,4,3,4,1,6,4,consistent,100
+id_718,79,2,Denier,1,Lean Republican,1,0.333333333,1,6,1,1,1,5,5,5,6,1,6,4,3,4,1,6,4,inconsistent,5
+id_719,75,1,Denier,0,Strongly Republican,1,1,1,6,6,6,5,5,6,6,6,1,4,4,4,1,1,6,1,consistent,80.66666667
+id_719,75,1,Denier,0,Strongly Republican,1,1,1,6,6,6,5,5,6,6,6,1,4,4,4,1,1,6,1,inconsistent,35
+id_720,48,2,Denier,7,Republican,1,0.166666667,4,3,4,3,4,4,4,4,4,3,4,4,2,5,5,6,3,consistent,34
+id_720,48,2,Denier,7,Republican,1,0.166666667,4,3,4,3,4,4,4,4,4,3,4,4,2,5,5,6,3,inconsistent,40
+id_721,71,1,Believer,8,Lean Democratic,1,0.666666667,5,1,4,4,5,5,5,1,4,2,5,4,4,NA,3,2,4,consistent,70
+id_721,71,1,Believer,8,Lean Democratic,1,0.666666667,5,1,4,4,5,5,5,1,4,2,5,4,4,NA,3,2,4,inconsistent,80
+id_723,68,1,Believer,10,Republican,1,0.166666667,4,4,1,5,5,1,5,1,1,1,1,1,5,5,5,5,1,consistent,100
+id_723,68,1,Believer,10,Republican,1,0.166666667,4,4,1,5,5,1,5,1,1,1,1,1,5,5,5,5,1,inconsistent,97.33333333
+id_724,68,1,Denier,0,Strongly Republican,1,0.5,1,5,6,1,1,4,5,1,6,1,6,4,5,1,1,6,1,consistent,100
+id_724,68,1,Denier,0,Strongly Republican,1,0.5,1,5,6,1,1,4,5,1,6,1,6,4,5,1,1,6,1,inconsistent,0
+id_725,52,1,Believer,9,Lean Democratic,1,0.833333333,6,6,3,6,4,4,4,1,6,1,6,4,6,4,6,1,6,consistent,75
+id_725,52,1,Believer,9,Lean Democratic,1,0.833333333,6,6,3,6,4,4,4,1,6,1,6,4,6,4,6,1,6,inconsistent,41
+id_779,64,1,Denier,8,Strongly Republican,1,0.333333333,6,4,6,1,1,3,6,3,6,6,4,3,6,6,1,6,6,consistent,97.33333333
+id_779,64,1,Denier,8,Strongly Republican,1,0.333333333,6,4,6,1,1,3,6,3,6,6,4,3,6,6,1,6,6,inconsistent,70.33333333
+id_780,63,1,Believer,10,Strongly Democratic,1,0,6,1,1,1,6,2,6,1,6,1,1,6,6,1,6,6,6,consistent,69.33333333
+id_780,63,1,Believer,10,Strongly Democratic,1,0,6,1,1,1,6,2,6,1,6,1,1,6,6,1,6,6,6,inconsistent,1.333333333
+id_781,40,1,Believer,9,Lean Democratic,1,0.333333333,5,5,5,5,5,5,5,5,3,2,5,5,6,5,6,5,6,consistent,94.33333333
+id_781,40,1,Believer,9,Lean Democratic,1,0.333333333,5,5,5,5,5,5,5,5,3,2,5,5,6,5,6,5,6,inconsistent,89.66666667
+id_783,45,1,Believer,6,Republican,1,0.333333333,5,4,5,3,5,5,3,5,5,3,5,4,3,5,4,5,5,consistent,77
+id_783,45,1,Believer,6,Republican,1,0.333333333,5,4,5,3,5,5,3,5,5,3,5,4,3,5,4,5,5,inconsistent,64.66666667
+id_785,35,1,Believer,7,Republican,1,0.5,5,5,4,4,5,4,5,6,6,5,4,5,5,5,4,5,4,consistent,64.33333333
+id_785,35,1,Believer,7,Republican,1,0.5,5,5,4,4,5,4,5,6,6,5,4,5,5,5,4,5,4,inconsistent,81.33333333
+id_786,40,1,Believer,10,Strongly Republican,1,0,6,5,2,4,6,6,5,3,6,5,6,5,6,6,2,5,3,consistent,87
+id_786,40,1,Believer,10,Strongly Republican,1,0,6,5,2,4,6,6,5,3,6,5,6,5,6,6,2,5,3,inconsistent,87.33333333
+id_787,55,1,Believer,9,Strongly Democratic,1,0.166666667,5,6,5,6,5,6,6,5,6,6,5,6,6,6,5,6,6,consistent,100
+id_787,55,1,Believer,9,Strongly Democratic,1,0.166666667,5,6,5,6,5,6,6,5,6,6,5,6,6,6,5,6,6,inconsistent,NA
+id_789,32,1,Believer,8,Strongly Republican,1,0.166666667,1,5,6,1,2,6,2,3,5,5,6,1,5,5,6,2,2,consistent,70
+id_789,32,1,Believer,8,Strongly Republican,1,0.166666667,1,5,6,1,2,6,2,3,5,5,6,1,5,5,6,2,2,inconsistent,60
+id_792,45,1,Believer,8,Strongly Democratic,1,0.5,6,6,5,5,6,6,6,5,6,5,6,6,6,6,6,6,5,consistent,65.33333333
+id_792,45,1,Believer,8,Strongly Democratic,1,0.5,6,6,5,5,6,6,6,5,6,5,6,6,6,6,6,6,5,inconsistent,64.66666667
+id_793,40,1,Believer,8,Strongly Republican,1,0.166666667,4,2,2,4,6,4,6,6,4,3,3,4,5,3,4,4,2,consistent,71.66666667
+id_793,40,1,Believer,8,Strongly Republican,1,0.166666667,4,2,2,4,6,4,6,6,4,3,3,4,5,3,4,4,2,inconsistent,52.66666667
+id_794,25,1,Believer,10,Lean Republican,1,0.166666667,5,5,6,6,6,6,6,4,6,1,6,4,6,4,3,6,2,consistent,62.66666667
+id_794,25,1,Believer,10,Lean Republican,1,0.166666667,5,5,6,6,6,6,6,4,6,1,6,4,6,4,3,6,2,inconsistent,74.33333333
+id_796,34,1,Believer,8,Strongly Democratic,1,0.166666667,4,2,3,4,3,2,5,4,4,3,3,4,5,5,4,5,3,consistent,58
+id_796,34,1,Believer,8,Strongly Democratic,1,0.166666667,4,2,3,4,3,2,5,4,4,3,3,4,5,5,4,5,3,inconsistent,43
+id_798,45,1,Believer,10,Strongly Republican,1,0.333333333,6,5,6,5,6,6,6,6,6,6,5,6,5,6,5,5,5,consistent,97.33333333
+id_798,45,1,Believer,10,Strongly Republican,1,0.333333333,6,5,6,5,6,6,6,6,6,6,5,6,5,6,5,5,5,inconsistent,90.66666667
+id_799,60,1,Believer,5,Lean Republican,1,1,5,4,1,1,1,1,4,4,5,1,1,1,1,4,1,3,1,consistent,51.66666667
+id_799,60,1,Believer,5,Lean Republican,1,1,5,4,1,1,1,1,4,4,5,1,1,1,1,4,1,3,1,inconsistent,57.33333333
+id_800,35,1,Believer,9,Strongly Democratic,1,0.333333333,6,6,6,5,4,6,6,5,5,5,5,6,6,6,5,6,5,consistent,87.33333333
+id_800,35,1,Believer,9,Strongly Democratic,1,0.333333333,6,6,6,5,4,6,6,5,5,5,5,6,6,6,5,6,5,inconsistent,87.33333333
+id_801,71,1,Believer,2,Strongly Republican,1,0.833333333,4,3,4,1,1,4,2,5,4,2,2,3,5,4,3,6,2,consistent,66.66666667
+id_801,71,1,Believer,2,Strongly Republican,1,0.833333333,4,3,4,1,1,4,2,5,4,2,2,3,5,4,3,6,2,inconsistent,63.33333333
+id_803,51,1,Believer,8,Strongly Democratic,1,0.166666667,6,4,1,6,6,4,6,3,5,1,3,3,1,4,4,3,4,consistent,81.33333333
+id_803,51,1,Believer,8,Strongly Democratic,1,0.166666667,6,4,1,6,6,4,6,3,5,1,3,3,1,4,4,3,4,inconsistent,19.66666667
+id_804,77,1,Denier,0,Strongly Republican,1,0.5,1,6,4,5,6,2,6,3,6,1,2,4,4,5,1,6,3,consistent,NA
+id_804,77,1,Denier,0,Strongly Republican,1,0.5,1,6,4,5,6,2,6,3,6,1,2,4,4,5,1,6,3,inconsistent,9
+id_805,74,1,Believer,10,Lean Democratic,1,0.166666667,4,4,3,4,4,4,4,4,4,3,3,4,4,3,5,4,4,consistent,85.33333333
+id_805,74,1,Believer,10,Lean Democratic,1,0.166666667,4,4,3,4,4,4,4,4,4,3,3,4,4,3,5,4,4,inconsistent,40
+id_806,62,1,Denier,1,Lean Republican,1,0.833333333,1,3,2,1,1,4,4,4,5,2,4,4,1,5,3,6,2,consistent,95
+id_806,62,1,Denier,1,Lean Republican,1,0.833333333,1,3,2,1,1,4,4,4,5,2,4,4,1,5,3,6,2,inconsistent,15
+id_807,66,1,Believer,5,Strongly Republican,1,0.333333333,4,5,3,1,1,4,4,4,4,1,5,2,2,4,1,5,1,consistent,55
+id_807,66,1,Believer,5,Strongly Republican,1,0.333333333,4,5,3,1,1,4,4,4,4,1,5,2,2,4,1,5,1,inconsistent,60
+id_808,68,1,Believer,6,Lean Republican,1,0.833333333,5,4,4,1,1,5,3,2,4,1,3,5,5,4,5,6,4,consistent,47
+id_808,68,1,Believer,6,Lean Republican,1,0.833333333,5,4,4,1,1,5,3,2,4,1,3,5,5,4,5,6,4,inconsistent,60
+id_810,31,1,Believer,7,Lean Democratic,1,1,4,4,4,6,6,5,2,4,4,1,4,4,5,4,5,3,5,consistent,72
+id_810,31,1,Believer,7,Lean Democratic,1,1,4,4,4,6,6,5,2,4,4,1,4,4,5,4,5,3,5,inconsistent,75
+id_813,30,1,Believer,10,Republican,1,0.166666667,6,6,1,6,6,5,4,4,4,1,5,4,6,5,4,6,4,consistent,17.33333333
+id_813,30,1,Believer,10,Republican,1,0.166666667,6,6,1,6,6,5,4,4,4,1,5,4,6,5,4,6,4,inconsistent,100
+id_814,40,1,Believer,9,Strongly Republican,1,0.333333333,4,3,3,3,4,4,4,4,4,2,3,3,2,4,4,2,3,consistent,64.66666667
+id_814,40,1,Believer,9,Strongly Republican,1,0.333333333,4,3,3,3,4,4,4,4,4,2,3,3,2,4,4,2,3,inconsistent,52.66666667
+id_816,41,1,Believer,8,Republican,1,0,4,4,1,6,6,4,3,3,5,1,4,3,3,5,4,5,5,consistent,NA
+id_816,41,1,Believer,8,Republican,1,0,4,4,1,6,6,4,3,3,5,1,4,3,3,5,4,5,5,inconsistent,90
+id_817,64,1,Believer,10,Lean Democratic,1,0,6,6,2,5,3,6,6,4,4,2,3,4,5,2,1,6,3,consistent,71.66666667
+id_817,64,1,Believer,10,Lean Democratic,1,0,6,6,2,5,3,6,6,4,4,2,3,4,5,2,1,6,3,inconsistent,45
+id_819,39,1,Believer,9,Democratic,1,0.166666667,6,2,4,5,6,3,4,4,6,3,4,4,3,4,4,6,3,consistent,55.66666667
+id_819,39,1,Believer,9,Democratic,1,0.166666667,6,2,4,5,6,3,4,4,6,3,4,4,3,4,4,6,3,inconsistent,51
+id_820,26,1,Denier,8,Lean Republican,1,0,5,4,6,4,5,4,5,5,5,5,5,4,5,4,5,5,4,consistent,64.33333333
+id_820,26,1,Denier,8,Lean Republican,1,0,5,4,6,4,5,4,5,5,5,5,5,4,5,4,5,5,4,inconsistent,74.66666667
+id_821,33,1,Believer,10,Strongly Republican,1,0.666666667,6,6,5,3,2,4,4,6,6,2,6,5,6,6,2,5,5,consistent,53.33333333
+id_821,33,1,Believer,10,Strongly Republican,1,0.666666667,6,6,5,3,2,4,4,6,6,2,6,5,6,6,2,5,5,inconsistent,65.66666667
+id_822,73,1,Believer,9,Lean Republican,1,0.333333333,6,6,3,6,6,6,4,2,6,1,5,4,5,6,6,6,6,consistent,50
+id_822,73,1,Believer,9,Lean Republican,1,0.333333333,6,6,3,6,6,6,4,2,6,1,5,4,5,6,6,6,6,inconsistent,97
+id_824,81,1,Believer,10,Strongly Democratic,1,0,6,2,5,4,5,5,4,2,5,2,3,3,4,4,4,4,3,consistent,62
+id_824,81,1,Believer,10,Strongly Democratic,1,0,6,2,5,4,5,5,4,2,5,2,3,3,4,4,4,4,3,inconsistent,48.66666667
+id_826,35,1,Believer,8,Democratic,1,0.166666667,4,2,6,4,6,3,6,4,2,2,4,5,4,2,2,6,2,consistent,82.33333333
+id_826,35,1,Believer,8,Democratic,1,0.166666667,4,2,6,4,6,3,6,4,2,2,4,5,4,2,2,6,2,inconsistent,71
+id_827,23,1,Believer,8,Strongly Democratic,1,0.166666667,3,2,3,2,1,4,5,4,3,4,3,1,2,4,6,2,4,consistent,57
+id_827,23,1,Believer,8,Strongly Democratic,1,0.166666667,3,2,3,2,1,4,5,4,3,4,3,1,2,4,6,2,4,inconsistent,65
+id_828,37,1,Believer,6,Strongly Democratic,1,0.666666667,5,4,4,4,4,5,4,4,4,5,5,4,4,4,4,6,4,consistent,61
+id_828,37,1,Believer,6,Strongly Democratic,1,0.666666667,5,4,4,4,4,5,4,4,4,5,5,4,4,4,4,6,4,inconsistent,65.33333333
+id_829,23,1,Believer,6,Lean Democratic,1,0.666666667,4,4,2,4,3,2,4,3,2,2,4,4,2,2,4,5,2,consistent,62.66666667
+id_829,23,1,Believer,6,Lean Democratic,1,0.666666667,4,4,2,4,3,2,4,3,2,2,4,4,2,2,4,5,2,inconsistent,53.66666667
+id_830,31,1,Believer,8,Lean Republican,1,0.333333333,5,1,3,5,4,2,5,2,6,1,4,5,2,5,1,6,3,consistent,68.33333333
+id_830,31,1,Believer,8,Lean Republican,1,0.333333333,5,1,3,5,4,2,5,2,6,1,4,5,2,5,1,6,3,inconsistent,80
+id_831,68,1,Believer,10,Lean Democratic,1,0.166666667,6,3,2,4,1,5,4,3,4,1,4,3,2,3,5,6,4,consistent,98.66666667
+id_831,68,1,Believer,10,Lean Democratic,1,0.166666667,6,3,2,4,1,5,4,3,4,1,4,3,2,3,5,6,4,inconsistent,9.333333333
+id_832,31,1,Believer,8,Strongly Republican,1,0,6,5,5,6,3,5,5,4,5,2,3,3,6,5,2,6,6,consistent,74.66666667
+id_832,31,1,Believer,8,Strongly Republican,1,0,6,5,5,6,3,5,5,4,5,2,3,3,6,5,2,6,6,inconsistent,78.33333333
+id_833,19,1,Believer,10,Republican,1,0.5,6,4,4,5,5,4,4,4,5,1,5,4,4,5,4,6,4,consistent,43.33333333
+id_833,19,1,Believer,10,Republican,1,0.5,6,4,4,5,5,4,4,4,5,1,5,4,4,5,4,6,4,inconsistent,83.33333333
+id_834,35,1,Believer,8,Lean Republican,1,0.833333333,6,6,6,5,6,5,NA,5,5,1,2,5,5,5,5,5,5,consistent,70.5
+id_834,35,1,Believer,8,Lean Republican,1,0.833333333,6,6,6,5,6,5,NA,5,5,1,2,5,5,5,5,5,5,inconsistent,92.33333333
+id_835,19,1,Believer,9,Lean Democratic,1,0.333333333,5,1,6,1,3,6,4,3,5,4,4,6,5,3,4,2,5,consistent,82.33333333
+id_835,19,1,Believer,9,Lean Democratic,1,0.333333333,5,1,6,1,3,6,4,3,5,4,4,6,5,3,4,2,5,inconsistent,57
+id_836,68,1,Believer,10,Lean Democratic,1,0.333333333,6,5,4,6,6,5,5,4,5,1,4,4,6,5,5,5,5,consistent,99
+id_836,68,1,Believer,10,Lean Democratic,1,0.333333333,6,5,4,6,6,5,5,4,5,1,4,4,6,5,5,5,5,inconsistent,99.33333333
+id_837,21,1,Believer,7,Lean Democratic,1,0.5,6,6,1,5,6,3,4,3,5,1,4,4,1,2,2,2,3,consistent,84
+id_837,21,1,Believer,7,Lean Democratic,1,0.5,6,6,1,5,6,3,4,3,5,1,4,4,1,2,2,2,3,inconsistent,41.66666667
+id_838,49,1,Denier,NA,Strongly Democratic,1,0,3,4,3,3,1,3,3,3,2,3,3,3,2,2,3,6,3,consistent,17
+id_838,49,1,Denier,NA,Strongly Democratic,1,0,3,4,3,3,1,3,3,3,2,3,3,3,2,2,3,6,3,inconsistent,NA
+id_839,71,1,Believer,3,Republican,1,0,2,6,6,4,6,6,6,6,6,4,3,4,6,1,3,6,1,consistent,67
+id_839,71,1,Believer,3,Republican,1,0,2,6,6,4,6,6,6,6,6,4,3,4,6,1,3,6,1,inconsistent,74.66666667
+id_840,30,1,Believer,7,Lean Republican,1,0,4,4,4,5,4,5,4,4,4,5,4,5,4,5,4,5,5,consistent,NA
+id_840,30,1,Believer,7,Lean Republican,1,0,4,4,4,5,4,5,4,4,4,5,4,5,4,5,4,5,5,inconsistent,61
+id_841,28,1,Believer,8,Strongly Democratic,1,0,6,4,2,5,4,4,3,4,6,3,4,3,5,4,5,2,4,consistent,75
+id_841,28,1,Believer,8,Strongly Democratic,1,0,6,4,2,5,4,4,3,4,6,3,4,3,5,4,5,2,4,inconsistent,77.66666667
+id_842,67,1,Believer,9,Lean Democratic,1,1,6,6,1,6,6,6,6,4,6,6,6,4,1,1,1,6,1,consistent,100
+id_842,67,1,Believer,9,Lean Democratic,1,1,6,6,1,6,6,6,6,4,6,6,6,4,1,1,1,6,1,inconsistent,100
+id_843,30,1,Believer,10,Lean Republican,1,0.333333333,6,1,1,6,6,1,4,1,6,1,1,1,1,6,6,1,3,consistent,16.66666667
+id_843,30,1,Believer,10,Lean Republican,1,0.333333333,6,1,1,6,6,1,4,1,6,1,1,1,1,6,6,1,3,inconsistent,66.66666667
+id_844,65,1,Believer,3,Lean Republican,1,0.166666667,4,4,3,1,6,5,5,4,6,4,6,4,6,2,1,6,1,consistent,94
+id_844,65,1,Believer,3,Lean Republican,1,0.166666667,4,4,3,1,6,5,5,4,6,4,6,4,6,2,1,6,1,inconsistent,33.33333333
+id_847,49,1,Believer,7,Lean Democratic,1,0.333333333,6,5,2,5,5,2,4,2,6,1,1,2,1,6,5,1,5,consistent,90
+id_847,49,1,Believer,7,Lean Democratic,1,0.333333333,6,5,2,5,5,2,4,2,6,1,1,2,1,6,5,1,5,inconsistent,87
+id_848,31,1,Believer,6,Strongly Republican,1,0,6,6,6,6,6,6,6,6,6,1,6,6,6,6,6,6,6,consistent,84.66666667
+id_848,31,1,Believer,6,Strongly Republican,1,0,6,6,6,6,6,6,6,6,6,1,6,6,6,6,6,6,6,inconsistent,91.66666667
+id_849,25,2,Denier,7,Democratic,1,0.666666667,3,3,5,3,4,3,3,3,4,3,4,5,4,4,5,4,3,consistent,75.66666667
+id_849,25,2,Denier,7,Democratic,1,0.666666667,3,3,5,3,4,3,3,3,4,3,4,5,4,4,5,4,3,inconsistent,51.33333333
+id_852,26,2,Believer,10,Strongly Democratic,1,0.166666667,6,2,5,6,6,5,5,2,6,4,5,4,3,6,5,1,3,consistent,86
+id_852,26,2,Believer,10,Strongly Democratic,1,0.166666667,6,2,5,6,6,5,5,2,6,4,5,4,3,6,5,1,3,inconsistent,36.33333333
+id_853,36,1,Believer,2,Lean Republican,1,0.666666667,3,5,2,5,5,2,5,6,2,3,1,4,4,2,1,6,2,consistent,79.33333333
+id_853,36,1,Believer,2,Lean Republican,1,0.666666667,3,5,2,5,5,2,5,6,2,3,1,4,4,2,1,6,2,inconsistent,48.33333333
+id_857,40,1,Believer,8,Democratic,1,0.333333333,4,2,4,3,4,4,3,4,4,3,5,4,4,3,3,5,3,consistent,82.66666667
+id_857,40,1,Believer,8,Democratic,1,0.333333333,4,2,4,3,4,4,3,4,4,3,5,4,4,3,3,5,3,inconsistent,76.66666667
+id_858,34,1,Believer,10,Strongly Democratic,1,0.5,6,5,1,6,6,3,6,2,2,1,1,1,1,1,5,1,1,consistent,88.66666667
+id_858,34,1,Believer,10,Strongly Democratic,1,0.5,6,5,1,6,6,3,6,2,2,1,1,1,1,1,5,1,1,inconsistent,43.33333333
+id_859,71,1,Believer,10,Strongly Democratic,1,0.166666667,6,4,4,4,5,6,5,4,4,1,6,4,4,6,1,6,4,consistent,100
+id_859,71,1,Believer,10,Strongly Democratic,1,0.166666667,6,4,4,4,5,6,5,4,4,1,6,4,4,6,1,6,4,inconsistent,0
+id_860,38,1,Believer,8,Strongly Republican,1,0.166666667,6,2,5,4,6,5,6,5,5,2,4,6,4,6,5,6,3,consistent,40
+id_860,38,1,Believer,8,Strongly Republican,1,0.166666667,6,2,5,4,6,5,6,5,5,2,4,6,4,6,5,6,3,inconsistent,83.66666667
+id_861,59,1,Believer,10,Strongly Democratic,1,0.333333333,6,6,4,6,6,3,1,4,6,1,6,3,4,3,5,6,1,consistent,66.66666667
+id_861,59,1,Believer,10,Strongly Democratic,1,0.333333333,6,6,4,6,6,3,1,4,6,1,6,3,4,3,5,6,1,inconsistent,0
+id_862,45,1,Believer,10,Strongly Democratic,1,0.333333333,6,5,6,5,5,6,6,6,6,6,3,6,6,6,6,5,4,consistent,60.33333333
+id_862,45,1,Believer,10,Strongly Democratic,1,0.333333333,6,5,6,5,5,6,6,6,6,6,3,6,6,6,6,5,4,inconsistent,73.66666667
+id_866,37,1,Denier,7,Strongly Democratic,1,0,5,5,5,5,5,6,6,5,6,2,5,6,6,5,6,6,5,consistent,80.33333333
+id_866,37,1,Denier,7,Strongly Democratic,1,0,5,5,5,5,5,6,6,5,6,2,5,6,6,5,6,6,5,inconsistent,69
+id_867,30,1,Believer,6,Lean Democratic,1,0.166666667,5,5,4,5,5,5,5,5,5,5,4,5,5,5,5,5,5,consistent,77.33333333
+id_867,30,1,Believer,6,Lean Democratic,1,0.166666667,5,5,4,5,5,5,5,5,5,5,4,5,5,5,5,5,5,inconsistent,75.33333333
+id_869,25,1,Believer,7,Strongly Republican,1,0.833333333,5,4,2,1,1,4,5,1,6,1,3,4,3,3,1,6,2,consistent,69.66666667
+id_869,25,1,Believer,7,Strongly Republican,1,0.833333333,5,4,2,1,1,4,5,1,6,1,3,4,3,3,1,6,2,inconsistent,73
+id_870,35,1,Believer,7,Democratic,1,0.166666667,6,3,3,5,6,5,4,4,5,3,5,4,5,4,3,6,3,consistent,88
+id_870,35,1,Believer,7,Democratic,1,0.166666667,6,3,3,5,6,5,4,4,5,3,5,4,5,4,3,6,3,inconsistent,38
+id_872,62,1,Believer,10,Democratic,1,1,4,1,6,1,1,6,2,4,4,4,6,5,5,4,1,6,1,consistent,51.66666667
+id_872,62,1,Believer,10,Democratic,1,1,4,1,6,1,1,6,2,4,4,4,6,5,5,4,1,6,1,inconsistent,61.66666667
+id_874,50,1,Denier,8,Lean Republican,1,0.166666667,3,3,3,3,5,2,5,4,5,1,3,3,5,6,4,6,6,consistent,80.33333333
+id_874,50,1,Denier,8,Lean Republican,1,0.166666667,3,3,3,3,5,2,5,4,5,1,3,3,5,6,4,6,6,inconsistent,61.33333333
+id_875,69,1,Believer,5,Lean Democratic,1,0.5,5,5,2,4,2,5,4,5,5,2,4,2,4,5,4,3,3,consistent,63.33333333
+id_875,69,1,Believer,5,Lean Democratic,1,0.5,5,5,2,4,2,5,4,5,5,2,4,2,4,5,4,3,3,inconsistent,64
+id_876,22,1,Believer,10,Strongly Democratic,1,0,6,6,6,5,6,6,1,1,6,1,2,5,6,1,6,6,3,consistent,NA
+id_876,22,1,Believer,10,Strongly Democratic,1,0,6,6,6,5,6,6,1,1,6,1,2,5,6,1,6,6,3,inconsistent,50
+id_878,30,1,Believer,8,Lean Democratic,1,0.333333333,4,5,3,5,5,3,3,4,3,1,2,2,2,4,4,4,4,consistent,70
+id_878,30,1,Believer,8,Lean Democratic,1,0.333333333,4,5,3,5,5,3,3,4,3,1,2,2,2,4,4,4,4,inconsistent,73
+id_879,38,1,Believer,8,Strongly Democratic,1,0.666666667,5,5,3,5,5,4,3,3,5,4,5,5,4,6,5,6,3,consistent,87
+id_879,38,1,Believer,8,Strongly Democratic,1,0.666666667,5,5,3,5,5,4,3,3,5,4,5,5,4,6,5,6,3,inconsistent,90.66666667
+id_880,46,1,Believer,9,Lean Republican,1,0,6,6,5,3,4,5,5,4,6,4,6,6,5,6,2,3,1,consistent,89.66666667
+id_880,46,1,Believer,9,Lean Republican,1,0,6,6,5,3,4,5,5,4,6,4,6,6,5,6,2,3,1,inconsistent,86.33333333
+id_882,45,1,Believer,9,Strongly Democratic,1,0.333333333,5,1,6,6,3,6,4,5,6,5,4,6,6,6,2,3,5,consistent,80
+id_882,45,1,Believer,9,Strongly Democratic,1,0.333333333,5,1,6,6,3,6,4,5,6,5,4,6,6,6,2,3,5,inconsistent,77
+id_883,56,1,Believer,6,Democratic,1,0.5,6,5,4,6,6,2,5,4,4,1,5,4,3,6,3,2,3,consistent,78.33333333
+id_883,56,1,Believer,6,Democratic,1,0.5,6,5,4,6,6,2,5,4,4,1,5,4,3,6,3,2,3,inconsistent,27
+id_886,59,1,Believer,8,Strongly Democratic,1,0.5,6,5,1,4,5,5,5,5,5,3,4,1,6,5,4,3,5,consistent,71.33333333
+id_886,59,1,Believer,8,Strongly Democratic,1,0.5,6,5,1,4,5,5,5,5,5,3,4,1,6,5,4,3,5,inconsistent,32.33333333
+id_888,43,1,Believer,10,Lean Democratic,1,0.166666667,6,5,4,5,6,5,5,5,4,2,6,6,5,4,4,4,6,consistent,100
+id_888,43,1,Believer,10,Lean Democratic,1,0.166666667,6,5,4,5,6,5,5,5,4,2,6,6,5,4,4,4,6,inconsistent,86.66666667
+id_892,35,1,Believer,9,Strongly Democratic,1,0.5,6,5,1,5,6,6,5,5,4,1,4,6,4,2,2,5,2,consistent,33
+id_892,35,1,Believer,9,Strongly Democratic,1,0.5,6,5,1,5,6,6,5,5,4,1,4,6,4,2,2,5,2,inconsistent,73
+id_895,41,1,Believer,8,Democratic,1,0.5,6,5,1,6,6,3,5,4,6,1,2,2,2,4,2,1,4,consistent,85.66666667
+id_895,41,1,Believer,8,Democratic,1,0.5,6,5,1,6,6,3,5,4,6,1,2,2,2,4,2,1,4,inconsistent,15
+id_897,56,1,Believer,10,Lean Democratic,1,0.166666667,6,6,5,1,1,6,5,3,6,2,6,6,6,5,5,6,6,consistent,100
+id_897,56,1,Believer,10,Lean Democratic,1,0.166666667,6,6,5,1,1,6,5,3,6,2,6,6,6,5,5,6,6,inconsistent,100
+id_898,45,1,Believer,10,Strongly Republican,1,0,5,4,4,6,2,4,6,4,4,4,5,4,3,4,3,3,1,consistent,91.66666667
+id_898,45,1,Believer,10,Strongly Republican,1,0,5,4,4,6,2,4,6,4,4,4,5,4,3,4,3,3,1,inconsistent,90.33333333
+id_899,22,1,Believer,7,Lean Republican,1,0.166666667,4,5,4,6,4,4,5,5,6,2,3,2,4,3,1,6,3,consistent,53.66666667
+id_899,22,1,Believer,7,Lean Republican,1,0.166666667,4,5,4,6,4,4,5,5,6,2,3,2,4,3,1,6,3,inconsistent,70.33333333
+id_900,33,1,Believer,8,Lean Democratic,1,0.833333333,6,6,2,5,6,3,5,3,5,1,2,2,4,4,3,4,3,consistent,78.33333333
+id_900,33,1,Believer,8,Lean Democratic,1,0.833333333,6,6,2,5,6,3,5,3,5,1,2,2,4,4,3,4,3,inconsistent,10
+id_901,52,1,Denier,10,Strongly Republican,1,0,6,5,3,1,1,4,6,1,3,1,3,4,1,1,6,6,3,consistent,100
+id_901,52,1,Denier,10,Strongly Republican,1,0,6,5,3,1,1,4,6,1,3,1,3,4,1,1,6,6,3,inconsistent,100
+id_902,40,1,Believer,8,Lean Republican,1,0.166666667,6,2,4,2,2,5,6,4,5,4,6,4,5,4,1,1,3,consistent,58.33333333
+id_902,40,1,Believer,8,Lean Republican,1,0.166666667,6,2,4,2,2,5,6,4,5,4,6,4,5,4,1,1,3,inconsistent,59
+id_903,46,1,Believer,10,Lean Democratic,1,0.333333333,6,3,3,6,6,4,6,3,5,1,3,4,2,6,6,5,1,consistent,100
+id_903,46,1,Believer,10,Lean Democratic,1,0.333333333,6,3,3,6,6,4,6,3,5,1,3,4,2,6,6,5,1,inconsistent,16.66666667
+id_904,64,1,Denier,1,Strongly Republican,1,1,3,4,2,1,1,4,4,3,5,2,4,4,5,5,2,5,2,consistent,71.66666667
+id_904,64,1,Denier,1,Strongly Republican,1,1,3,4,2,1,1,4,4,3,5,2,4,4,5,5,2,5,2,inconsistent,32.66666667
+id_906,62,1,Believer,10,Strongly Democratic,1,0.833333333,6,5,1,5,6,1,6,1,6,1,3,3,4,5,1,1,4,consistent,100
+id_906,62,1,Believer,10,Strongly Democratic,1,0.833333333,6,5,1,5,6,1,6,1,6,1,3,3,4,5,1,1,4,inconsistent,5
+id_908,22,1,Believer,3,Lean Republican,1,0.333333333,6,6,6,6,5,4,5,5,5,1,3,3,6,1,1,6,1,consistent,62.33333333
+id_908,22,1,Believer,3,Lean Republican,1,0.333333333,6,6,6,6,5,4,5,5,5,1,3,3,6,1,1,6,1,inconsistent,86.66666667
+id_909,59,1,Believer,8,Lean Democratic,1,0.5,5,3,4,4,4,4,3,3,4,2,4,3,3,4,2,5,6,consistent,50.33333333
+id_909,59,1,Believer,8,Lean Democratic,1,0.5,5,3,4,4,4,4,3,3,4,2,4,3,3,4,2,5,6,inconsistent,50
+id_912,77,1,Denier,1,Strongly Republican,1,0.5,1,5,3,1,1,6,5,4,4,1,6,3,2,2,1,3,4,consistent,70
+id_912,77,1,Denier,1,Strongly Republican,1,0.5,1,5,3,1,1,6,5,4,4,1,6,3,2,2,1,3,4,inconsistent,10
+id_913,75,1,Believer,8,Lean Republican,1,0.166666667,5,5,2,3,6,5,4,4,4,1,5,5,5,5,2,6,5,consistent,81
+id_913,75,1,Believer,8,Lean Republican,1,0.166666667,5,5,2,3,6,5,4,4,4,1,5,5,5,5,2,6,5,inconsistent,66.5
+id_917,74,1,Believer,2,Lean Republican,1,0.833333333,1,5,1,1,1,4,4,5,5,2,2,4,5,3,2,6,4,consistent,82.66666667
+id_917,74,1,Believer,2,Lean Republican,1,0.833333333,1,5,1,1,1,4,4,5,5,2,2,4,5,3,2,6,4,inconsistent,20
+id_918,53,1,Believer,10,Lean Republican,1,0.833333333,5,6,1,3,1,4,6,4,1,1,4,2,2,3,3,6,3,consistent,38
+id_918,53,1,Believer,10,Lean Republican,1,0.833333333,5,6,1,3,1,4,6,4,1,1,4,2,2,3,3,6,3,inconsistent,46
+id_919,68,1,Believer,10,Democratic,1,0.333333333,6,6,1,6,6,2,4,4,4,1,1,2,3,2,6,2,6,consistent,66.66666667
+id_919,68,1,Believer,10,Democratic,1,0.333333333,6,6,1,6,6,2,4,4,4,1,1,2,3,2,6,2,6,inconsistent,38.33333333
+id_920,69,1,Believer,8,Democratic,1,0.166666667,5,4,4,4,4,4,3,2,4,4,4,4,4,3,2,3,3,consistent,70
+id_920,69,1,Believer,8,Democratic,1,0.166666667,5,4,4,4,4,4,3,2,4,4,4,4,4,3,2,3,3,inconsistent,NA
+id_921,63,1,Denier,8,Lean Republican,1,0.166666667,2,2,6,6,5,5,2,5,5,6,6,6,6,5,5,5,4,consistent,64
+id_921,63,1,Denier,8,Lean Republican,1,0.166666667,2,2,6,6,5,5,2,5,5,6,6,6,6,5,5,5,4,inconsistent,50.5
+id_923,72,1,Denier,10,Lean Republican,1,0.333333333,6,1,1,1,1,5,4,4,6,5,5,5,3,6,6,1,4,consistent,50
+id_923,72,1,Denier,10,Lean Republican,1,0.333333333,6,1,1,1,1,5,4,4,6,5,5,5,3,6,6,1,4,inconsistent,50
+id_924,42,1,Believer,NA,Lean Republican,1,0.333333333,4,6,4,3,3,4,6,3,4,1,4,1,3,4,3,6,3,consistent,68.33333333
+id_924,42,1,Believer,NA,Lean Republican,1,0.333333333,4,6,4,3,3,4,6,3,4,1,4,1,3,4,3,6,3,inconsistent,65
+id_925,20,1,Believer,8,Lean Republican,1,0.333333333,6,3,2,5,5,6,4,4,5,2,5,6,3,3,2,4,3,consistent,81.66666667
+id_925,20,1,Believer,8,Lean Republican,1,0.333333333,6,3,2,5,5,6,4,4,5,2,5,6,3,3,2,4,3,inconsistent,72.33333333
+id_926,33,1,Believer,9,Democratic,1,0.333333333,4,2,4,4,2,6,1,2,3,4,3,4,3,4,2,3,2,consistent,66.33333333
+id_926,33,1,Believer,9,Democratic,1,0.333333333,4,2,4,4,2,6,1,2,3,4,3,4,3,4,2,3,2,inconsistent,60
+id_929,65,2,Believer,10,Lean Republican,1,0,6,4,4,6,5,5,4,4,4,4,5,4,6,5,3,6,5,consistent,80
+id_929,65,2,Believer,10,Lean Republican,1,0,6,4,4,6,5,5,4,4,4,4,5,4,6,5,3,6,5,inconsistent,82.33333333
+id_930,21,1,Believer,7,Strongly Democratic,1,0.333333333,6,2,3,2,1,5,1,2,1,5,2,2,3,2,3,1,2,consistent,67
+id_930,21,1,Believer,7,Strongly Democratic,1,0.333333333,6,2,3,2,1,5,1,2,1,5,2,2,3,2,3,1,2,inconsistent,68
+id_931,68,1,Believer,7,Democratic,1,0.333333333,5,4,6,1,1,4,3,5,5,6,6,5,5,3,6,6,5,consistent,74
+id_931,68,1,Believer,7,Democratic,1,0.333333333,5,4,6,1,1,4,3,5,5,6,6,5,5,3,6,6,5,inconsistent,27.33333333
+id_932,22,1,Believer,9,Democratic,1,0.833333333,5,4,1,2,6,2,3,1,6,1,2,2,3,5,1,6,2,consistent,68.66666667
+id_932,22,1,Believer,9,Democratic,1,0.833333333,5,4,1,2,6,2,3,1,6,1,2,2,3,5,1,6,2,inconsistent,30
+id_933,35,1,Believer,7,Republican,1,0.166666667,6,6,2,6,6,4,6,5,4,6,4,3,6,2,5,4,1,consistent,54.66666667
+id_933,35,1,Believer,7,Republican,1,0.166666667,6,6,2,6,6,4,6,5,4,6,4,3,6,2,5,4,1,inconsistent,54.33333333
+id_934,36,1,Believer,7,Lean Republican,1,1,4,4,3,2,1,2,4,4,3,2,3,2,1,2,2,6,3,consistent,47.33333333
+id_934,36,1,Believer,7,Lean Republican,1,1,4,4,3,2,1,2,4,4,3,2,3,2,1,2,2,6,3,inconsistent,57
+id_935,63,1,Denier,1,Republican,1,0.833333333,2,6,4,6,6,5,5,2,6,1,4,2,2,1,1,6,4,consistent,100
+id_935,63,1,Denier,1,Republican,1,0.833333333,2,6,4,6,6,5,5,2,6,1,4,2,2,1,1,6,4,inconsistent,14
+id_937,75,1,Believer,8,Lean Democratic,1,0.166666667,6,4,2,4,3,3,5,2,4,1,4,3,4,5,5,2,4,consistent,74.33333333
+id_937,75,1,Believer,8,Lean Democratic,1,0.166666667,6,4,2,4,3,3,5,2,4,1,4,3,4,5,5,2,4,inconsistent,37.66666667
+id_938,54,1,Believer,10,Strongly Democratic,1,0.166666667,6,2,4,6,6,4,4,3,5,2,4,3,3,4,6,3,4,consistent,98.33333333
+id_938,54,1,Believer,10,Strongly Democratic,1,0.166666667,6,2,4,6,6,4,4,3,5,2,4,3,3,4,6,3,4,inconsistent,15
+id_939,20,1,Believer,1,Lean Democratic,1,0.166666667,3,4,4,1,5,3,3,2,1,3,5,4,5,4,3,4,3,consistent,27
+id_939,20,1,Believer,1,Lean Democratic,1,0.166666667,3,4,4,1,5,3,3,2,1,3,5,4,5,4,3,4,3,inconsistent,32.5
+id_940,61,1,Denier,8,Republican,1,0.666666667,4,4,3,5,5,4,4,3,5,2,4,5,4,3,2,4,2,consistent,83.66666667
+id_940,61,1,Denier,8,Republican,1,0.666666667,4,4,3,5,5,4,4,3,5,2,4,5,4,3,2,4,2,inconsistent,36.66666667
+id_941,72,1,Believer,10,Strongly Democratic,1,0.5,6,1,1,4,5,3,4,1,1,1,1,1,4,3,6,2,2,consistent,98.66666667
+id_941,72,1,Believer,10,Strongly Democratic,1,0.5,6,1,1,4,5,3,4,1,1,1,1,1,4,3,6,2,2,inconsistent,13
+id_942,22,1,Believer,8,Lean Democratic,1,0.833333333,6,2,3,5,6,4,2,5,4,1,4,3,1,3,5,1,4,consistent,65.33333333
+id_942,22,1,Believer,8,Lean Democratic,1,0.833333333,6,2,3,5,6,4,2,5,4,1,4,3,1,3,5,1,4,inconsistent,48.33333333
+id_945,34,1,Denier,5,Lean Democratic,1,0,2,6,2,5,6,3,5,4,3,2,3,4,4,4,1,5,3,consistent,63.66666667
+id_945,34,1,Denier,5,Lean Democratic,1,0,2,6,2,5,6,3,5,4,3,2,3,4,4,4,1,5,3,inconsistent,64.33333333
+id_947,50,1,Believer,7,Lean Democratic,1,0,5,5,5,5,5,5,5,5,5,2,5,5,5,5,4,6,4,consistent,59
+id_947,50,1,Believer,7,Lean Democratic,1,0,5,5,5,5,5,5,5,5,5,2,5,5,5,5,4,6,4,inconsistent,60.33333333
+id_948,60,1,Denier,8,Lean Republican,1,0.333333333,3,5,3,6,3,4,4,4,5,4,3,3,3,4,1,6,1,consistent,56.66666667
+id_948,60,1,Denier,8,Lean Republican,1,0.333333333,3,5,3,6,3,4,4,4,5,4,3,3,3,4,1,6,1,inconsistent,31.33333333
+id_949,45,1,Believer,7,Lean Republican,1,0.833333333,5,6,2,6,1,4,6,6,6,1,5,2,5,1,2,6,3,consistent,47.33333333
+id_949,45,1,Believer,7,Lean Republican,1,0.833333333,5,6,2,6,1,4,6,6,6,1,5,2,5,1,2,6,3,inconsistent,89
+id_950,19,1,Believer,7,Strongly Democratic,1,0,5,4,5,6,6,5,6,1,5,3,3,4,4,6,3,1,3,consistent,53
+id_950,19,1,Believer,7,Strongly Democratic,1,0,5,4,5,6,6,5,6,1,5,3,3,4,4,6,3,1,3,inconsistent,53
+id_951,50,1,Believer,7,Lean Republican,1,0.666666667,4,6,1,6,6,4,4,5,5,3,4,4,5,6,2,3,3,consistent,64.66666667
+id_951,50,1,Believer,7,Lean Republican,1,0.666666667,4,6,1,6,6,4,4,5,5,3,4,4,5,6,2,3,3,inconsistent,66.33333333
+id_952,58,1,Believer,8,Lean Republican,1,0.5,5,2,5,4,5,4,5,2,5,5,4,5,6,2,5,3,4,consistent,79
+id_952,58,1,Believer,8,Lean Republican,1,0.5,5,2,5,4,5,4,5,2,5,5,4,5,6,2,5,3,4,inconsistent,84.33333333
+id_953,24,1,Believer,10,Lean Democratic,1,0.333333333,6,1,6,1,6,6,1,6,6,1,3,6,6,1,3,1,6,consistent,78.33333333
+id_953,24,1,Believer,10,Lean Democratic,1,0.333333333,6,1,6,1,6,6,1,6,6,1,3,6,6,1,3,1,6,inconsistent,65
+id_954,64,1,Believer,9,Lean Democratic,1,0.166666667,6,5,4,5,6,4,3,5,3,1,4,4,5,5,6,5,6,consistent,91.66666667
+id_954,64,1,Believer,9,Lean Democratic,1,0.166666667,6,5,4,5,6,4,3,5,3,1,4,4,5,5,6,5,6,inconsistent,64
+id_955,99,1,Denier,5,Republican,1,0.166666667,2,6,1,5,6,2,4,2,4,3,2,1,2,5,1,6,1,consistent,50.5
+id_955,99,1,Denier,5,Republican,1,0.166666667,2,6,1,5,6,2,4,2,4,3,2,1,2,5,1,6,1,inconsistent,27.66666667
+id_956,61,1,Believer,10,Lean Democratic,1,0,6,1,6,5,6,6,6,1,6,1,6,5,6,5,6,1,4,consistent,100
+id_956,61,1,Believer,10,Lean Democratic,1,0,6,1,6,5,6,6,6,1,6,1,6,5,6,5,6,1,4,inconsistent,83
+id_957,59,1,Believer,7,Republican,1,0.333333333,5,3,1,1,1,4,4,2,3,2,2,4,4,3,2,4,4,consistent,8
+id_957,59,1,Believer,7,Republican,1,0.333333333,5,3,1,1,1,4,4,2,3,2,2,4,4,3,2,4,4,inconsistent,70.66666667
+id_962,46,1,Denier,0,Republican,1,0,1,3,6,1,1,2,2,6,6,4,6,4,2,5,1,6,1,consistent,61.66666667
+id_962,46,1,Denier,0,Republican,1,0,1,3,6,1,1,2,2,6,6,4,6,4,2,5,1,6,1,inconsistent,43.66666667
+id_963,18,1,Believer,3,Lean Republican,1,0.666666667,5,2,1,5,5,4,1,3,6,1,4,4,2,3,1,6,4,consistent,59
+id_963,18,1,Believer,3,Lean Republican,1,0.666666667,5,2,1,5,5,4,1,3,6,1,4,4,2,3,1,6,4,inconsistent,58.66666667
+id_965,63,1,Denier,4,Lean Republican,1,0.666666667,4,3,2,4,3,4,5,2,4,3,3,4,3,4,4,2,5,consistent,75
+id_965,63,1,Denier,4,Lean Republican,1,0.666666667,4,3,2,4,3,4,5,2,4,3,3,4,3,4,4,2,5,inconsistent,48.33333333
+id_966,56,1,Believer,8,Republican,1,0.5,6,4,5,4,5,5,NA,2,6,3,5,4,5,5,5,6,3,consistent,47.66666667
+id_966,56,1,Believer,8,Republican,1,0.5,6,4,5,4,5,5,NA,2,6,3,5,4,5,5,5,6,3,inconsistent,90
+id_967,59,1,Believer,2,Lean Republican,1,0.666666667,4,5,3,5,6,5,5,2,5,1,4,3,2,3,1,3,3,consistent,60.66666667
+id_967,59,1,Believer,2,Lean Republican,1,0.666666667,4,5,3,5,6,5,5,2,5,1,4,3,2,3,1,3,3,inconsistent,42
+id_969,22,1,Believer,10,Lean Republican,1,0,4,2,4,5,5,2,3,2,5,2,4,2,4,3,2,3,3,consistent,44
+id_969,22,1,Believer,10,Lean Republican,1,0,4,2,4,5,5,2,3,2,5,2,4,2,4,3,2,3,3,inconsistent,60.33333333
+id_971,64,1,Believer,8,Republican,1,0.333333333,5,6,2,6,5,2,1,2,5,3,4,5,4,3,6,6,5,consistent,75
+id_971,64,1,Believer,8,Republican,1,0.333333333,5,6,2,6,5,2,1,2,5,3,4,5,4,3,6,6,5,inconsistent,78.66666667
+id_973,63,1,Believer,4,Lean Republican,1,0,4,6,2,6,6,4,5,3,6,1,6,4,2,4,3,6,2,consistent,75
+id_973,63,1,Believer,4,Lean Republican,1,0,4,6,2,6,6,4,5,3,6,1,6,4,2,4,3,6,2,inconsistent,43
+id_976,52,1,Believer,7,Lean Democratic,1,0,3,5,4,4,4,3,3,3,4,4,3,4,4,5,4,4,4,consistent,63
+id_976,52,1,Believer,7,Lean Democratic,1,0,3,5,4,4,4,3,3,3,4,4,3,4,4,5,4,4,4,inconsistent,72
+id_977,57,1,Denier,2,Lean Republican,1,0.1666667,1,6,4,3,1,5,3,3,4,3,6,4,4,3,3,6,5,consistent,63.66666667
+id_977,57,1,Denier,2,Lean Republican,1,0.1666667,1,6,4,3,1,5,3,3,4,3,6,4,4,3,3,6,5,inconsistent,30
+id_978,59,1,Believer,5,Lean Democratic,1,0.3333333,4,2,6,1,1,4,1,5,2,2,5,4,6,6,2,6,3,consistent,2
+id_978,59,1,Believer,5,Lean Democratic,1,0.3333333,4,2,6,1,1,4,1,5,2,2,5,4,6,6,2,6,3,inconsistent,26.33333333
+id_982,64,1,Denier,2,Republican,1,0.5,2,5,2,4,5,5,2,3,3,1,3,5,3,4,1,5,3,consistent,81.33333333
+id_982,64,1,Denier,2,Republican,1,0.5,2,5,2,4,5,5,2,3,3,1,3,5,3,4,1,5,3,inconsistent,66.66666667
+id_985,53,1,Believer,5,Lean Republican,1,0,5,5,4,5,5,4,4,2,5,2,5,3,4,5,3,6,3,consistent,NA
+id_985,53,1,Believer,5,Lean Republican,1,0,5,5,4,5,5,4,4,2,5,2,5,3,4,5,3,6,3,inconsistent,55
+id_987,52,1,Believer,10,Strongly Democratic,1,0.3333333,6,6,5,6,6,4,6,5,5,1,5,5,3,6,6,6,2,consistent,99.33333333
+id_987,52,1,Believer,10,Strongly Democratic,1,0.3333333,6,6,5,6,6,4,6,5,5,1,5,5,3,6,6,6,2,inconsistent,30.33333333
+id_988,53,1,Believer,7,Lean Democratic,1,0.8333333,6,2,2,6,6,5,5,1,5,1,4,1,4,4,4,5,3,consistent,65.66666667
+id_988,53,1,Believer,7,Lean Democratic,1,0.8333333,6,2,2,6,6,5,5,1,5,1,4,1,4,4,4,5,3,inconsistent,26.66666667
+id_989,56,1,Believer,10,Strongly Democratic,1,1,6,6,1,6,6,2,5,1,5,1,1,1,1,6,5,5,2,consistent,100
+id_989,56,1,Believer,10,Strongly Democratic,1,1,6,6,1,6,6,2,5,1,5,1,1,1,1,6,5,5,2,inconsistent,5.666666667
+id_990,62,1,Denier,2,Lean Republican,1,0.5,2,5,4,6,4,5,4,6,6,2,3,3,3,6,1,6,6,consistent,58
+id_990,62,1,Denier,2,Lean Republican,1,0.5,2,5,4,6,4,5,4,6,6,2,3,3,3,6,1,6,6,inconsistent,6.666666667
+id_991,37,1,Denier,3,Lean Republican,1,0.3333333,2,5,6,1,1,4,6,1,6,1,6,4,5,3,1,6,2,consistent,66.66666667
+id_991,37,1,Denier,3,Lean Republican,1,0.3333333,2,5,6,1,1,4,6,1,6,1,6,4,5,3,1,6,2,inconsistent,0
+id_992,53,1,Denier,1,Lean Republican,1,0.8333333,2,4,5,1,1,4,4,5,5,5,5,4,4,5,4,6,4,consistent,53.33333333
+id_992,53,1,Denier,1,Lean Republican,1,0.8333333,2,4,5,1,1,4,4,5,5,5,5,4,4,5,4,6,4,inconsistent,26.66666667
+id_994,40,1,Believer,NA,Democratic,1,NA,3,2,2,4,2,4,4,3,3,4,3,4,5,3,3,5,2,consistent,55.33333333
+id_994,40,1,Believer,NA,Democratic,1,NA,3,2,2,4,2,4,4,3,3,4,3,4,5,3,3,5,2,inconsistent,54.33333333
+id_2,68,1,Believer,10,Lean Democratic,0,0.5,6,1,2,1,6,5,1,4,5,1,NA,4,2,3,6,3,3,consistent,94.66666667
+id_2,68,1,Believer,10,Lean Democratic,0,0.5,6,1,2,1,6,5,1,4,5,1,NA,4,2,3,6,3,3,inconsistent,0
+id_3,64,1,Denier,0,Lean Republican,0,0,1,3,6,1,1,4,4,4,6,4,4,4,5,4,2,6,3,consistent,66.66666667
+id_3,64,1,Denier,0,Lean Republican,0,0,1,3,6,1,1,4,4,4,6,4,4,4,5,4,2,6,3,inconsistent,17
+id_4,72,2,Believer,9,Lean Democratic,0,0.1666667,5,4,4,4,5,2,5,4,3,1,2,3,4,5,3,4,4,consistent,76
+id_4,72,2,Believer,9,Lean Democratic,0,0.1666667,5,4,4,4,5,2,5,4,3,1,2,3,4,5,3,4,4,inconsistent,71
+id_5,78,1,Believer,6,Democratic,0,0.8333333,6,5,1,6,6,5,5,2,5,1,5,3,2,5,3,1,2,consistent,85.33333333
+id_5,78,1,Believer,6,Democratic,0,0.8333333,6,5,1,6,6,5,5,2,5,1,5,3,2,5,3,1,2,inconsistent,74
+id_6,42,1,Believer,10,Strongly Democratic,0,0,6,3,6,6,6,1,5,5,6,1,2,5,3,5,4,6,5,consistent,88.33333333
+id_6,42,1,Believer,10,Strongly Democratic,0,0,6,3,6,6,6,1,5,5,6,1,2,5,3,5,4,6,5,inconsistent,37
+id_7,66,2,Denier,3,Strongly Republican,0,0.6666667,5,5,2,5,1,4,5,4,4,1,5,3,1,1,1,6,2,consistent,94.66666667
+id_7,66,2,Denier,3,Strongly Republican,0,0.6666667,5,5,2,5,1,4,5,4,4,1,5,3,1,1,1,6,2,inconsistent,40
+id_8,58,1,Believer,9,Democratic,0,0.8333333,6,5,2,6,6,4,5,4,5,1,4,2,4,6,2,2,1,consistent,93.33333333
+id_8,58,1,Believer,9,Democratic,0,0.8333333,6,5,2,6,6,4,5,4,5,1,4,2,4,6,2,2,1,inconsistent,63.33333333
+id_9,61,2,Believer,1,Strongly Republican,0,0.8333333,2,6,5,5,5,5,5,5,6,1,5,4,2,5,5,6,4,consistent,73
+id_9,61,2,Believer,1,Strongly Republican,0,0.8333333,2,6,5,5,5,5,5,5,6,1,5,4,2,5,5,6,4,inconsistent,70
+id_10,30,2,Denier,0,Lean Republican,0,0.1666667,1,3,2,2,6,3,4,1,6,6,3,2,3,3,1,6,1,consistent,64
+id_10,30,2,Denier,0,Lean Republican,0,0.1666667,1,3,2,2,6,3,4,1,6,6,3,2,3,3,1,6,1,inconsistent,39.33333333
+id_11,58,2,Believer,10,Strongly Democratic,0,0.1666667,6,4,6,1,1,5,5,3,5,3,4,5,5,6,6,4,6,consistent,82
+id_11,58,2,Believer,10,Strongly Democratic,0,0.1666667,6,4,6,1,1,5,5,3,5,3,4,5,5,6,6,4,6,inconsistent,80.33333333
+id_12,50,1,Believer,6,Lean Democratic,0,0,4,4,4,4,4,4,4,5,5,2,5,5,4,5,4,6,4,consistent,63.33333333
+id_12,50,1,Believer,6,Lean Democratic,0,0,4,4,4,4,4,4,4,5,5,2,5,5,4,5,4,6,4,inconsistent,60.33333333
+id_14,42,2,Believer,5,Lean Republican,0,0.3333333,4,4,3,4,4,4,4,3,3,3,5,2,3,4,4,3,3,consistent,62.66666667
+id_14,42,2,Believer,5,Lean Republican,0,0.3333333,4,4,3,4,4,4,4,3,3,3,5,2,3,4,4,3,3,inconsistent,76.66666667
+id_15,33,1,Denier,4,Lean Republican,0,0,2,3,5,6,5,5,1,1,1,1,3,5,5,6,1,6,1,consistent,41.33333333
+id_15,33,1,Denier,4,Lean Republican,0,0,2,3,5,6,5,5,1,1,1,1,3,5,5,6,1,6,1,inconsistent,36.66666667
+id_16,39,1,Believer,10,Democratic,0,0.3333333,6,4,4,6,4,4,3,4,4,4,4,5,4,6,2,6,4,consistent,66.66666667
+id_16,39,1,Believer,10,Democratic,0,0.3333333,6,4,4,6,4,4,3,4,4,4,4,5,4,6,2,6,4,inconsistent,68.33333333
+id_17,80,1,Believer,9,Democratic,0,0.5,6,6,2,5,6,6,6,4,6,1,5,5,5,6,2,6,2,consistent,90
+id_17,80,1,Believer,9,Democratic,0,0.5,6,6,2,5,6,6,6,4,6,1,5,5,5,6,2,6,2,inconsistent,32
+id_20,30,2,Believer,10,Democratic,0,0.1666667,5,4,1,5,6,6,5,5,5,1,5,6,5,5,6,5,5,consistent,100
+id_20,30,2,Believer,10,Democratic,0,0.1666667,5,4,1,5,6,6,5,5,5,1,5,6,5,5,6,5,5,inconsistent,66.66666667
+id_21,71,1,Denier,5,Strongly Republican,0,0.1666667,4,4,3,3,4,3,4,4,3,3,4,4,3,4,4,4,3,consistent,50.66666667
+id_21,71,1,Denier,5,Strongly Republican,0,0.1666667,4,4,3,3,4,3,4,4,3,3,4,4,3,4,4,4,3,inconsistent,50.66666667
+id_22,49,1,Believer,10,Democratic,0,0,6,3,3,4,6,4,4,3,5,3,4,4,4,4,5,2,3,consistent,63
+id_22,49,1,Believer,10,Democratic,0,0,6,3,3,4,6,4,4,3,5,3,4,4,4,4,5,2,3,inconsistent,43.66666667
+id_23,51,1,Believer,7,Lean Democratic,0,0.5,3,5,3,3,1,3,4,2,3,3,3,4,3,5,2,3,4,consistent,64.66666667
+id_23,51,1,Believer,7,Lean Democratic,0,0.5,3,5,3,3,1,3,4,2,3,3,3,4,3,5,2,3,4,inconsistent,62
+id_24,76,2,Denier,5,Strongly Republican,0,0.3333333,4,4,3,1,1,4,4,3,5,4,5,3,4,4,3,6,3,consistent,64
+id_24,76,2,Denier,5,Strongly Republican,0,0.3333333,4,4,3,1,1,4,4,3,5,4,5,3,4,4,3,6,3,inconsistent,53.33333333
+id_25,76,2,Believer,10,Strongly Democratic,0,0.1666667,6,6,1,1,1,6,6,1,1,1,6,1,1,1,6,1,6,consistent,59
+id_25,76,2,Believer,10,Strongly Democratic,0,0.1666667,6,6,1,1,1,6,6,1,1,1,6,1,1,1,6,1,6,inconsistent,81.33333333
+id_26,38,1,Believer,9,Lean Republican,0,0,5,4,5,4,5,4,5,1,4,1,3,4,2,5,1,6,2,consistent,60.33333333
+id_26,38,1,Believer,9,Lean Republican,0,0,5,4,5,4,5,4,5,1,4,1,3,4,2,5,1,6,2,inconsistent,77.33333333
+id_28,60,2,Believer,1,Lean Democratic,0,0.1666667,5,5,2,4,6,4,5,3,3,3,4,3,3,4,4,3,3,consistent,74
+id_28,60,2,Believer,1,Lean Democratic,0,0.1666667,5,5,2,4,6,4,5,3,3,3,4,3,3,4,4,3,3,inconsistent,43.66666667
+id_29,68,2,Believer,10,Democratic,0,0.3333333,6,1,3,5,3,4,4,1,3,1,5,1,3,3,6,2,4,consistent,79.33333333
+id_29,68,2,Believer,10,Democratic,0,0.3333333,6,1,3,5,3,4,4,1,3,1,5,1,3,3,6,2,4,inconsistent,0
+id_30,30,2,Believer,8,Republican,0,0.3333333,4,5,4,5,6,4,5,6,5,4,5,5,5,4,6,6,5,consistent,80.66666667
+id_30,30,2,Believer,8,Republican,0,0.3333333,4,5,4,5,6,4,5,6,5,4,5,5,5,4,6,6,5,inconsistent,72.33333333
+id_31,64,1,Denier,0,Strongly Republican,0,0.3333333,2,6,1,5,2,5,5,1,6,1,2,4,3,6,1,6,1,consistent,93.33333333
+id_31,64,1,Denier,0,Strongly Republican,0,0.3333333,2,6,1,5,2,5,5,1,6,1,2,4,3,6,1,6,1,inconsistent,24.66666667
+id_32,58,2,Believer,10,Democratic,0,0,6,4,5,1,5,1,3,3,4,1,4,3,5,6,6,3,5,consistent,90
+id_32,58,2,Believer,10,Democratic,0,0,6,4,5,1,5,1,3,3,4,1,4,3,5,6,6,3,5,inconsistent,10.66666667
+id_33,48,2,Believer,7,Lean Democratic,0,0.5,4,4,3,3,4,4,3,4,3,2,4,3,3,4,3,3,4,consistent,72.66666667
+id_33,48,2,Believer,7,Lean Democratic,0,0.5,4,4,3,3,4,4,3,4,3,2,4,3,3,4,3,3,4,inconsistent,51
+id_35,72,2,Believer,10,Strongly Democratic,0,0,6,4,5,4,4,5,4,4,4,3,4,5,6,4,4,NA,1,consistent,50.33333333
+id_35,72,2,Believer,10,Strongly Democratic,0,0,6,4,5,4,4,5,4,4,4,3,4,5,6,4,4,NA,1,inconsistent,43.66666667
+id_36,73,2,Denier,2,Strongly Republican,0,0.5,2,5,4,5,3,4,5,1,5,1,4,4,2,1,2,6,2,consistent,81
+id_36,73,2,Denier,2,Strongly Republican,0,0.5,2,5,4,5,3,4,5,1,5,1,4,4,2,1,2,6,2,inconsistent,28.66666667
+id_37,52,1,Denier,3,Lean Republican,0,1,3,4,3,5,5,5,4,2,4,2,5,4,2,3,1,3,2,consistent,63.33333333
+id_37,52,1,Denier,3,Lean Republican,0,1,3,4,3,5,5,5,4,2,4,2,5,4,2,3,1,3,2,inconsistent,43.33333333
+id_38,77,1,Believer,8,Lean Republican,0,0.6666667,6,5,4,1,2,6,6,4,6,1,5,2,6,3,1,6,3,consistent,31.66666667
+id_38,77,1,Believer,8,Lean Republican,0,0.6666667,6,5,4,1,2,6,6,4,6,1,5,2,6,3,1,6,3,inconsistent,85.66666667
+id_40,64,2,Believer,10,Lean Democratic,0,0.1666667,6,2,6,4,1,6,6,6,6,6,6,6,4,6,6,6,3,consistent,78.33333333
+id_40,64,2,Believer,10,Lean Democratic,0,0.1666667,6,2,6,4,1,6,6,6,6,6,6,6,4,6,6,6,3,inconsistent,40
+id_41,73,2,Believer,10,Strongly Democratic,0,0.8333333,6,2,3,4,6,2,5,2,5,1,1,1,1,3,2,4,2,consistent,46.66666667
+id_41,73,2,Believer,10,Strongly Democratic,0,0.8333333,6,2,3,4,6,2,5,2,5,1,1,1,1,3,2,4,2,inconsistent,8.333333333
+id_42,70,2,Believer,8,Democratic,0,0.5,6,4,1,6,6,6,1,3,5,1,4,4,2,6,4,1,3,consistent,82.33333333
+id_42,70,2,Believer,8,Democratic,0,0.5,6,4,1,6,6,6,1,3,5,1,4,4,2,6,4,1,3,inconsistent,83
+id_45,64,2,Denier,2,Lean Republican,0,0.5,2,3,4,1,3,3,4,4,4,3,4,3,3,5,4,5,2,consistent,80
+id_45,64,2,Denier,2,Lean Republican,0,0.5,2,3,4,1,3,3,4,4,4,3,4,3,3,5,4,5,2,inconsistent,0
+id_46,61,2,Denier,2,Lean Republican,0,0.5,2,2,6,3,3,6,5,4,4,5,6,4,3,6,6,3,2,consistent,86.33333333
+id_46,61,2,Denier,2,Lean Republican,0,0.5,2,2,6,3,3,6,5,4,4,5,6,4,3,6,6,3,2,inconsistent,6.333333333
+id_47,72,2,Believer,8,Strongly Democratic,0,0,6,4,5,2,1,6,5,2,5,1,6,5,6,2,3,2,2,consistent,83.66666667
+id_47,72,2,Believer,8,Strongly Democratic,0,0,6,4,5,2,1,6,5,2,5,1,6,5,6,2,3,2,2,inconsistent,73.33333333
+id_48,73,1,Denier,8,Republican,0,0.5,4,5,4,2,3,5,4,3,4,3,4,3,4,2,5,4,3,consistent,75.66666667
+id_48,73,1,Denier,8,Republican,0,0.5,4,5,4,2,3,5,4,3,4,3,4,3,4,2,5,4,3,inconsistent,75.66666667
+id_49,75,1,Believer,10,Strongly Democratic,0,0.3333333,6,5,3,5,5,3,6,3,6,1,2,5,3,5,2,5,3,consistent,84.33333333
+id_49,75,1,Believer,10,Strongly Democratic,0,0.3333333,6,5,3,5,5,3,6,3,6,1,2,5,3,5,2,5,3,inconsistent,62.66666667
+id_50,65,2,Denier,3,Republican,0,0.6666667,4,5,1,6,6,3,5,2,5,1,5,5,3,3,2,6,3,consistent,41.66666667
+id_50,65,2,Denier,3,Republican,0,0.6666667,4,5,1,6,6,3,5,2,5,1,5,5,3,3,2,6,3,inconsistent,10
+id_51,41,1,Believer,9,Strongly Democratic,0,0.1666667,5,5,2,6,6,6,4,2,3,1,6,6,5,3,1,4,2,consistent,92
+id_51,41,1,Believer,9,Strongly Democratic,0,0.1666667,5,5,2,6,6,6,4,2,3,1,6,6,5,3,1,4,2,inconsistent,75.33333333
+id_52,49,1,Denier,4,Strongly Republican,0,0,3,6,3,1,1,1,4,6,1,1,1,3,4,1,1,1,4,consistent,16.66666667
+id_52,49,1,Denier,4,Strongly Republican,0,0,3,6,3,1,1,1,4,6,1,1,1,3,4,1,1,1,4,inconsistent,12.33333333
+id_53,76,1,Believer,6,Republican,0,0.5,5,5,3,1,1,3,4,2,3,2,2,3,5,1,1,6,2,consistent,41.33333333
+id_53,76,1,Believer,6,Republican,0,0.5,5,5,3,1,1,3,4,2,3,2,2,3,5,1,1,6,2,inconsistent,55.33333333
+id_55,78,1,Believer,10,Strongly Democratic,0,0.1666667,6,6,1,6,6,6,6,2,6,1,4,6,6,6,6,1,5,consistent,100
+id_55,78,1,Believer,10,Strongly Democratic,0,0.1666667,6,6,1,6,6,6,6,2,6,1,4,6,6,6,6,1,5,inconsistent,29
+id_56,65,1,Denier,0,Lean Democratic,0,0.1666667,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,consistent,0
+id_56,65,1,Denier,0,Lean Democratic,0,0.1666667,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,inconsistent,0
+id_57,70,1,Believer,9,Lean Republican,0,0,6,4,4,4,5,5,4,4,4,3,5,5,3,5,2,5,3,consistent,50.66666667
+id_57,70,1,Believer,9,Lean Republican,0,0,6,4,4,4,5,5,4,4,4,3,5,5,3,5,2,5,3,inconsistent,74.66666667
+id_58,68,2,Believer,10,Lean Republican,0,0.1666667,6,1,5,2,5,4,4,3,4,1,3,1,4,6,4,1,3,consistent,15
+id_58,68,2,Believer,10,Lean Republican,0,0.1666667,6,1,5,2,5,4,4,3,4,1,3,1,4,6,4,1,3,inconsistent,87.66666667
+id_59,79,2,Denier,7,Lean Republican,0,0.6666667,5,5,1,4,5,3,4,4,2,1,3,2,2,5,5,6,4,consistent,42
+id_59,79,2,Denier,7,Lean Republican,0,0.6666667,5,5,1,4,5,3,4,4,2,1,3,2,2,5,5,6,4,inconsistent,44
+id_60,79,1,Believer,9,Strongly Republican,0,0.1666667,6,6,1,1,1,5,6,6,6,1,6,1,2,6,1,6,1,consistent,99
+id_60,79,1,Believer,9,Strongly Republican,0,0.1666667,6,6,1,1,1,5,6,6,6,1,6,1,2,6,1,6,1,inconsistent,85.33333333
+id_61,57,2,Believer,7,Lean Republican,0,0,3,3,3,3,3,3,3,3,4,4,4,4,3,3,4,4,4,consistent,64
+id_61,57,2,Believer,7,Lean Republican,0,0,3,3,3,3,3,3,3,3,4,4,4,4,3,3,4,4,4,inconsistent,63.66666667
+id_62,76,2,Believer,9,Strongly Democratic,0,0.5,6,3,3,6,6,3,5,2,2,1,2,2,5,5,6,3,6,consistent,93
+id_62,76,2,Believer,9,Strongly Democratic,0,0.5,6,3,3,6,6,3,5,2,2,1,2,2,5,5,6,3,6,inconsistent,11.33333333
+id_63,78,2,Believer,7,Republican,0,0.5,4,3,5,1,1,4,4,4,3,4,5,5,6,5,3,6,2,consistent,63.66666667
+id_63,78,2,Believer,7,Republican,0,0.5,4,3,5,1,1,4,4,4,3,4,5,5,6,5,3,6,2,inconsistent,53.33333333
+id_64,58,2,Believer,7,Republican,0,0,4,5,3,5,2,4,5,3,2,1,3,4,2,5,4,6,4,consistent,63
+id_64,58,2,Believer,7,Republican,0,0,4,5,3,5,2,4,5,3,2,1,3,4,2,5,4,6,4,inconsistent,72.5
+id_65,49,2,Believer,9,Democratic,0,0.3333333,6,2,1,6,4,4,6,2,5,1,4,5,5,2,3,2,2,consistent,81
+id_65,49,2,Believer,9,Democratic,0,0.3333333,6,2,1,6,4,4,6,2,5,1,4,5,5,2,3,2,2,inconsistent,30.66666667
+id_66,50,2,Believer,6,Lean Republican,0,0.5,5,2,5,3,4,4,4,3,4,2,4,3,2,4,4,2,3,consistent,50
+id_66,50,2,Believer,6,Lean Republican,0,0.5,5,2,5,3,4,4,4,3,4,2,4,3,2,4,4,2,3,inconsistent,50
+id_67,37,1,Believer,10,Strongly Democratic,0,0.1666667,6,1,1,6,6,2,5,1,4,1,4,5,5,3,3,1,3,consistent,92.66666667
+id_67,37,1,Believer,10,Strongly Democratic,0,0.1666667,6,1,1,6,6,2,5,1,4,1,4,5,5,3,3,1,3,inconsistent,3.333333333
+id_68,77,1,Denier,2,Lean Republican,0,1,2,4,1,1,2,4,5,5,5,1,5,3,1,3,1,5,1,consistent,74.66666667
+id_68,77,1,Denier,2,Lean Republican,0,1,2,4,1,1,2,4,5,5,5,1,5,3,1,3,1,5,1,inconsistent,42.33333333
+id_69,70,2,Believer,8,Lean Republican,0,0.5,4,3,3,4,3,4,4,4,4,3,4,3,4,5,4,5,4,consistent,60.66666667
+id_69,70,2,Believer,8,Lean Republican,0,0.5,4,3,3,4,3,4,4,4,4,3,4,3,4,5,4,5,4,inconsistent,56.66666667
+id_71,54,2,Believer,9,Lean Democratic,0,0.5,6,3,4,5,6,6,4,2,5,3,5,5,4,2,6,4,4,consistent,74
+id_71,54,2,Believer,9,Lean Democratic,0,0.5,6,3,4,5,6,6,4,2,5,3,5,5,4,2,6,4,4,inconsistent,32.33333333
+id_72,69,2,Believer,9,Lean Republican,0,0.6666667,6,3,2,5,4,3,5,4,5,1,4,2,3,3,3,3,3,consistent,49.66666667
+id_72,69,2,Believer,9,Lean Republican,0,0.6666667,6,3,2,5,4,3,5,4,5,1,4,2,3,3,3,3,3,inconsistent,80.66666667
+id_73,69,1,Denier,5,Lean Republican,0,0.3333333,4,4,2,4,4,4,3,4,5,1,4,4,NA,4,1,6,5,consistent,47.66666667
+id_73,69,1,Denier,5,Lean Republican,0,0.3333333,4,4,2,4,4,4,3,4,5,1,4,4,NA,4,1,6,5,inconsistent,46
+id_74,71,1,Denier,0,Strongly Republican,0,0.5,1,6,2,1,1,4,4,4,5,4,4,3,5,4,4,6,2,consistent,97
+id_74,71,1,Denier,0,Strongly Republican,0,0.5,1,6,2,1,1,4,4,4,5,4,4,3,5,4,4,6,2,inconsistent,5
+id_75,67,2,Believer,9,Democratic,0,0.5,5,3,6,3,3,6,5,3,3,1,5,3,3,5,6,4,3,consistent,64.33333333
+id_75,67,2,Believer,9,Democratic,0,0.5,5,3,6,3,3,6,5,3,3,1,5,3,3,5,6,4,3,inconsistent,58
+id_76,22,2,Denier,1,Lean Republican,0,0.1666667,2,2,6,1,1,6,3,6,6,6,6,6,3,4,4,6,1,consistent,44.66666667
+id_76,22,2,Denier,1,Lean Republican,0,0.1666667,2,2,6,1,1,6,3,6,6,6,6,6,3,4,4,6,1,inconsistent,42
+id_77,34,1,Believer,9,Lean Democratic,0,0.8333333,6,3,2,6,6,2,4,2,4,1,1,1,1,4,4,1,2,consistent,91.66666667
+id_77,34,1,Believer,9,Lean Democratic,0,0.8333333,6,3,2,6,6,2,4,2,4,1,1,1,1,4,4,1,2,inconsistent,21.66666667
+id_79,41,2,Denier,5,Lean Democratic,0,0.1666667,5,4,4,4,4,5,3,5,3,2,4,4,4,5,NA,5,5,consistent,61
+id_79,41,2,Denier,5,Lean Democratic,0,0.1666667,5,4,4,4,4,5,3,5,3,2,4,4,4,5,NA,5,5,inconsistent,64
+id_80,28,2,Believer,10,Democratic,0,0.6666667,6,3,3,6,6,3,4,2,4,1,5,2,2,4,6,1,2,consistent,100
+id_80,28,2,Believer,10,Democratic,0,0.6666667,6,3,3,6,6,3,4,2,4,1,5,2,2,4,6,1,2,inconsistent,20
+id_81,34,2,Believer,10,Democratic,0,0,6,2,5,4,4,5,4,3,3,4,5,4,4,3,3,1,3,consistent,62.66666667
+id_81,34,2,Believer,10,Democratic,0,0,6,2,5,4,4,5,4,3,3,4,5,4,4,3,3,1,3,inconsistent,34
+id_82,69,2,Believer,3,Strongly Republican,0,0.3333333,4,4,4,3,3,4,3,4,4,3,3,3,4,3,3,5,3,consistent,50
+id_82,69,2,Believer,3,Strongly Republican,0,0.3333333,4,4,4,3,3,4,3,4,4,3,3,3,4,3,3,5,3,inconsistent,47.5
+id_83,67,2,Believer,10,Lean Democratic,0,0.1666667,5,3,3,6,6,5,4,2,4,1,3,1,1,4,1,1,3,consistent,94.33333333
+id_83,67,2,Believer,10,Lean Democratic,0,0.1666667,5,3,3,6,6,5,4,2,4,1,3,1,1,4,1,1,3,inconsistent,33
+id_84,34,2,Believer,6,Lean Republican,0,0.5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,consistent,53
+id_84,34,2,Believer,6,Lean Republican,0,0.5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,inconsistent,53.66666667
+id_85,59,1,Believer,6,Strongly Republican,0,0.1666667,4,4,6,5,4,4,1,4,6,4,4,4,6,6,5,6,6,consistent,62
+id_85,59,1,Believer,6,Strongly Republican,0,0.1666667,4,4,6,5,4,4,1,4,6,4,4,4,6,6,5,6,6,inconsistent,72.66666667
+id_86,32,2,Believer,6,Lean Democratic,0,0.1666667,4,4,4,4,4,3,5,2,4,2,4,4,4,5,5,6,4,consistent,67.66666667
+id_86,32,2,Believer,6,Lean Democratic,0,0.1666667,4,4,4,4,4,3,5,2,4,2,4,4,4,5,5,6,4,inconsistent,68.33333333
+id_87,40,2,Believer,9,Democratic,0,0.3333333,3,2,2,3,2,2,2,3,2,2,4,1,1,2,5,1,3,consistent,57.33333333
+id_87,40,2,Believer,9,Democratic,0,0.3333333,3,2,2,3,2,2,2,3,2,2,4,1,1,2,5,1,3,inconsistent,67.33333333
+id_88,73,1,Denier,2,Strongly Republican,0,0.5,1,6,3,5,5,4,4,4,4,4,4,4,4,4,1,6,3,consistent,61
+id_88,73,1,Denier,2,Strongly Republican,0,0.5,1,6,3,5,5,4,4,4,4,4,4,4,4,4,1,6,3,inconsistent,23.66666667
+id_90,21,2,Believer,9,Lean Democratic,0,0.6666667,6,3,2,2,2,4,5,2,4,1,3,2,1,6,5,1,4,consistent,94
+id_90,21,2,Believer,9,Lean Democratic,0,0.6666667,6,3,2,2,2,4,5,2,4,1,3,2,1,6,5,1,4,inconsistent,20
+id_91,50,1,Believer,4,Lean Republican,0,0.6666667,4,5,2,4,4,4,3,4,5,4,4,3,4,3,3,5,3,consistent,56.33333333
+id_91,50,1,Believer,4,Lean Republican,0,0.6666667,4,5,2,4,4,4,3,4,5,4,4,3,4,3,3,5,3,inconsistent,55.66666667
+id_92,42,2,Denier,4,Lean Republican,0,0.3333333,2,4,6,1,1,3,5,6,5,4,5,4,6,4,4,6,5,consistent,65.33333333
+id_92,42,2,Denier,4,Lean Republican,0,0.3333333,2,4,6,1,1,3,5,6,5,4,5,4,6,4,4,6,5,inconsistent,44
+id_93,28,2,Believer,9,Strongly Democratic,0,0.3333333,6,3,6,4,4,4,5,2,4,2,4,3,6,3,5,4,3,consistent,73
+id_93,28,2,Believer,9,Strongly Democratic,0,0.3333333,6,3,6,4,4,4,5,2,4,2,4,3,6,3,5,4,3,inconsistent,43
+id_94,92,2,Denier,2,Republican,0,0.5,4,6,3,2,3,4,5,4,6,1,4,4,3,6,2,6,2,consistent,90.66666667
+id_94,92,2,Denier,2,Republican,0,0.5,4,6,3,2,3,4,5,4,6,1,4,4,3,6,2,6,2,inconsistent,9
+id_95,61,2,Believer,5,Lean Republican,0,0.3333333,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,consistent,NA
+id_95,61,2,Believer,5,Lean Republican,0,0.3333333,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,inconsistent,50
+id_96,60,2,Believer,6,Lean Republican,0,0.3333333,4,3,4,3,4,3,4,3,3,4,3,2,3,3,5,4,4,consistent,52
+id_96,60,2,Believer,6,Lean Republican,0,0.3333333,4,3,4,3,4,3,4,3,3,4,3,2,3,3,5,4,4,inconsistent,47
+id_97,66,2,Believer,8,Lean Democratic,0,0.1666667,5,4,4,3,3,4,4,3,4,3,4,4,4,3,3,4,4,consistent,63.33333333
+id_97,66,2,Believer,8,Lean Democratic,0,0.1666667,5,4,4,3,3,4,4,3,4,3,4,4,4,3,3,4,4,inconsistent,50
+id_98,69,2,Believer,8,Lean Republican,0,0.1666667,6,1,6,4,5,4,5,6,5,4,5,4,5,4,6,3,5,consistent,62.66666667
+id_98,69,2,Believer,8,Lean Republican,0,0.1666667,6,1,6,4,5,4,5,6,5,4,5,4,5,4,6,3,5,inconsistent,65
+id_99,73,2,Believer,6,Lean Democratic,0,0.1666667,6,6,1,3,1,2,5,4,4,1,4,2,1,6,3,6,2,consistent,75
+id_99,73,2,Believer,6,Lean Democratic,0,0.1666667,6,6,1,3,1,2,5,4,4,1,4,2,1,6,3,6,2,inconsistent,28
+id_101,56,2,Believer,10,Lean Democratic,0,0.8333333,6,5,3,2,3,3,5,4,5,2,5,3,2,6,6,1,6,consistent,35
+id_101,56,2,Believer,10,Lean Democratic,0,0.8333333,6,5,3,2,3,3,5,4,5,2,5,3,2,6,6,1,6,inconsistent,17
+id_102,66,2,Believer,10,Lean Democratic,0,0,6,5,2,6,6,5,5,5,6,1,4,2,2,3,3,2,3,consistent,83
+id_102,66,2,Believer,10,Lean Democratic,0,0,6,5,2,6,6,5,5,5,6,1,4,2,2,3,3,2,3,inconsistent,28
+id_103,40,1,Believer,8,Strongly Republican,0,0.1666667,5,5,5,5,3,5,5,5,5,2,5,5,4,5,4,5,3,consistent,66
+id_103,40,1,Believer,8,Strongly Republican,0,0.1666667,5,5,5,5,3,5,5,5,5,2,5,5,4,5,4,5,3,inconsistent,74.33333333
+id_104,59,2,Believer,10,Lean Democratic,0,0.1666667,3,2,5,4,6,6,3,3,5,4,5,4,5,1,3,6,3,consistent,65.66666667
+id_104,59,2,Believer,10,Lean Democratic,0,0.1666667,3,2,5,4,6,6,3,3,5,4,5,4,5,1,3,6,3,inconsistent,55.66666667
+id_105,45,1,Denier,2,Strongly Democratic,0,0.5,3,4,4,1,2,4,4,5,6,2,3,3,5,6,1,4,3,consistent,60
+id_105,45,1,Denier,2,Strongly Democratic,0,0.5,3,4,4,1,2,4,4,5,6,2,3,3,5,6,1,4,3,inconsistent,57
+id_106,63,1,Believer,10,Strongly Democratic,0,0.1666667,6,6,4,6,6,4,4,5,6,1,5,5,6,6,6,6,5,consistent,100
+id_106,63,1,Believer,10,Strongly Democratic,0,0.1666667,6,6,4,6,6,4,4,5,6,1,5,5,6,6,6,6,5,inconsistent,100
+id_110,55,2,Believer,7,Democratic,0,0,6,1,3,6,6,4,4,3,4,3,4,4,1,4,4,5,3,consistent,43
+id_110,55,2,Believer,7,Democratic,0,0,6,1,3,6,6,4,4,3,4,3,4,4,1,4,4,5,3,inconsistent,36.66666667
+id_113,42,2,Believer,7,Lean Democratic,0,0.6666667,6,3,3,3,3,3,5,1,5,4,4,2,1,5,4,5,5,consistent,51
+id_113,42,2,Believer,7,Lean Democratic,0,0.6666667,6,3,3,3,3,3,5,1,5,4,4,2,1,5,4,5,5,inconsistent,32.33333333
+id_114,63,2,Believer,10,Democratic,0,0,6,4,4,5,5,5,4,3,3,1,5,2,4,3,2,3,5,consistent,89
+id_114,63,2,Believer,10,Democratic,0,0,6,4,4,5,5,5,4,3,3,1,5,2,4,3,2,3,5,inconsistent,23.33333333
+id_115,67,2,Denier,5,Lean Republican,0,0.1666667,3,3,4,5,4,4,4,4,4,3,4,4,4,3,3,5,4,consistent,60
+id_115,67,2,Denier,5,Lean Republican,0,0.1666667,3,3,4,5,4,4,4,4,4,3,4,4,4,3,3,5,4,inconsistent,52
+id_116,66,2,Believer,9,Lean Democratic,0,0.6666667,6,5,3,5,5,5,3,2,4,2,6,3,4,6,3,3,3,consistent,77.33333333
+id_116,66,2,Believer,9,Lean Democratic,0,0.6666667,6,5,3,5,5,5,3,2,4,2,6,3,4,6,3,3,3,inconsistent,46.66666667
+id_117,66,1,Denier,2,Lean Republican,0,1,2,6,2,5,4,5,5,5,6,2,5,2,1,2,1,5,2,consistent,71.33333333
+id_117,66,1,Denier,2,Lean Republican,0,1,2,6,2,5,4,5,5,5,6,2,5,2,1,2,1,5,2,inconsistent,34.66666667
+id_119,66,2,Denier,2,Democratic,0,0.1666667,4,NA,5,3,4,4,4,4,1,1,3,4,3,2,2,4,2,consistent,59.33333333
+id_119,66,2,Denier,2,Democratic,0,0.1666667,4,NA,5,3,4,4,4,4,1,1,3,4,3,2,2,4,2,inconsistent,58
+id_121,45,2,Believer,9,Republican,0,0.1666667,6,3,4,6,6,3,5,2,4,1,4,1,2,3,3,6,2,consistent,85
+id_121,45,2,Believer,9,Republican,0,0.1666667,6,3,4,6,6,3,5,2,4,1,4,1,2,3,3,6,2,inconsistent,85.33333333
+id_122,55,1,Believer,10,Lean Democratic,0,0.8333333,6,6,3,6,6,5,4,4,2,1,6,5,3,3,6,3,2,consistent,91.33333333
+id_122,55,1,Believer,10,Lean Democratic,0,0.8333333,6,6,3,6,6,5,4,4,2,1,6,5,3,3,6,3,2,inconsistent,20.66666667
+id_123,86,2,Denier,4,Lean Republican,0,0.3333333,4,4,3,2,3,3,4,5,4,3,4,2,3,3,3,4,3,consistent,54
+id_123,86,2,Denier,4,Lean Republican,0,0.3333333,4,4,3,2,3,3,4,5,4,3,4,2,3,3,3,4,3,inconsistent,50.5
+id_125,68,2,Believer,9,Lean Democratic,0,0.3333333,6,3,3,3,4,4,5,3,5,1,4,2,4,5,5,2,5,consistent,86.66666667
+id_125,68,2,Believer,9,Lean Democratic,0,0.3333333,6,3,3,3,4,4,5,3,5,1,4,2,4,5,5,2,5,inconsistent,26.66666667
+id_127,63,2,Believer,9,Lean Republican,0,0.1666667,6,2,3,1,4,5,4,4,4,1,5,4,5,3,2,5,3,consistent,43.33333333
+id_127,63,2,Believer,9,Lean Republican,0,0.1666667,6,2,3,1,4,5,4,4,4,1,5,4,5,3,2,5,3,inconsistent,63.33333333
+id_128,62,1,Denier,NA,Lean Republican,0,1,1,3,4,3,3,4,3,4,4,4,4,3,2,3,1,4,1,consistent,96.66666667
+id_128,62,1,Denier,NA,Lean Republican,0,1,1,3,4,3,3,4,3,4,4,4,4,3,2,3,1,4,1,inconsistent,1.666666667
+id_129,63,2,Believer,8,Lean Republican,0,0.3333333,6,1,6,6,2,5,6,1,2,1,6,6,6,1,5,5,1,consistent,57
+id_129,63,2,Believer,8,Lean Republican,0,0.3333333,6,1,6,6,2,5,6,1,2,1,6,6,6,1,5,5,1,inconsistent,80.33333333
+id_130,70,1,Denier,1,Strongly Republican,0,0.5,2,5,4,1,1,4,4,4,5,5,5,5,5,5,1,6,3,consistent,100
+id_130,70,1,Denier,1,Strongly Republican,0,0.5,2,5,4,1,1,4,4,4,5,5,5,5,5,5,1,6,3,inconsistent,1
+id_131,66,1,Denier,1,Republican,0,0.5,1,5,3,1,2,4,5,4,5,1,5,4,3,5,1,6,3,consistent,82.66666667
+id_131,66,1,Denier,1,Republican,0,0.5,1,5,3,1,2,4,5,4,5,1,5,4,3,5,1,6,3,inconsistent,23.33333333
+id_134,51,1,Denier,3,Lean Republican,0,0.5,1,4,3,4,4,4,4,4,4,2,2,4,4,3,1,4,3,consistent,68.66666667
+id_134,51,1,Denier,3,Lean Republican,0,0.5,1,4,3,4,4,4,4,4,4,2,2,4,4,3,1,4,3,inconsistent,44.66666667
+id_135,74,1,Believer,10,Lean Democratic,0,0.5,6,3,1,6,6,5,4,1,6,1,4,4,5,5,5,2,1,consistent,94.33333333
+id_135,74,1,Believer,10,Lean Democratic,0,0.5,6,3,1,6,6,5,4,1,6,1,4,4,5,5,5,2,1,inconsistent,32.66666667
+id_136,66,1,Believer,10,Lean Democratic,0,0.1666667,4,4,3,4,6,4,3,3,4,1,3,4,4,3,3,4,4,consistent,82.66666667
+id_136,66,1,Believer,10,Lean Democratic,0,0.1666667,4,4,3,4,6,4,3,3,4,1,3,4,4,3,3,4,4,inconsistent,30.66666667
+id_137,75,1,Denier,6,Lean Democratic,0,0.8333333,2,3,5,5,5,4,5,5,5,1,4,3,3,5,2,5,6,consistent,52
+id_137,75,1,Denier,6,Lean Democratic,0,0.8333333,2,3,5,5,5,4,5,5,5,1,4,3,3,5,2,5,6,inconsistent,86.33333333
+id_138,70,1,Believer,6,Lean Democratic,0,0.5,4,3,5,3,5,4,4,3,4,3,4,4,1,4,2,6,5,consistent,57
+id_138,70,1,Believer,6,Lean Democratic,0,0.5,4,3,5,3,5,4,4,3,4,3,4,4,1,4,2,6,5,inconsistent,61
+id_141,69,1,Believer,8,Lean Republican,0,1,6,6,1,6,6,5,5,1,5,1,4,1,4,3,6,5,5,consistent,13
+id_141,69,1,Believer,8,Lean Republican,0,1,6,6,1,6,6,5,5,1,5,1,4,1,4,3,6,5,5,inconsistent,79
+id_142,72,1,Believer,10,Strongly Democratic,0,0.1666667,6,1,5,4,5,4,5,3,5,1,5,5,4,5,3,5,5,consistent,99
+id_142,72,1,Believer,10,Strongly Democratic,0,0.1666667,6,1,5,4,5,4,5,3,5,1,5,5,4,5,3,5,5,inconsistent,100
+id_143,83,1,Believer,6,Lean Democratic,0,0.3333333,6,6,1,5,6,2,6,5,5,1,2,1,1,5,3,3,4,consistent,55.33333333
+id_143,83,1,Believer,6,Lean Democratic,0,0.3333333,6,6,1,5,6,2,6,5,5,1,2,1,1,5,3,3,4,inconsistent,51.33333333
+id_144,61,1,Believer,9,Strongly Republican,0,0.3333333,6,1,1,5,4,5,4,4,6,1,4,4,6,5,5,6,6,consistent,87.66666667
+id_144,61,1,Believer,9,Strongly Republican,0,0.3333333,6,1,1,5,4,5,4,4,6,1,4,4,6,5,5,6,6,inconsistent,81.33333333
+id_145,82,2,Denier,4,Republican,0,0.5,4,5,3,1,1,4,4,4,5,3,5,4,4,5,3,5,5,consistent,66.33333333
+id_145,82,2,Denier,4,Republican,0,0.5,4,5,3,1,1,4,4,4,5,3,5,4,4,5,3,5,5,inconsistent,15.66666667
+id_147,77,1,Believer,9,Democratic,0,0.6666667,6,6,3,5,5,5,6,3,5,2,5,5,4,6,6,4,4,consistent,46.5
+id_147,77,1,Believer,9,Democratic,0,0.6666667,6,6,3,5,5,5,6,3,5,2,5,5,4,6,6,4,4,inconsistent,NA
+id_148,70,1,Believer,10,Lean Democratic,0,0.6666667,6,2,4,6,3,4,4,2,4,2,4,4,4,4,3,3,4,consistent,95.33333333
+id_148,70,1,Believer,10,Lean Democratic,0,0.6666667,6,2,4,6,3,4,4,2,4,2,4,4,4,4,3,3,4,inconsistent,8.666666667
+id_149,58,1,Denier,0,Lean Republican,0,0.5,1,6,6,1,2,3,5,1,6,5,1,1,2,1,1,6,3,consistent,NA
+id_149,58,1,Denier,0,Lean Republican,0,0.5,1,6,6,1,2,3,5,1,6,5,1,1,2,1,1,6,3,inconsistent,0
+id_150,83,1,Denier,1,Strongly Republican,0,0.5,2,5,5,1,1,NA,5,1,4,1,4,3,2,2,2,6,2,consistent,59
+id_150,83,1,Denier,1,Strongly Republican,0,0.5,2,5,5,1,1,NA,5,1,4,1,4,3,2,2,2,6,2,inconsistent,35.33333333
+id_151,33,1,Denier,0,Democratic,0,0,1,1,3,4,1,2,1,4,2,2,1,5,1,2,5,3,3,consistent,20.33333333
+id_151,33,1,Denier,0,Democratic,0,0,1,1,3,4,1,2,1,4,2,2,1,5,1,2,5,3,3,inconsistent,18.66666667
+id_152,78,2,Believer,4,Lean Republican,0,0.5,5,5,5,1,1,6,5,4,6,4,6,4,2,5,2,3,3,consistent,NA
+id_152,78,2,Believer,4,Lean Republican,0,0.5,5,5,5,1,1,6,5,4,6,4,6,4,2,5,2,3,3,inconsistent,61.5
+id_153,59,2,Believer,6,Lean Democratic,0,0.1666667,5,2,4,4,3,4,4,4,5,5,2,5,5,5,4,5,3,consistent,47.33333333
+id_153,59,2,Believer,6,Lean Democratic,0,0.1666667,5,2,4,4,3,4,4,4,5,5,2,5,5,5,4,5,3,inconsistent,63.5
+id_154,71,2,Believer,6,Strongly Democratic,0,0,2,3,6,1,1,4,5,1,6,1,4,5,5,4,5,6,4,consistent,82
+id_154,71,2,Believer,6,Strongly Democratic,0,0,2,3,6,1,1,4,5,1,6,1,4,5,5,4,5,6,4,inconsistent,NA
+id_155,67,1,Denier,2,Strongly Republican,0,0.3333333,4,5,1,1,1,4,4,1,6,4,6,4,5,2,1,4,3,consistent,50.33333333
+id_155,67,1,Denier,2,Strongly Republican,0,0.3333333,4,5,1,1,1,4,4,1,6,4,6,4,5,2,1,4,3,inconsistent,29.33333333
+id_157,67,1,Believer,9,Lean Democratic,0,0.5,5,3,3,5,5,3,4,3,4,3,4,3,2,4,3,3,5,consistent,89.33333333
+id_157,67,1,Believer,9,Lean Democratic,0,0.5,5,3,3,5,5,3,4,3,4,3,4,3,2,4,3,3,5,inconsistent,4
+id_158,36,1,Believer,4,Lean Republican,0,0.1666667,4,4,3,3,3,4,3,3,4,3,4,3,4,3,3,4,3,consistent,54
+id_158,36,1,Believer,4,Lean Republican,0,0.1666667,4,4,3,3,3,4,3,3,4,3,4,3,4,3,3,4,3,inconsistent,48
+id_159,52,1,Denier,3,Republican,0,0.3333333,2,5,3,5,4,5,3,4,3,4,4,4,4,4,3,4,5,consistent,74.33333333
+id_159,52,1,Denier,3,Republican,0,0.3333333,2,5,3,5,4,5,3,4,3,4,4,4,4,4,3,4,5,inconsistent,21
+id_161,70,2,Believer,9,Lean Democratic,0,0.8333333,6,3,4,4,2,6,4,4,5,3,4,4,4,5,5,3,1,consistent,98.33333333
+id_161,70,2,Believer,9,Lean Democratic,0,0.8333333,6,3,4,4,2,6,4,4,5,3,4,4,4,5,5,3,1,inconsistent,43.33333333
+id_162,68,2,Believer,NA,Strongly Democratic,0,0.1666667,4,4,2,1,1,4,1,2,4,1,3,1,3,3,4,4,3,consistent,71.5
+id_162,68,2,Believer,NA,Strongly Democratic,0,0.1666667,4,4,2,1,1,4,1,2,4,1,3,1,3,3,4,4,3,inconsistent,NA
+id_163,72,2,Believer,10,Strongly Democratic,0,0.8333333,6,5,4,6,6,6,5,1,5,1,5,2,3,3,5,2,5,consistent,97.5
+id_163,72,2,Believer,10,Strongly Democratic,0,0.8333333,6,5,4,6,6,6,5,1,5,1,5,2,3,3,5,2,5,inconsistent,6
+id_164,38,2,Believer,9,Democratic,0,0.6666667,6,5,1,6,6,1,6,5,6,1,1,1,2,6,1,2,1,consistent,100
+id_164,38,2,Believer,9,Democratic,0,0.6666667,6,5,1,6,6,1,6,5,6,1,1,1,2,6,1,2,1,inconsistent,30
+id_165,55,2,Denier,1,Strongly Republican,0,0,1,4,3,2,1,4,1,5,4,4,5,4,3,4,1,6,4,consistent,72.66666667
+id_165,55,2,Denier,1,Strongly Republican,0,0,1,4,3,2,1,4,1,5,4,4,5,4,3,4,1,6,4,inconsistent,21
+id_166,48,1,Denier,0,Strongly Republican,0,0.1666667,1,1,6,1,1,1,6,6,1,1,6,6,1,6,5,6,1,consistent,66.66666667
+id_166,48,1,Denier,0,Strongly Republican,0,0.1666667,1,1,6,1,1,1,6,6,1,1,6,6,1,6,5,6,1,inconsistent,0
+id_167,55,2,Believer,4,Strongly Republican,0,0.8333333,4,4,4,1,1,4,4,6,5,1,4,1,4,4,3,6,3,consistent,21
+id_167,55,2,Believer,4,Strongly Republican,0,0.8333333,4,4,4,1,1,4,4,6,5,1,4,1,4,4,3,6,3,inconsistent,18.33333333
+id_168,59,2,Believer,10,Republican,0,0.1666667,6,6,1,3,5,2,5,3,2,1,2,2,4,5,5,6,2,consistent,44.66666667
+id_168,59,2,Believer,10,Republican,0,0.1666667,6,6,1,3,5,2,5,3,2,1,2,2,4,5,5,6,2,inconsistent,68
+id_171,79,2,Believer,3,Lean Republican,0,0.3333333,3,3,3,5,6,4,4,2,6,1,3,1,3,3,1,3,1,consistent,46.66666667
+id_171,79,2,Believer,3,Lean Republican,0,0.3333333,3,3,3,5,6,4,4,2,6,1,3,1,3,3,1,3,1,inconsistent,52.33333333
+id_172,25,2,Believer,5,Lean Republican,0,0.6666667,4,3,3,5,4,6,3,4,4,3,4,4,4,3,3,3,3,consistent,54.66666667
+id_172,25,2,Believer,5,Lean Republican,0,0.6666667,4,3,3,5,4,6,3,4,4,3,4,4,4,3,3,3,3,inconsistent,47.33333333
+id_173,54,2,Believer,9,Lean Democratic,0,0.1666667,5,4,4,5,5,5,4,4,5,2,4,4,3,3,4,3,3,consistent,69.33333333
+id_173,54,2,Believer,9,Lean Democratic,0,0.1666667,5,4,4,5,5,5,4,4,5,2,4,4,3,3,4,3,3,inconsistent,51.33333333
+id_174,72,1,Believer,10,Strongly Democratic,0,0.1666667,5,4,3,6,4,4,5,1,4,2,5,4,4,4,4,1,4,consistent,95.33333333
+id_174,72,1,Believer,10,Strongly Democratic,0,0.1666667,5,4,3,6,4,4,5,1,4,2,5,4,4,4,4,1,4,inconsistent,89.33333333
+id_175,66,1,Denier,2,Lean Republican,0,1,2,6,2,4,4,4,5,5,5,2,4,2,2,3,2,4,3,consistent,72.66666667
+id_175,66,1,Denier,2,Lean Republican,0,1,2,6,2,4,4,4,5,5,5,2,4,2,2,3,2,4,3,inconsistent,17.66666667
+id_176,71,2,Denier,6,Republican,0,0.1666667,4,3,5,5,6,5,2,5,6,4,6,5,5,4,2,2,5,consistent,86.66666667
+id_176,71,2,Denier,6,Republican,0,0.1666667,4,3,5,5,6,5,2,5,6,4,6,5,5,4,2,2,5,inconsistent,40
+id_177,50,2,Believer,9,Strongly Democratic,0,0.6666667,6,4,3,5,5,5,5,2,3,2,4,4,3,3,5,3,5,consistent,85
+id_177,50,2,Believer,9,Strongly Democratic,0,0.6666667,6,4,3,5,5,5,5,2,3,2,4,4,3,3,5,3,5,inconsistent,20
+id_178,72,1,Denier,0,Lean Republican,0,0.8333333,1,6,5,4,6,4,4,4,4,3,4,3,1,5,5,6,5,consistent,65.66666667
+id_178,72,1,Denier,0,Lean Republican,0,0.8333333,1,6,5,4,6,4,4,4,4,3,4,3,1,5,5,6,5,inconsistent,3.333333333
+id_180,69,2,Believer,10,Lean Democratic,0,0.5,6,5,4,5,6,6,5,6,3,3,6,4,4,5,6,5,5,consistent,100
+id_180,69,2,Believer,10,Lean Democratic,0,0.5,6,5,4,5,6,6,5,6,3,3,6,4,4,5,6,5,5,inconsistent,NA
+id_181,73,2,Denier,3,Lean Republican,0,0.1666667,2,6,5,5,1,6,4,4,5,3,5,4,1,4,1,6,3,consistent,85.66666667
+id_181,73,2,Denier,3,Lean Republican,0,0.1666667,2,6,5,5,1,6,4,4,5,3,5,4,1,4,1,6,3,inconsistent,30.33333333
+id_182,60,2,Believer,10,Lean Democratic,0,0.8333333,6,2,4,4,5,5,2,2,3,1,5,2,3,2,5,2,3,consistent,84.33333333
+id_182,60,2,Believer,10,Lean Democratic,0,0.8333333,6,2,4,4,5,5,2,2,3,1,5,2,3,2,5,2,3,inconsistent,54
+id_183,65,1,Believer,9,Lean Democratic,0,0.5,6,5,5,5,5,6,6,5,5,5,6,5,6,5,4,6,5,consistent,95
+id_183,65,1,Believer,9,Lean Democratic,0,0.5,6,5,5,5,5,6,6,5,5,5,6,5,6,5,4,6,5,inconsistent,95.33333333
+id_184,82,2,Believer,9,Lean Democratic,0,0.8333333,6,3,3,5,6,4,5,4,5,1,3,2,5,6,4,1,3,consistent,90
+id_184,82,2,Believer,9,Lean Democratic,0,0.8333333,6,3,3,5,6,4,5,4,5,1,3,2,5,6,4,1,3,inconsistent,27
+id_185,25,2,Denier,1,Republican,0,0.1666667,1,2,6,1,1,5,3,6,6,6,6,6,2,5,4,6,1,consistent,48.33333333
+id_185,25,2,Denier,1,Republican,0,0.1666667,1,2,6,1,1,5,3,6,6,6,6,6,2,5,4,6,1,inconsistent,48.33333333
+id_186,68,1,Believer,6,Lean Democratic,0,0,5,2,4,4,4,3,5,4,4,3,2,3,3,3,2,5,2,consistent,67
+id_186,68,1,Believer,6,Lean Democratic,0,0,5,2,4,4,4,3,5,4,4,3,2,3,3,3,2,5,2,inconsistent,52
+id_187,16,2,Believer,10,Democratic,0,0.6666667,6,4,2,6,6,5,4,4,5,1,4,1,3,6,6,1,5,consistent,100
+id_187,16,2,Believer,10,Democratic,0,0.6666667,6,4,2,6,6,5,4,4,5,1,4,1,3,6,6,1,5,inconsistent,0
+id_188,73,1,Denier,2,Strongly Republican,0,0.5,2,2,4,6,2,6,4,5,6,1,1,3,5,5,2,2,1,consistent,66.66666667
+id_188,73,1,Denier,2,Strongly Republican,0,0.5,2,2,4,6,2,6,4,5,6,1,1,3,5,5,2,2,1,inconsistent,47
+id_189,70,2,Believer,10,Strongly Democratic,0,0.1666667,4,4,5,6,5,5,6,3,4,1,5,4,3,3,1,5,2,consistent,88
+id_189,70,2,Believer,10,Strongly Democratic,0,0.1666667,4,4,5,6,5,5,6,3,4,1,5,4,3,3,1,5,2,inconsistent,57
+id_190,60,2,Denier,0,Republican,0,0.3333333,1,4,5,1,1,4,4,5,4,2,4,3,3,4,4,6,3,consistent,46.33333333
+id_190,60,2,Denier,0,Republican,0,0.3333333,1,4,5,1,1,4,4,5,4,2,4,3,3,4,4,6,3,inconsistent,52
+id_191,67,2,Believer,6,Lean Republican,0,0,4,5,2,5,6,6,4,4,5,1,6,4,2,5,1,5,4,consistent,90
+id_191,67,2,Believer,6,Lean Republican,0,0,4,5,2,5,6,6,4,4,5,1,6,4,2,5,1,5,4,inconsistent,83.33333333
+id_193,70,1,Believer,8,Lean Republican,0,0.8333333,5,5,2,5,5,5,5,3,5,1,5,4,2,3,3,3,2,consistent,34
+id_193,70,1,Believer,8,Lean Republican,0,0.8333333,5,5,2,5,5,5,5,3,5,1,5,4,2,3,3,3,2,inconsistent,82.66666667
+id_195,70,2,Believer,8,Strongly Democratic,0,0.3333333,6,2,2,2,6,5,4,2,3,3,6,3,4,5,3,6,3,consistent,87
+id_195,70,2,Believer,8,Strongly Democratic,0,0.3333333,6,2,2,2,6,5,4,2,3,3,6,3,4,5,3,6,3,inconsistent,29
+id_196,75,1,Believer,10,Strongly Democratic,0,0.6666667,6,6,1,6,6,6,5,4,6,1,6,5,6,5,3,2,5,consistent,100
+id_196,75,1,Believer,10,Strongly Democratic,0,0.6666667,6,6,1,6,6,6,5,4,6,1,6,5,6,5,3,2,5,inconsistent,71.66666667
+id_197,64,1,Denier,0,Strongly Republican,0,0.3333333,2,6,1,5,2,5,4,3,6,1,4,4,3,6,1,6,2,consistent,95.66666667
+id_197,64,1,Denier,0,Strongly Republican,0,0.3333333,2,6,1,5,2,5,4,3,6,1,4,4,3,6,1,6,2,inconsistent,10
+id_198,66,1,Believer,3,Lean Republican,0,1,4,5,6,3,3,4,4,4,4,4,4,4,3,3,3,4,3,consistent,76.66666667
+id_198,66,1,Believer,3,Lean Republican,0,1,4,5,6,3,3,4,4,4,4,4,4,4,3,3,3,4,3,inconsistent,41.66666667
+id_199,76,2,Denier,6,Republican,0,0.1666667,4,5,2,5,6,5,5,4,4,1,2,4,5,6,3,2,2,consistent,88.33333333
+id_199,76,2,Denier,6,Republican,0,0.1666667,4,5,2,5,6,5,5,4,4,1,2,4,5,6,3,2,2,inconsistent,65
+id_200,72,2,Denier,5,Strongly Republican,0,0.3333333,4,4,4,4,5,5,4,2,4,3,4,3,3,4,4,6,4,consistent,65
+id_200,72,2,Denier,5,Strongly Republican,0,0.3333333,4,4,4,4,5,5,4,2,4,3,4,3,3,4,4,6,4,inconsistent,55.66666667
+id_201,42,1,Believer,8,Strongly Democratic,0,0.3333333,6,4,1,6,6,1,3,1,6,1,1,1,4,6,1,1,2,consistent,36
+id_201,42,1,Believer,8,Strongly Democratic,0,0.3333333,6,4,1,6,6,1,3,1,6,1,1,1,4,6,1,1,2,inconsistent,54.66666667
+id_202,69,1,Denier,2,Lean Republican,0,0.3333333,3,5,3,4,3,4,5,5,4,3,4,3,3,3,1,6,2,consistent,75.5
+id_202,69,1,Denier,2,Lean Republican,0,0.3333333,3,5,3,4,3,4,5,5,4,3,4,3,3,3,1,6,2,inconsistent,21.5
+id_203,72,2,Believer,9,Lean Republican,0,0.1666667,5,4,6,6,2,6,5,3,4,6,6,4,6,3,2,4,5,consistent,61.33333333
+id_203,72,2,Believer,9,Lean Republican,0,0.1666667,5,4,6,6,2,6,5,3,4,6,6,4,6,3,2,4,5,inconsistent,77.66666667
+id_204,36,1,Believer,10,Democratic,0,0.1666667,6,1,1,6,6,1,2,2,4,1,1,1,1,5,6,1,5,consistent,100
+id_204,36,1,Believer,10,Democratic,0,0.1666667,6,1,1,6,6,1,2,2,4,1,1,1,1,5,6,1,5,inconsistent,0
+id_205,42,2,Believer,9,Strongly Democratic,0,0.8333333,6,4,2,6,5,1,2,3,3,1,3,2,3,1,6,3,5,consistent,57.66666667
+id_205,42,2,Believer,9,Strongly Democratic,0,0.8333333,6,4,2,6,5,1,2,3,3,1,3,2,3,1,6,3,5,inconsistent,13.33333333
+id_206,62,1,Believer,6,Lean Democratic,0,0.5,5,3,3,4,4,3,4,3,3,3,3,3,4,4,4,3,3,consistent,54
+id_206,62,1,Believer,6,Lean Democratic,0,0.5,5,3,3,4,4,3,4,3,3,3,3,3,4,4,4,3,3,inconsistent,53.66666667
+id_207,70,1,Believer,8,Lean Republican,0,0.8333333,5,6,2,6,6,5,6,3,5,1,5,4,3,5,3,3,3,consistent,66.33333333
+id_207,70,1,Believer,8,Lean Republican,0,0.8333333,5,6,2,6,6,5,6,3,5,1,5,4,3,5,3,3,3,inconsistent,68.33333333
+id_209,75,1,Believer,10,Strongly Democratic,0,0.3333333,6,5,4,5,6,3,5,3,6,1,3,2,2,3,5,5,3,consistent,84.66666667
+id_209,75,1,Believer,10,Strongly Democratic,0,0.3333333,6,5,4,5,6,3,5,3,6,1,3,2,2,3,5,5,3,inconsistent,84.66666667
+id_211,31,2,Denier,7,Republican,0,0,3,4,3,4,4,4,5,5,4,3,3,3,4,4,4,3,5,consistent,71
+id_211,31,2,Denier,7,Republican,0,0,3,4,3,4,4,4,5,5,4,3,3,3,4,4,4,3,5,inconsistent,75
+id_255,26,1,Believer,8,Lean Democratic,0,0,6,3,5,5,5,5,5,4,5,2,4,6,3,6,4,4,5,consistent,75
+id_255,26,1,Believer,8,Lean Democratic,0,0,6,3,5,5,5,5,5,4,5,2,4,6,3,6,4,4,5,inconsistent,71
+id_258,62,1,Believer,6,Lean Republican,0,0.8333333,4,6,3,4,4,4,4,6,4,1,4,3,1,4,1,6,4,consistent,53.33333333
+id_258,62,1,Believer,6,Lean Republican,0,0.8333333,4,6,3,4,4,4,4,6,4,1,4,3,1,4,1,6,4,inconsistent,56.66666667
+id_260,19,1,Believer,10,Strongly Democratic,0,0.1666667,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,consistent,100
+id_260,19,1,Believer,10,Strongly Democratic,0,0.1666667,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,inconsistent,91
+id_262,45,1,Believer,10,Strongly Democratic,0,0.1666667,5,6,6,3,6,6,6,6,5,5,6,6,6,6,6,6,6,consistent,55
+id_262,45,1,Believer,10,Strongly Democratic,0,0.1666667,5,6,6,3,6,6,6,6,5,5,6,6,6,6,6,6,6,inconsistent,65.66666667
+id_263,47,1,Believer,10,Strongly Democratic,0,0,6,5,1,5,NA,5,5,6,5,1,1,1,1,4,4,4,6,consistent,59.66666667
+id_263,47,1,Believer,10,Strongly Democratic,0,0,6,5,1,5,NA,5,5,6,5,1,1,1,1,4,4,4,6,inconsistent,56.66666667
+id_264,39,1,Believer,9,Democratic,0,0,6,5,6,6,5,5,5,5,5,5,5,6,5,5,6,6,5,consistent,90
+id_264,39,1,Believer,9,Democratic,0,0,6,5,6,6,5,5,5,5,5,5,5,6,5,5,6,6,5,inconsistent,87
+id_266,31,1,Believer,8,Democratic,0,0.3333333,4,4,4,6,6,5,6,4,5,1,4,5,5,5,6,4,5,consistent,79.66666667
+id_266,31,1,Believer,8,Democratic,0,0.3333333,4,4,4,6,6,5,6,4,5,1,4,5,5,5,6,4,5,inconsistent,72.66666667
+id_268,21,1,Believer,NA,Lean Democratic,0,0.3333333,4,1,6,6,3,3,1,1,6,3,2,4,4,4,4,4,4,consistent,44.66666667
+id_268,21,1,Believer,NA,Lean Democratic,0,0.3333333,4,1,6,6,3,3,1,1,6,3,2,4,4,4,4,4,4,inconsistent,50
+id_269,45,1,Believer,9,Strongly Democratic,0,0.5,6,6,6,6,5,5,6,5,6,6,6,6,5,6,6,6,6,consistent,93.66666667
+id_269,45,1,Believer,9,Strongly Democratic,0,0.5,6,6,6,6,5,5,6,5,6,6,6,6,5,6,6,6,6,inconsistent,89.66666667
+id_271,52,1,Believer,9,Strongly Democratic,0,0.6666667,6,5,2,6,6,6,5,6,5,1,1,2,1,3,5,1,1,consistent,94
+id_271,52,1,Believer,9,Strongly Democratic,0,0.6666667,6,5,2,6,6,6,5,6,5,1,1,2,1,3,5,1,1,inconsistent,67.66666667
+id_272,61,1,Denier,10,Strongly Democratic,0,0,5,4,6,6,6,5,4,4,1,4,4,3,4,3,5,6,2,consistent,90
+id_272,61,1,Denier,10,Strongly Democratic,0,0,5,4,6,6,6,5,4,4,1,4,4,3,4,3,5,6,2,inconsistent,60
+id_273,45,1,Believer,8,Democratic,0,0.3333333,4,4,4,2,4,4,4,5,4,4,5,4,4,5,4,6,5,consistent,74
+id_273,45,1,Believer,8,Democratic,0,0.3333333,4,4,4,2,4,4,4,5,4,4,5,4,4,5,4,6,5,inconsistent,74
+id_275,30,1,Believer,8,Democratic,0,0.1666667,6,6,6,5,5,4,5,6,5,3,3,6,5,5,5,4,6,consistent,79.33333333
+id_275,30,1,Believer,8,Democratic,0,0.1666667,6,6,6,5,5,4,5,6,5,3,3,6,5,5,5,4,6,inconsistent,70.5
+id_276,23,1,Believer,6,Strongly Democratic,0,0,4,1,3,1,2,3,1,3,3,2,2,3,1,4,3,3,3,consistent,46.5
+id_276,23,1,Believer,6,Strongly Democratic,0,0,4,1,3,1,2,3,1,3,3,2,2,3,1,4,3,3,3,inconsistent,55
+id_277,69,1,Believer,5,Republican,0,0.5,4,5,3,5,4,4,4,4,5,2,4,4,4,3,3,5,3,consistent,50.33333333
+id_277,69,1,Believer,5,Republican,0,0.5,4,5,3,5,4,4,4,4,5,2,4,4,4,3,3,5,3,inconsistent,50.5
+id_278,65,1,Believer,8,Strongly Democratic,0,0.6666667,6,4,2,5,6,3,5,2,5,1,2,2,2,4,5,6,3,consistent,67
+id_278,65,1,Believer,8,Strongly Democratic,0,0.6666667,6,4,2,5,6,3,5,2,5,1,2,2,2,4,5,6,3,inconsistent,40
+id_279,27,1,Believer,8,Democratic,0,0.6666667,4,4,3,3,3,4,3,3,3,4,4,3,4,3,4,4,3,consistent,68.66666667
+id_279,27,1,Believer,8,Democratic,0,0.6666667,4,4,3,3,3,4,3,3,3,4,4,3,4,3,4,4,3,inconsistent,69
+id_280,34,1,Believer,8,Strongly Democratic,0,0.8333333,6,3,4,5,5,4,5,4,4,2,4,3,5,4,4,6,3,consistent,67
+id_280,34,1,Believer,8,Strongly Democratic,0,0.8333333,6,3,4,5,5,4,5,4,4,2,4,3,5,4,4,6,3,inconsistent,38
+id_281,66,1,Believer,5,Lean Republican,0,0.6666667,5,6,4,6,6,4,4,3,5,1,3,2,3,6,6,6,6,consistent,NA
+id_281,66,1,Believer,5,Lean Republican,0,0.6666667,5,6,4,6,6,4,4,3,5,1,3,2,3,6,6,6,6,inconsistent,36
+id_282,71,1,Believer,5,Strongly Republican,0,0.5,4,4,5,1,1,4,4,2,3,5,3,1,4,5,5,6,1,consistent,85
+id_282,71,1,Believer,5,Strongly Republican,0,0.5,4,4,5,1,1,4,4,2,3,5,3,1,4,5,5,6,1,inconsistent,61
+id_283,35,1,Believer,10,Republican,0,0.1666667,5,5,4,5,5,5,5,5,5,5,5,5,5,5,6,5,5,consistent,90
+id_283,35,1,Believer,10,Republican,0,0.1666667,5,5,4,5,5,5,5,5,5,5,5,5,5,5,6,5,5,inconsistent,91.33333333
+id_285,20,1,Denier,7,Lean Democratic,0,0.5,4,5,5,4,4,2,2,4,5,6,4,5,3,3,3,3,2,consistent,66.66666667
+id_285,20,1,Denier,7,Lean Democratic,0,0.5,4,5,5,4,4,2,2,4,5,6,4,5,3,3,3,3,2,inconsistent,52.33333333
+id_286,44,1,Believer,3,Strongly Democratic,0,0.1666667,6,6,1,1,1,6,1,1,1,6,2,2,1,1,6,6,1,consistent,49.66666667
+id_286,44,1,Believer,3,Strongly Democratic,0,0.1666667,6,6,1,1,1,6,1,1,1,6,2,2,1,1,6,6,1,inconsistent,42
+id_288,65,1,Believer,7,Republican,0,0.8333333,5,5,4,2,1,5,3,2,5,3,4,4,5,4,4,5,4,consistent,50
+id_288,65,1,Believer,7,Republican,0,0.8333333,5,5,4,2,1,5,3,2,5,3,4,4,5,4,4,5,4,inconsistent,50
+id_289,59,1,Believer,10,Strongly Democratic,0,0.5,6,5,4,6,6,1,5,2,5,1,1,1,4,6,6,6,1,consistent,99
+id_289,59,1,Believer,10,Strongly Democratic,0,0.5,6,5,4,6,6,1,5,2,5,1,1,1,4,6,6,6,1,inconsistent,2.666666667
+id_291,67,1,Believer,10,Lean Democratic,0,0.5,6,4,5,5,5,4,5,4,5,2,5,4,5,5,4,4,3,consistent,80
+id_291,67,1,Believer,10,Lean Democratic,0,0.5,6,4,5,5,5,4,5,4,5,2,5,4,5,5,4,4,3,inconsistent,20
+id_292,24,1,Believer,10,Strongly Democratic,0,0.1666667,6,3,6,4,6,4,4,3,3,3,3,2,2,6,5,1,6,consistent,61
+id_292,24,1,Believer,10,Strongly Democratic,0,0.1666667,6,3,6,4,6,4,4,3,3,3,3,2,2,6,5,1,6,inconsistent,18
+id_297,65,1,Denier,1,Lean Democratic,0,0.3333333,4,5,5,4,5,5,4,3,NA,4,5,4,5,5,5,5,6,consistent,43
+id_297,65,1,Denier,1,Lean Democratic,0,0.3333333,4,5,5,4,5,5,4,3,NA,4,5,4,5,5,5,5,6,inconsistent,67.66666667
+id_299,34,1,Denier,8,Lean Republican,0,0.3333333,6,6,6,6,6,6,6,6,6,1,6,6,5,6,6,6,3,consistent,67.66666667
+id_299,34,1,Denier,8,Lean Republican,0,0.3333333,6,6,6,6,6,6,6,6,6,1,6,6,5,6,6,6,3,inconsistent,59.33333333
+id_300,20,1,Believer,4,Republican,0,0.6666667,6,2,6,5,5,4,4,6,6,6,6,6,5,6,1,6,3,consistent,88.66666667
+id_300,20,1,Believer,4,Republican,0,0.6666667,6,2,6,5,5,4,4,6,6,6,6,6,5,6,1,6,3,inconsistent,71
+id_301,35,1,Believer,9,Strongly Democratic,0,0,5,6,5,5,5,6,5,4,5,2,5,5,5,5,5,5,5,consistent,80.66666667
+id_301,35,1,Believer,9,Strongly Democratic,0,0,5,6,5,5,5,6,5,4,5,2,5,5,5,5,5,5,5,inconsistent,86
+id_302,56,1,Believer,8,Democratic,0,0,5,4,3,3,3,5,3,5,5,4,4,5,6,4,5,4,4,consistent,66.66666667
+id_302,56,1,Believer,8,Democratic,0,0,5,4,3,3,3,5,3,5,5,4,4,5,6,4,5,4,4,inconsistent,62
+id_303,30,1,Believer,10,Lean Republican,0,0.5,6,1,6,1,4,5,3,4,4,2,4,4,2,5,6,1,6,consistent,51
+id_303,30,1,Believer,10,Lean Republican,0,0.5,6,1,6,1,4,5,3,4,4,2,4,4,2,5,6,1,6,inconsistent,48.33333333
+id_305,67,1,Believer,9,Democratic,0,0.3333333,6,5,4,5,2,5,6,3,3,2,5,6,4,6,3,6,6,consistent,92
+id_305,67,1,Believer,9,Democratic,0,0.3333333,6,5,4,5,2,5,6,3,3,2,5,6,4,6,3,6,6,inconsistent,88
+id_308,53,1,Denier,5,Lean Democratic,0,0.1666667,1,1,4,2,3,5,1,6,6,4,4,4,5,6,1,6,5,consistent,8.333333333
+id_308,53,1,Denier,5,Lean Democratic,0,0.1666667,1,1,4,2,3,5,1,6,6,4,4,4,5,6,1,6,5,inconsistent,91.66666667
+id_310,55,1,Believer,8,Republican,0,0,5,4,5,3,4,3,4,4,4,3,4,4,4,4,2,3,2,consistent,83.33333333
+id_310,55,1,Believer,8,Republican,0,0,5,4,5,3,4,3,4,4,4,3,4,4,4,4,2,3,2,inconsistent,47.33333333
+id_311,38,1,Believer,10,Strongly Democratic,0,0.8333333,6,1,1,6,6,4,5,2,6,1,1,1,1,3,2,2,5,consistent,98
+id_311,38,1,Believer,10,Strongly Democratic,0,0.8333333,6,1,1,6,6,4,5,2,6,1,1,1,1,3,2,2,5,inconsistent,51
+id_312,34,1,Believer,10,Lean Democratic,0,0,6,6,1,4,5,2,6,6,4,1,5,6,2,4,5,6,3,consistent,65
+id_312,34,1,Believer,10,Lean Democratic,0,0,6,6,1,4,5,2,6,6,4,1,5,6,2,4,5,6,3,inconsistent,33.33333333
+id_316,67,1,Denier,7,Lean Republican,0,1,5,3,3,5,2,4,5,3,4,2,4,3,5,3,4,4,5,consistent,64
+id_316,67,1,Denier,7,Lean Republican,0,1,5,3,3,5,2,4,5,3,4,2,4,3,5,3,4,4,5,inconsistent,69
+id_317,72,1,Denier,7,Strongly Republican,0,0.1666667,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,consistent,16.33333333
+id_317,72,1,Denier,7,Strongly Republican,0,0.1666667,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,inconsistent,15.66666667
+id_318,28,1,Believer,10,Strongly Republican,0,0,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,consistent,100
+id_318,28,1,Believer,10,Strongly Republican,0,0,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,inconsistent,100
+id_319,65,1,Denier,1,Strongly Republican,0,0.8333333,2,5,5,1,1,4,4,5,5,5,5,5,4,4,1,5,2,consistent,100
+id_319,65,1,Denier,1,Strongly Republican,0,0.8333333,2,5,5,1,1,4,4,5,5,5,5,5,4,4,1,5,2,inconsistent,28.66666667
+id_323,57,1,Denier,1,Strongly Republican,0,1,4,5,1,1,1,2,5,4,5,1,2,2,1,3,1,6,2,consistent,75.66666667
+id_323,57,1,Denier,1,Strongly Republican,0,1,4,5,1,1,1,2,5,4,5,1,2,2,1,3,1,6,2,inconsistent,30
+id_324,34,1,Believer,8,Strongly Republican,0,0.5,6,5,5,6,6,6,6,6,5,6,5,5,6,6,5,6,6,consistent,80.33333333
+id_324,34,1,Believer,8,Strongly Republican,0,0.5,6,5,5,6,6,6,6,6,5,6,5,5,6,6,5,6,6,inconsistent,75.66666667
+id_326,35,1,Believer,7,Democratic,0,0.3333333,3,4,6,4,4,4,4,3,5,4,5,4,4,4,4,3,4,consistent,62.33333333
+id_326,35,1,Believer,7,Democratic,0,0.3333333,3,4,6,4,4,4,4,3,5,4,5,4,4,4,4,3,4,inconsistent,69.66666667
+id_327,50,1,Believer,7,Lean Democratic,0,0.5,5,1,4,6,6,4,4,3,6,1,4,4,5,6,5,4,3,consistent,61.33333333
+id_327,50,1,Believer,7,Lean Democratic,0,0.5,5,1,4,6,6,4,4,3,6,1,4,4,5,6,5,4,3,inconsistent,50.33333333
+id_328,21,1,Believer,9,Lean Democratic,0,0,3,4,1,6,6,2,4,4,5,2,3,4,3,1,1,6,3,consistent,77
+id_328,21,1,Believer,9,Lean Democratic,0,0,3,4,1,6,6,2,4,4,5,2,3,4,3,1,1,6,3,inconsistent,59.33333333
+id_331,30,1,Believer,10,Strongly Democratic,0,0,6,2,3,6,6,6,1,1,1,1,6,6,6,6,6,6,6,consistent,100
+id_331,30,1,Believer,10,Strongly Democratic,0,0,6,2,3,6,6,6,1,1,1,1,6,6,6,6,6,6,6,inconsistent,30
+id_333,62,1,Believer,8,Republican,0,0,6,5,6,5,5,5,1,6,6,1,5,4,6,6,4,1,3,consistent,56
+id_333,62,1,Believer,8,Republican,0,0,6,5,6,5,5,5,1,6,6,1,5,4,6,6,4,1,3,inconsistent,81
+id_334,63,1,Believer,9,Republican,0,0,6,6,3,5,5,6,3,3,3,2,5,5,5,5,2,5,5,consistent,18.33333333
+id_334,63,1,Believer,9,Republican,0,0,6,6,3,5,5,6,3,3,3,2,5,5,5,5,2,5,5,inconsistent,85
+id_336,43,1,Believer,10,Democratic,0,0.8333333,6,6,5,6,6,5,6,3,6,4,6,6,6,6,4,6,1,consistent,96.66666667
+id_336,43,1,Believer,10,Democratic,0,0.8333333,6,6,5,6,6,5,6,3,6,4,6,6,6,6,4,6,1,inconsistent,95
+id_339,31,1,Believer,8,Lean Republican,0,0.3333333,4,1,4,3,3,5,4,5,4,3,4,2,5,3,4,3,3,consistent,73.33333333
+id_339,31,1,Believer,8,Lean Republican,0,0.3333333,4,1,4,3,3,5,4,5,4,3,4,2,5,3,4,3,3,inconsistent,75
+id_341,40,1,Believer,9,Strongly Democratic,0,0,6,5,5,5,5,5,5,5,5,5,5,6,5,3,6,6,5,consistent,62.66666667
+id_341,40,1,Believer,9,Strongly Democratic,0,0,6,5,5,5,5,5,5,5,5,5,5,6,5,3,6,6,5,inconsistent,67
+id_342,63,1,Believer,9,Lean Republican,0,0.8333333,6,3,3,5,6,4,4,4,5,1,4,2,3,3,2,4,4,consistent,41.66666667
+id_342,63,1,Believer,9,Lean Republican,0,0.8333333,6,3,3,5,6,4,4,4,5,1,4,2,3,3,2,4,4,inconsistent,82.33333333
+id_343,74,1,Denier,0,Strongly Republican,0,0.1666667,1,6,1,5,6,6,5,5,5,2,4,4,4,6,2,4,2,consistent,90.5
+id_343,74,1,Denier,0,Strongly Republican,0,0.1666667,1,6,1,5,6,6,5,5,5,2,4,4,4,6,2,4,2,inconsistent,28.66666667
+id_345,41,1,Believer,10,Strongly Republican,0,0,5,6,6,5,6,6,5,5,6,6,5,6,6,6,5,6,6,consistent,100
+id_345,41,1,Believer,10,Strongly Republican,0,0,5,6,6,5,6,6,5,5,6,6,5,6,6,6,5,6,6,inconsistent,100
+id_346,60,1,Believer,9,Lean Republican,0,0.1666667,5,3,4,1,1,5,4,4,4,1,3,3,5,5,4,6,5,consistent,34
+id_346,60,1,Believer,9,Lean Republican,0,0.1666667,5,3,4,1,1,5,4,4,4,1,3,3,5,5,4,6,5,inconsistent,74.33333333
+id_347,76,1,Denier,6,Lean Republican,0,0.3333333,4,5,2,4,2,5,4,6,6,5,5,4,4,3,1,5,4,consistent,92.33333333
+id_347,76,1,Denier,6,Lean Republican,0,0.3333333,4,5,2,4,2,5,4,6,6,5,5,4,4,3,1,5,4,inconsistent,47.5
+id_351,40,1,Believer,10,Strongly Republican,0,0,5,6,5,6,6,5,6,6,5,6,6,6,6,6,6,6,4,consistent,96.33333333
+id_351,40,1,Believer,10,Strongly Republican,0,0,5,6,5,6,6,5,6,6,5,6,6,6,6,6,6,6,4,inconsistent,98.66666667
+id_353,19,1,Believer,8,Democratic,0,0.1666667,6,3,5,5,4,4,4,3,4,4,5,5,4,3,2,6,3,consistent,69
+id_353,19,1,Believer,8,Democratic,0,0.1666667,6,3,5,5,4,4,4,3,4,4,5,5,4,3,2,6,3,inconsistent,53.66666667
+id_355,45,1,Believer,10,Strongly Republican,0,0.5,6,6,1,5,6,6,6,6,6,1,6,6,6,6,6,6,1,consistent,89.33333333
+id_355,45,1,Believer,10,Strongly Republican,0,0.5,6,6,1,5,6,6,6,6,6,1,6,6,6,6,6,6,1,inconsistent,93
+id_356,72,1,Believer,7,Lean Democratic,0,0.1666667,5,3,4,1,1,5,1,4,5,3,6,5,6,3,4,2,4,consistent,48
+id_356,72,1,Believer,7,Lean Democratic,0,0.1666667,5,3,4,1,1,5,1,4,5,3,6,5,6,3,4,2,4,inconsistent,49.66666667
+id_357,25,1,Believer,8,Democratic,0,0.1666667,5,4,4,5,5,4,4,5,5,4,5,5,5,4,4,6,3,consistent,69.33333333
+id_357,25,1,Believer,8,Democratic,0,0.1666667,5,4,4,5,5,4,4,5,5,4,5,5,5,4,4,6,3,inconsistent,63.66666667
+id_358,30,1,Believer,7,Democratic,0,0.6666667,3,2,2,2,1,2,2,2,3,2,2,2,1,2,2,2,2,consistent,32
+id_358,30,1,Believer,7,Democratic,0,0.6666667,3,2,2,2,1,2,2,2,3,2,2,2,1,2,2,2,2,inconsistent,54
+id_359,49,1,Believer,9,Lean Democratic,0,1,6,5,1,5,6,2,5,2,4,1,2,1,1,5,5,1,5,consistent,99.33333333
+id_359,49,1,Believer,9,Lean Democratic,0,1,6,5,1,5,6,2,5,2,4,1,2,1,1,5,5,1,5,inconsistent,0
+id_361,29,1,Believer,8,Lean Democratic,0,0.8333333,5,4,4,4,4,4,4,3,4,1,3,4,4,4,5,5,3,consistent,73
+id_361,29,1,Believer,8,Lean Democratic,0,0.8333333,5,4,4,4,4,4,4,3,4,1,3,4,4,4,5,5,3,inconsistent,51.66666667
+id_363,57,1,Believer,9,Democratic,0,0.1666667,6,4,5,5,4,4,5,5,5,2,4,4,4,5,5,6,6,consistent,51.66666667
+id_363,57,1,Believer,9,Democratic,0,0.1666667,6,4,5,5,4,4,5,5,5,2,4,4,4,5,5,6,6,inconsistent,53.33333333
+id_365,36,1,Denier,3,Lean Democratic,0,0.1666667,3,3,3,4,3,3,4,4,4,3,4,3,4,6,4,4,4,consistent,47.66666667
+id_365,36,1,Denier,3,Lean Democratic,0,0.1666667,3,3,3,4,3,3,4,4,4,3,4,3,4,6,4,4,4,inconsistent,55.66666667
+id_369,37,1,Believer,3,Lean Democratic,0,0.1666667,5,5,4,1,2,5,5,1,2,4,6,5,4,3,3,4,2,consistent,57
+id_369,37,1,Believer,3,Lean Democratic,0,0.1666667,5,5,4,1,2,5,5,1,2,4,6,5,4,3,3,4,2,inconsistent,55.66666667
+id_370,32,1,Believer,8,Lean Democratic,0,0,6,4,5,6,6,5,2,1,5,2,4,3,5,6,4,3,4,consistent,69.33333333
+id_370,32,1,Believer,8,Lean Democratic,0,0,6,4,5,6,6,5,2,1,5,2,4,3,5,6,4,3,4,inconsistent,68.66666667
+id_371,29,1,Believer,6,Democratic,0,0,5,5,6,5,5,4,6,6,5,5,6,4,6,6,6,6,4,consistent,89
+id_371,29,1,Believer,6,Democratic,0,0,5,5,6,5,5,4,6,6,5,5,6,4,6,6,6,6,4,inconsistent,89.33333333
+id_372,35,1,Believer,7,Strongly Democratic,0,0.3333333,6,6,4,3,6,4,5,6,6,1,6,2,6,6,1,6,1,consistent,98
+id_372,35,1,Believer,7,Strongly Democratic,0,0.3333333,6,6,4,3,6,4,5,6,6,1,6,2,6,6,1,6,1,inconsistent,62.66666667
+id_373,45,1,Believer,5,Strongly Democratic,0,0.1666667,1,2,2,1,2,2,2,2,2,1,2,1,1,2,2,2,2,consistent,56.66666667
+id_373,45,1,Believer,5,Strongly Democratic,0,0.1666667,1,2,2,1,2,2,2,2,2,1,2,1,1,2,2,2,2,inconsistent,63.66666667
+id_374,45,1,Believer,8,Strongly Republican,0,0,5,5,3,3,4,4,6,2,5,1,5,5,3,3,4,2,3,consistent,96.33333333
+id_374,45,1,Believer,8,Strongly Republican,0,0,5,5,3,3,4,4,6,2,5,1,5,5,3,3,4,2,3,inconsistent,85
+id_375,21,1,Denier,4,Democratic,0,0,5,5,4,3,5,5,6,1,5,5,6,6,5,4,6,4,2,consistent,56.33333333
+id_375,21,1,Denier,4,Democratic,0,0,5,5,4,3,5,5,6,1,5,5,6,6,5,4,6,4,2,inconsistent,49.66666667
+id_376,25,1,Believer,10,Democratic,0,0.1666667,6,1,6,5,6,4,4,2,5,4,3,4,5,5,4,5,4,consistent,66.66666667
+id_376,25,1,Believer,10,Democratic,0,0.1666667,6,1,6,5,6,4,4,2,5,4,3,4,5,5,4,5,4,inconsistent,62.66666667
+id_377,42,1,Believer,10,Strongly Democratic,0,0.6666667,6,4,4,5,4,6,6,5,6,2,5,5,6,6,3,6,3,consistent,88.33333333
+id_377,42,1,Believer,10,Strongly Democratic,0,0.6666667,6,4,4,5,4,6,6,5,6,2,5,5,6,6,3,6,3,inconsistent,86
+id_378,42,1,Believer,9,Lean Democratic,0,1,6,4,5,4,6,4,4,4,6,2,6,3,5,6,5,1,3,consistent,79
+id_378,42,1,Believer,9,Lean Democratic,0,1,6,4,5,4,6,4,4,4,6,2,6,3,5,6,5,1,3,inconsistent,64.33333333
+id_379,35,1,Believer,8,Democratic,0,0.3333333,4,5,3,4,6,5,6,5,2,2,4,5,2,5,5,5,4,consistent,84.33333333
+id_379,35,1,Believer,8,Democratic,0,0.3333333,4,5,3,4,6,5,6,5,2,2,4,5,2,5,5,5,4,inconsistent,81
+id_382,40,1,Believer,7,Strongly Democratic,0,0,4,6,6,3,4,6,5,5,6,4,6,6,4,6,6,5,6,consistent,NA
+id_382,40,1,Believer,7,Strongly Democratic,0,0,4,6,6,3,4,6,5,5,6,4,6,6,4,6,6,5,6,inconsistent,92
+id_383,40,1,Believer,5,Lean Democratic,0,0,1,1,1,1,1,1,6,1,6,1,1,1,1,1,1,1,1,consistent,70.66666667
+id_383,40,1,Believer,5,Lean Democratic,0,0,1,1,1,1,1,1,6,1,6,1,1,1,1,1,1,1,1,inconsistent,64.33333333
+id_385,23,1,Believer,8,Democratic,0,0.5,4,3,4,4,4,4,4,3,4,3,4,4,3,4,4,4,3,consistent,77.33333333
+id_385,23,1,Believer,8,Democratic,0,0.5,4,3,4,4,4,4,4,3,4,3,4,4,3,4,4,4,3,inconsistent,71.66666667
+id_387,52,1,Denier,7,Strongly Republican,0,0.1666667,4,1,6,6,6,6,6,1,5,6,6,5,6,1,1,5,1,consistent,0.3333333333
+id_387,52,1,Denier,7,Strongly Republican,0,0.1666667,4,1,6,6,6,6,6,1,5,6,6,5,6,1,1,5,1,inconsistent,0.6666666667
+id_388,20,1,Believer,10,Democratic,0,0.1666667,6,1,4,6,3,6,4,1,2,1,5,5,6,1,6,6,4,consistent,45.66666667
+id_388,20,1,Believer,10,Democratic,0,0.1666667,6,1,4,6,3,6,4,1,2,1,5,5,6,1,6,6,4,inconsistent,70
+id_390,60,1,Believer,6,Democratic,0,0.5,5,4,4,4,4,5,5,4,5,2,4,4,4,3,4,5,3,consistent,52.33333333
+id_390,60,1,Believer,6,Democratic,0,0.5,5,4,4,4,4,5,5,4,5,2,4,4,4,3,4,5,3,inconsistent,51
+id_391,58,1,Believer,9,Democratic,0,0.5,6,3,6,6,6,4,5,4,4,1,4,4,5,5,5,6,6,consistent,83
+id_391,58,1,Believer,9,Democratic,0,0.5,6,3,6,6,6,4,5,4,4,1,4,4,5,5,5,6,6,inconsistent,53.5
+id_392,35,1,Believer,10,Strongly Democratic,0,0.3333333,6,3,5,5,6,6,6,5,5,4,5,6,4,5,6,6,4,consistent,92
+id_392,35,1,Believer,10,Strongly Democratic,0,0.3333333,6,3,5,5,6,6,6,5,5,4,5,6,4,5,6,6,4,inconsistent,93
+id_395,67,1,Denier,3,Lean Republican,0,0.6666667,3,5,4,5,4,3,3,3,4,3,4,4,4,4,2,5,3,consistent,61.66666667
+id_395,67,1,Denier,3,Lean Republican,0,0.6666667,3,5,4,5,4,3,3,3,4,3,4,4,4,4,2,5,3,inconsistent,22.66666667
+id_398,70,1,Believer,10,Lean Democratic,0,0.5,6,2,3,6,6,6,4,5,6,1,5,4,1,6,2,5,2,consistent,93.66666667
+id_398,70,1,Believer,10,Lean Democratic,0,0.5,6,2,3,6,6,6,4,5,6,1,5,4,1,6,2,5,2,inconsistent,20
+id_399,65,1,Denier,1,Strongly Republican,0,0.5,1,5,3,1,1,4,4,5,5,2,6,4,5,3,1,6,4,consistent,95.66666667
+id_399,65,1,Denier,1,Strongly Republican,0,0.5,1,5,3,1,1,4,4,5,5,2,6,4,5,3,1,6,4,inconsistent,4.333333333
+id_402,30,1,Denier,0,Strongly Republican,0,0.6666667,2,3,6,1,1,4,5,6,6,5,4,2,4,1,1,6,2,consistent,61.66666667
+id_402,30,1,Denier,0,Strongly Republican,0,0.6666667,2,3,6,1,1,4,5,6,6,5,4,2,4,1,1,6,2,inconsistent,11.66666667
+id_403,58,1,Denier,1,Republican,0,0.8333333,2,6,1,3,1,4,3,4,5,1,5,2,4,3,1,6,2,consistent,55
+id_403,58,1,Denier,1,Republican,0,0.8333333,2,6,1,3,1,4,3,4,5,1,5,2,4,3,1,6,2,inconsistent,10
+id_404,78,1,Denier,7,Lean Republican,0,0,5,5,2,6,5,4,5,4,6,2,4,4,5,6,3,3,6,consistent,48.66666667
+id_404,78,1,Denier,7,Lean Republican,0,0,5,5,2,6,5,4,5,4,6,2,4,4,5,6,3,3,6,inconsistent,60
+id_405,40,1,Believer,9,Strongly Democratic,0,0.1666667,6,6,6,6,6,6,6,5,5,6,5,5,4,5,5,6,5,consistent,89.66666667
+id_405,40,1,Believer,9,Strongly Democratic,0,0.1666667,6,6,6,6,6,6,6,5,5,6,5,5,4,5,5,6,5,inconsistent,90.33333333
+id_407,44,1,Believer,8,Lean Democratic,0,0.5,4,5,3,4,2,4,5,2,5,1,4,4,5,3,3,6,5,consistent,50
+id_407,44,1,Believer,8,Lean Democratic,0,0.5,4,5,3,4,2,4,5,2,5,1,4,4,5,3,3,6,5,inconsistent,50
+id_409,72,1,Believer,8,Strongly Republican,0,0.6666667,5,5,5,5,1,6,5,4,2,2,5,4,4,3,5,6,4,consistent,40
+id_409,72,1,Believer,8,Strongly Republican,0,0.6666667,5,5,5,5,1,6,5,4,2,2,5,4,4,3,5,6,4,inconsistent,91.66666667
+id_410,57,1,Believer,8,Lean Democratic,0,0.8333333,5,5,3,4,4,5,4,4,6,1,4,4,4,6,3,3,3,consistent,61.33333333
+id_410,57,1,Believer,8,Lean Democratic,0,0.8333333,5,5,3,4,4,5,4,4,6,1,4,4,4,6,3,3,3,inconsistent,54
+id_411,24,1,Believer,8,Democratic,0,0.5,6,1,1,5,6,5,4,3,4,1,4,4,3,4,5,3,5,consistent,97.66666667
+id_411,24,1,Believer,8,Democratic,0,0.5,6,1,1,5,6,5,4,3,4,1,4,4,3,4,5,3,5,inconsistent,15
+id_414,75,1,Believer,6,Republican,0,0.3333333,5,3,4,4,4,4,4,3,4,3,4,4,3,4,3,4,3,consistent,64
+id_414,75,1,Believer,6,Republican,0,0.3333333,5,3,4,4,4,4,4,3,4,3,4,4,3,4,3,4,3,inconsistent,53
+id_415,39,1,Believer,8,Strongly Democratic,0,0.3333333,6,1,4,2,3,3,4,3,1,1,5,6,3,6,3,3,1,consistent,90.66666667
+id_415,39,1,Believer,8,Strongly Democratic,0,0.3333333,6,1,4,2,3,3,4,3,1,1,5,6,3,6,3,3,1,inconsistent,40
+id_417,24,1,Denier,7,Lean Republican,0,0.5,3,3,1,5,3,5,3,2,3,2,4,2,3,5,3,3,4,consistent,67.66666667
+id_417,24,1,Denier,7,Lean Republican,0,0.5,3,3,1,5,3,5,3,2,3,2,4,2,3,5,3,3,4,inconsistent,55.33333333
+id_419,77,1,Denier,4,Lean Republican,0,0.1666667,6,6,1,6,6,5,6,5,6,2,5,4,5,2,2,4,3,consistent,42.33333333
+id_419,77,1,Denier,4,Lean Republican,0,0.1666667,6,6,1,6,6,5,6,5,6,2,5,4,5,2,2,4,3,inconsistent,38.66666667
+id_421,20,1,Denier,6,Democratic,0,0.6666667,4,4,3,4,3,3,2,5,2,5,3,4,4,3,4,2,4,consistent,54
+id_421,20,1,Denier,6,Democratic,0,0.6666667,4,4,3,4,3,3,2,5,2,5,3,4,4,3,4,2,4,inconsistent,29.33333333
+id_425,23,1,Believer,7,Democratic,0,1,5,4,4,5,3,5,5,3,6,4,5,5,5,5,5,3,4,consistent,84.5
+id_425,23,1,Believer,7,Democratic,0,1,5,4,4,5,3,5,5,3,6,4,5,5,5,5,5,3,4,inconsistent,74
+id_426,38,1,Believer,3,Republican,0,1,1,5,4,5,6,6,1,3,5,6,5,5,6,2,1,6,6,consistent,76.66666667
+id_426,38,1,Believer,3,Republican,0,1,1,5,4,5,6,6,1,3,5,6,5,5,6,2,1,6,6,inconsistent,43.66666667
+id_428,35,1,Believer,9,Strongly Democratic,0,0.3333333,6,1,6,6,1,6,6,6,6,6,1,6,6,2,5,6,1,consistent,93.66666667
+id_428,35,1,Believer,9,Strongly Democratic,0,0.3333333,6,1,6,6,1,6,6,6,6,6,1,6,6,2,5,6,1,inconsistent,74
+id_430,47,2,Believer,9,Lean Republican,0,0.8333333,6,2,2,1,1,6,3,6,6,4,6,6,1,2,1,1,4,consistent,94.33333333
+id_430,47,2,Believer,9,Lean Republican,0,0.8333333,6,2,2,1,1,6,3,6,6,4,6,6,1,2,1,1,4,inconsistent,39
+id_432,47,1,Believer,7,Lean Democratic,0,0.8333333,5,4,2,5,5,4,6,2,5,2,4,5,3,5,5,5,2,consistent,84
+id_432,47,1,Believer,7,Lean Democratic,0,0.8333333,5,4,2,5,5,4,6,2,5,2,4,5,3,5,5,5,2,inconsistent,46.66666667
+id_433,59,1,Believer,7,Lean Republican,0,0,4,5,2,4,5,5,5,4,5,3,4,4,4,3,4,6,3,consistent,59.33333333
+id_433,59,1,Believer,7,Lean Republican,0,0,4,5,2,4,5,5,5,4,5,3,4,4,4,3,4,6,3,inconsistent,63.66666667
+id_434,52,1,Believer,6,Democratic,0,0.6666667,5,5,3,5,5,3,4,2,4,3,4,5,5,4,4,2,3,consistent,65.33333333
+id_434,52,1,Believer,6,Democratic,0,0.6666667,5,5,3,5,5,3,4,2,4,3,4,5,5,4,4,2,3,inconsistent,60
+id_435,63,1,Denier,1,Lean Republican,0,0.1666667,2,4,4,1,1,2,3,6,5,1,1,3,5,5,1,6,3,consistent,96
+id_435,63,1,Denier,1,Lean Republican,0,0.1666667,2,4,4,1,1,2,3,6,5,1,1,3,5,5,1,6,3,inconsistent,4.5
+id_437,59,1,Believer,8,Republican,0,0,6,5,5,3,2,3,4,2,5,3,5,5,5,5,2,6,3,consistent,88.66666667
+id_437,59,1,Believer,8,Republican,0,0,6,5,5,3,2,3,4,2,5,3,5,5,5,5,2,6,3,inconsistent,91.33333333
+id_438,35,1,Believer,10,Democratic,0,0.3333333,6,3,3,6,6,6,6,4,6,1,6,6,6,6,2,1,6,consistent,65
+id_438,35,1,Believer,10,Democratic,0,0.3333333,6,3,3,6,6,6,6,4,6,1,6,6,6,6,2,1,6,inconsistent,23
+id_439,35,1,Believer,10,Democratic,0,0.1666667,6,3,3,6,6,6,6,4,6,1,6,6,6,6,2,1,NA,consistent,41
+id_439,35,1,Believer,10,Democratic,0,0.1666667,6,3,3,6,6,6,6,4,6,1,6,6,6,6,2,1,NA,inconsistent,59
+id_440,48,1,Believer,8,Lean Republican,0,0.6666667,5,3,4,5,5,4,4,3,5,4,4,4,5,4,3,3,2,consistent,62.33333333
+id_440,48,1,Believer,8,Lean Republican,0,0.6666667,5,3,4,5,5,4,4,3,5,4,4,4,5,4,3,3,2,inconsistent,61.33333333
+id_441,55,1,Denier,0,Strongly Republican,0,0.8333333,1,5,2,1,4,4,6,6,4,1,1,2,2,2,1,6,1,consistent,100
+id_441,55,1,Denier,0,Strongly Republican,0,0.8333333,1,5,2,1,4,4,6,6,4,1,1,2,2,2,1,6,1,inconsistent,0
+id_443,57,1,Believer,9,Republican,0,1,6,6,1,2,1,6,4,1,2,1,6,2,4,5,2,1,1,consistent,67.33333333
+id_443,57,1,Believer,9,Republican,0,1,6,6,1,2,1,6,4,1,2,1,6,2,4,5,2,1,1,inconsistent,46
+id_444,62,1,Believer,8,Lean Republican,0,0.6666667,5,5,3,6,4,6,6,5,5,1,6,2,5,3,6,6,2,consistent,37.33333333
+id_444,62,1,Believer,8,Lean Republican,0,0.6666667,5,5,3,6,4,6,6,5,5,1,6,2,5,3,6,6,2,inconsistent,67
+id_445,56,1,Believer,10,Strongly Republican,0,0,6,1,1,6,3,4,4,4,5,6,5,3,5,3,6,6,4,consistent,33.33333333
+id_445,56,1,Believer,10,Strongly Republican,0,0,6,1,1,6,3,4,4,4,5,6,5,3,5,3,6,6,4,inconsistent,100
+id_446,64,1,Denier,2,Republican,0,1,2,6,1,1,1,2,5,2,5,1,4,2,3,4,1,6,1,consistent,71
+id_446,64,1,Denier,2,Republican,0,1,2,6,1,1,1,2,5,2,5,1,4,2,3,4,1,6,1,inconsistent,15
+id_447,87,1,Denier,2,Strongly Republican,0,0.6666667,3,6,2,1,1,1,1,3,5,1,4,2,2,6,1,6,2,consistent,68.33333333
+id_447,87,1,Denier,2,Strongly Republican,0,0.6666667,3,6,2,1,1,1,1,3,5,1,4,2,2,6,1,6,2,inconsistent,50.66666667
+id_448,50,1,Believer,6,Republican,0,1,4,5,1,5,4,5,4,4,3,3,5,3,5,5,4,5,1,consistent,51.66666667
+id_448,50,1,Believer,6,Republican,0,1,4,5,1,5,4,5,4,4,3,3,5,3,5,5,4,5,1,inconsistent,73.33333333
+id_449,54,1,Denier,7,Republican,0,0.3333333,4,1,6,5,6,4,5,1,3,5,5,3,2,5,2,6,4,consistent,85
+id_449,54,1,Denier,7,Republican,0,0.3333333,4,1,6,5,6,4,5,1,3,5,5,3,2,5,2,6,4,inconsistent,62.66666667
+id_450,63,1,Denier,6,Lean Republican,0,0.6666667,5,4,2,5,6,6,4,4,5,1,5,4,4,6,3,6,3,consistent,80
+id_450,63,1,Denier,6,Lean Republican,0,0.6666667,5,4,2,5,6,6,4,4,5,1,5,4,4,6,3,6,3,inconsistent,NA
+id_452,63,1,Believer,10,Strongly Democratic,0,0.5,6,3,3,6,6,4,5,5,5,1,1,1,1,1,2,6,2,consistent,87.33333333
+id_452,63,1,Believer,10,Strongly Democratic,0,0.5,6,3,3,6,6,4,5,5,5,1,1,1,1,1,2,6,2,inconsistent,55.5
+id_453,23,1,Believer,8,Lean Democratic,0,0.1666667,6,2,2,6,6,4,5,4,4,1,3,2,4,5,5,2,5,consistent,93.33333333
+id_453,23,1,Believer,8,Lean Democratic,0,0.1666667,6,2,2,6,6,4,5,4,4,1,3,2,4,5,5,2,5,inconsistent,42.33333333
+id_454,55,1,Denier,0,Republican,0,0.5,1,6,6,6,6,5,6,5,6,4,4,5,5,6,1,6,4,consistent,88.66666667
+id_454,55,1,Denier,0,Republican,0,0.5,1,6,6,6,6,5,6,5,6,4,4,5,5,6,1,6,4,inconsistent,2.333333333
+id_455,72,2,Believer,7,Lean Republican,0,0.5,6,1,1,5,4,6,5,3,5,1,5,5,4,5,5,2,2,consistent,47.33333333
+id_455,72,2,Believer,7,Lean Republican,0,0.5,6,1,1,5,4,6,5,3,5,1,5,5,4,5,5,2,2,inconsistent,64.66666667
+id_456,20,1,Believer,9,Lean Democratic,0,0.1666667,5,4,5,4,5,4,5,2,5,1,6,4,4,3,2,3,6,consistent,62
+id_456,20,1,Believer,9,Lean Democratic,0,0.1666667,5,4,5,4,5,4,5,2,5,1,6,4,4,3,2,3,6,inconsistent,44
+id_457,22,1,Believer,10,Lean Democratic,0,0.1666667,6,4,5,3,4,3,5,5,6,3,1,4,5,4,4,6,6,consistent,71.66666667
+id_457,22,1,Believer,10,Lean Democratic,0,0.1666667,6,4,5,3,4,3,5,5,6,3,1,4,5,4,4,6,6,inconsistent,74.33333333
+id_460,55,1,Believer,NA,Republican,0,0,4,4,4,4,4,4,4,4,4,4,4,4,5,4,4,4,4,consistent,51
+id_460,55,1,Believer,NA,Republican,0,0,4,4,4,4,4,4,4,4,4,4,4,4,5,4,4,4,4,inconsistent,NA
+id_462,60,1,Believer,10,Lean Republican,0,0.3333333,6,4,1,6,2,4,2,3,5,2,5,5,5,4,4,1,4,consistent,66
+id_462,60,1,Believer,10,Lean Republican,0,0.3333333,6,4,1,6,2,4,2,3,5,2,5,5,5,4,4,1,4,inconsistent,55.5
+id_463,20,1,Believer,7,Republican,0,0.5,3,2,3,1,1,5,4,3,4,1,4,4,1,3,1,5,1,consistent,67
+id_463,20,1,Believer,7,Republican,0,0.5,3,2,3,1,1,5,4,3,4,1,4,4,1,3,1,5,1,inconsistent,53.33333333
+id_464,32,1,Believer,10,Democratic,0,0.6666667,6,4,2,6,6,1,3,2,4,1,1,5,2,6,2,6,1,consistent,91.66666667
+id_464,32,1,Believer,10,Democratic,0,0.6666667,6,4,2,6,6,1,3,2,4,1,1,5,2,6,2,6,1,inconsistent,89.33333333
+id_466,52,1,Believer,6,Lean Republican,0,0.1666667,5,1,6,4,4,1,5,1,1,1,1,1,1,1,1,6,1,consistent,50
+id_466,52,1,Believer,6,Lean Republican,0,0.1666667,5,1,6,4,4,1,5,1,1,1,1,1,1,1,1,6,1,inconsistent,50
+id_467,39,1,Believer,8,Democratic,0,0.5,6,4,3,4,4,4,5,3,5,2,4,5,4,5,2,6,3,consistent,85
+id_467,39,1,Believer,8,Democratic,0,0.5,6,4,3,4,4,4,5,3,5,2,4,5,4,5,2,6,3,inconsistent,51.66666667
+id_468,63,1,Denier,2,Lean Democratic,0,0.3333333,1,4,3,3,3,4,4,4,4,5,4,4,4,3,2,5,3,consistent,45.33333333
+id_468,63,1,Denier,2,Lean Democratic,0,0.3333333,1,4,3,3,3,4,4,4,4,5,4,4,4,3,2,5,3,inconsistent,86.66666667
+id_469,59,1,Believer,8,Lean Republican,0,0,5,5,4,3,4,4,4,2,5,3,5,4,4,5,3,5,3,consistent,77.66666667
+id_469,59,1,Believer,8,Lean Republican,0,0,5,5,4,3,4,4,4,2,5,3,5,4,4,5,3,5,3,inconsistent,63.66666667
+id_470,54,1,Believer,7,Lean Democratic,0,0.3333333,6,6,6,6,6,5,6,6,5,6,5,5,5,5,5,5,5,consistent,74.33333333
+id_470,54,1,Believer,7,Lean Democratic,0,0.3333333,6,6,6,6,6,5,6,6,5,6,5,5,5,5,5,5,5,inconsistent,78
+id_473,45,1,Believer,8,Lean Republican,0,0.5,5,5,4,5,5,4,5,5,3,3,4,4,4,4,5,4,5,consistent,77.33333333
+id_473,45,1,Believer,8,Lean Republican,0,0.5,5,5,4,5,5,4,5,5,3,3,4,4,4,4,5,4,5,inconsistent,67.66666667
+id_474,30,3,Believer,10,Lean Republican,0,0.1666667,6,5,5,3,4,6,3,5,4,6,6,6,2,5,4,6,4,consistent,75
+id_474,30,3,Believer,10,Lean Republican,0,0.1666667,6,5,5,3,4,6,3,5,4,6,6,6,2,5,4,6,4,inconsistent,42
+id_475,51,1,Believer,9,Strongly Democratic,0,1,6,4,2,5,6,2,4,2,3,1,3,2,2,4,6,2,3,consistent,70.33333333
+id_475,51,1,Believer,9,Strongly Democratic,0,1,6,4,2,5,6,2,4,2,3,1,3,2,2,4,6,2,3,inconsistent,32
+id_476,39,1,Believer,6,Lean Republican,0,0.6666667,4,4,4,1,2,3,4,3,4,4,5,3,4,3,1,6,3,consistent,51.33333333
+id_476,39,1,Believer,6,Lean Republican,0,0.6666667,4,4,4,1,2,3,4,3,4,4,5,3,4,3,1,6,3,inconsistent,62.33333333
+id_477,47,1,Believer,9,Strongly Democratic,0,0.3333333,6,4,5,6,6,4,6,5,6,1,4,2,1,5,6,1,1,consistent,96.66666667
+id_477,47,1,Believer,9,Strongly Democratic,0,0.3333333,6,4,5,6,6,4,6,5,6,1,4,2,1,5,6,1,1,inconsistent,30
+id_478,39,1,Believer,6,Lean Republican,0,0.8333333,5,4,2,1,1,6,1,5,5,1,6,2,1,1,1,6,1,consistent,38
+id_478,39,1,Believer,6,Lean Republican,0,0.8333333,5,4,2,1,1,6,1,5,5,1,6,2,1,1,1,6,1,inconsistent,94
+id_481,47,1,Denier,10,Strongly Democratic,0,0.1666667,1,5,4,5,6,6,3,3,5,2,5,4,5,6,5,4,5,consistent,100
+id_481,47,1,Denier,10,Strongly Democratic,0,0.1666667,1,5,4,5,6,6,3,3,5,2,5,4,5,6,5,4,5,inconsistent,46.66666667
+id_482,59,1,Believer,10,Lean Democratic,0,0.1666667,6,1,2,4,4,6,5,3,4,5,2,4,3,2,4,6,4,consistent,35
+id_482,59,1,Believer,10,Lean Democratic,0,0.1666667,6,1,2,4,4,6,5,3,4,5,2,4,3,2,4,6,4,inconsistent,59
+id_483,63,1,Denier,0,Strongly Republican,0,1,1,6,4,5,2,4,5,5,4,4,5,4,3,2,3,6,4,consistent,94.5
+id_483,63,1,Denier,0,Strongly Republican,0,1,1,6,4,5,2,4,5,5,4,4,5,4,3,2,3,6,4,inconsistent,8
