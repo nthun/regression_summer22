@@ -34,21 +34,16 @@ risk_data <- read_csv(here::here("data/riskaversion_data.csv"))
 ```{r}
 # Creating a dataset that contains the result of the model in a tidy way
 # Data manipulation
-risk_models <- 
+risk_model_data <- 
   risk_data %>% 
   mutate(
     choice = as.factor(choice),
     choice = fct_relevel(choice, "safe", "risky")
-  ) %>%
-  pivot_longer(cols = religion:age, names_to = "predictor_name", values_to = "predictor_value") %>% 
-  group_by(predictor_name) %>% 
-  nest() %>% 
-  mutate(
-    model = map(data,
-                ~ glm(choice ~ predictor_value, family = "binomial", data = .x) %>% 
-                  broom::tidy()
-                )
-    )
+  )
+
+risk_model <- 
+  glm(choice ~ religion + age, family = "binomial", data = risk_model_data) %>% 
+  broom::tidy()
 ```
 
 # Printing the results in a table
@@ -56,11 +51,7 @@ risk_models <-
 # Printing results using the gt package
 library(gt) 
 
-risk_models %>% 
-  select(-data) %>% 
-  unnest(model) %>% 
-  # Rename the predictor, so model terms will be more specific
-  mutate(term = str_replace(term, "predictor_value", predictor_name)) %>%
+risk_model %>% 
   gt() %>% 
   # Formatting numers to be 2 digits, except for p value (3 digits)
   fmt_number(c("estimate", "std.error", "statistic"), decimals = 2) %>% 
