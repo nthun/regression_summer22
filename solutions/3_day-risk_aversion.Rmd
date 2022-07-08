@@ -41,9 +41,13 @@ risk_model_data <-
     choice = fct_relevel(choice, "safe", "risky")
   )
 
+# Creating a model
 risk_model <- 
   glm(choice ~ religion + age, family = "binomial", data = risk_model_data) %>% 
   broom::tidy()
+
+# Making predictions
+pred <- predict(risk_model, risk_model_data, type = "response")
 ```
 
 # Printing the results in a table
