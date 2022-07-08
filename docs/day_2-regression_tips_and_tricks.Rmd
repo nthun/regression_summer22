@@ -225,8 +225,109 @@ Unless you can make your outcome variable continuous, you cannot use linear regr
 
 
 # Regularized regression
+
+For exploratory data analysis, machine learning methods provide the most robust results. We will use LASSO regression to predict which 
+
+We use the Office dataset, that contains data on the TV show: Office. 
+We will predict the imdb rating of the episodes, based on: 
+- season (certain seasons are better then others?)
+- episode (e.g. earlier or later episodes are better?)
+- the number of lines each character says in the episode
+- the writer's name
+- the director's name
+
+We will use the `tidymodels` infrastructure to conduct a LASSO regression.
+(source: https://juliasilge.com/blog/lasso-the-office/, data source: https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-03-17)
+The first step in an exploratory analysis is to assure that that we put aside a part of the data, that we can use for evaluation. We  zuse the remainder for traing the model.
+
 ```{r}
-# TODO: Add LASSO regression part!
+
+office <- read_csv("data/office.csv")
+
+office
+
+library(tidymodels)
+
+# Creating training and testing sets
+set.seed(2022)
+office_split <- initial_split(office, strata = season)
+office_train <- training(office_split)
+office_test <- testing(office_split)
+```
+
+
+```{r}
+# Creating a pre-processing recipe
+office_rec <- 
+  recipe(imdb_rating ~ ., data = office_train) %>%
+  # Specify variable role, so it is not included as a predictor
+  update_role(episode_name, new_role = "ID") %>%
+  # Drop variables with near zero variance
+  step_nzv(all_numeric(), -all_outcomes()) %>%
+  # Standardize all numeric variables
+  step_normalize(all_numeric(), -all_outcomes())
+```
+
+
+```{r}
+# Calculating the pre-processing steps
+office_prep <- 
+  office_rec %>%
+  prep(strings_as_factors = FALSE)
+
+# Checking the preprocessed data
+juice(office_prep)
+
+```
+
+
+```{r}
+lasso_spec <- 
+  linear_reg(penalty = 0.1, mixture = 1) %>%
+  set_engine("glmnet")
+
+wf <- 
+  workflow() %>%
+  add_recipe(office_rec)
+
+lasso_fit <- 
+  wf %>%
+  add_model(lasso_spec) %>%
+  fit(data = office_train)
+
+lasso_res <-
+  lasso_fit %>%
+  extract_fit_engine() %>% 
+  tidy() %>% 
+  arrange(step)
+
+lasso_res %>% 
+  add_count(term) %>% 
+  mutate(term = fct_reorder(term, n)) %>% 
+  ggplot() +
+  aes(x = step, y = term, fill = estimate, alpha = lambda) +
+  geom_tile(show.legend = FALSE) +
+  scale_y_discrete(name = NULL)
+
+
+```
+
+Variable importance
+
+```{r}
+library(vip)
+
+lasso_fit %>%
+  extract_fit_parsnip() %>%
+  vi(lambda = lowest_rmse$penalty) %>%
+  mutate(
+    Importance = abs(Importance),
+    Variable = fct_reorder(Variable, Importance)
+  ) %>%
+  ggplot(aes(x = Importance, y = Variable, fill = Sign)) +
+  geom_col() +
+  scale_x_continuous(expand = c(0, 0)) +
+  labs(y = NULL)
 ```
 
 

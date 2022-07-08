@@ -96,7 +96,6 @@ The prediction of the GLM can either be on the scale of the predictors ("link"),
 library(yardstick)
 
 Deducer::rocplot(surv_fit)
-Deducer::
 
 augment(surv_fit, type.predict = "response")
 
