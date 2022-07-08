@@ -1,0 +1,263 @@
+---
+title: "day_3 - GENERALIZED LINEAR REGRESSION"
+author: "Tamas Nagy"
+date: '2022-07-13'
+output: 
+  html_document:
+   theme: spacelab
+   code_download: true
+   toc: true
+   toc_float: true
+editor_options: 
+  chunk_output_type: console
+  markdown: 
+    wrap: sentence
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(broom)
+library(titanic)
+
+theme_set(theme_light())
+```
+
+# Predicting the Titanic survivors
+
+We will use the titanic dataset to predict who died and who survived.
+We use a model that includes sex, the price of the ticket, the number of spouses and sibilings, and the number of parents and children. We also include the interactions of the ticket price and sex.
+
+```{r}
+# We will use the titanic dataset
+titanic <- 
+    titanic_train %>% 
+    rename_all(str_to_lower) %>% 
+    as_tibble() %>% 
+    # We will center the fare variable
+    mutate(fare = scale(fare, scale = FALSE))
+    
+# Fit logistic binomial regression
+surv_fit <- glm(survived ~ fare  * sex + sibsp + parch, 
+                family = "binomial", 
+                data = titanic)
+
+summary(surv_fit)
+tidy(surv_fit)
+glance(surv_fit)
+```
+To get the odds ratio, use the `exp()` function on the coefficients.
+
+We can also calculate confidence intervals for the ORs.
+```{r}
+exp(confint(surv_fit))
+```
+
+But instead, we can use the `tidy()` function to exponentiate coefficients and provide confidence intervals. 
+
+```{r}
+tidy(surv_fit, conf.int = TRUE, exponentiate = TRUE)
+```
+
+Let's plot the data. Please mind that you need to tweek the arguments for `geom_smooth()` to fit a binomial logistic function.
+
+# Plotting logistic regression
+```{r}
+# In this plot, we will only include sex and ticket price as predictors.
+ggplot(titanic) +
+    aes(y = survived, x = fare, group = sex, color = sex) +
+    geom_point() +
+    geom_smooth(method = "glm", 
+                method.args = list(family = "binomial")) +
+    coord_cartesian(ylim = c(0, 1)) +
+    scale_y_continuous(labels = scales::percent_format())
+```
+
+
+## Evaluating a logistic regression model
+
+R2 is not as easy to calculate for glm as for linear regression, and also might not be the most useful metric. The `performance` package offers several calculation methods, and also chooses the best one for the model.
+
+```{r}
+library(performance)
+r2(surv_fit)
+```
+
+## Model predictions 
+
+It is usually better to evaluate the predictions and classifications of the model. 
+The prediction of the GLM can either be on the scale of the predictors ("link"), or in the scale of the outcome ("response"). Thus for a binomial model the default predictions are of log-odds (probabilities on logit scale) and type = "response" gives the predicted probabilities. 
+
+
+```{r}
+# TODO: Calculate AUC, confusion matrix
+
+library(yardstick)
+
+Deducer::rocplot(surv_fit)
+Deducer::
+
+augment(surv_fit, type.predict = "response")
+
+
+
+
+```
+
+
+
+
+## Reporting logistic regression
+```{r}
+library(sjPlot)
+tab_model(surv_fit,
+          show.aic = TRUE,
+          show.loglik = TRUE,
+          collapse.se = TRUE
+)
+```
+
+# Poisson regression
+Use poisson regression to predict a count-type variable (integer values, and totally left-skewed)
+We are predicting the number of family members on board, by age
+
+```{r}
+titanic <-
+    titanic %>% 
+    mutate(family = sibsp + parch)
+
+# Check the distribution of family variable
+titanic %>% 
+    ggplot() +
+    aes(x = family) +
+    geom_histogram(bins = 10)
+```
+
+Yep, definitely poisson distribution
+Fitting a poisson regression is not difficult, just use the family = "poisson" parameter.
+
+```{r}
+family_fit_pois <- glm(family ~ age, family = "poisson", data = titanic)
+```
+
+
+Check the results. They look very much like the output of logistic regression, only the model summary statistics are different
+
+```{r}
+summary(family_fit_pois)
+tidy(family_fit_pois, exponentiate = TRUE, conf.int = TRUE)
+glance(family_fit_pois)
+```
+
+However the poisson regression is not apropriate for data that has a large dispersion. Dispersion should not be significantly larger than 1.
+We can test the dispersion like this:
+
+```{r}
+library(performance)
+
+check_overdispersion(family_fit_pois)
+```
+
+We have to run a negative binomial regression, since dispersion is 1.9 (variance is more than 2x the mean). This parameter was calculated using quasipoisson family.
+
+```{r}
+family_fit_nb <- MASS::glm.nb(family ~ age, data = titanic)
+summary(family_fit_nb)
+tidy(family_fit_nb, exponentiate = TRUE, conf.int = TRUE)
+glance(family_fit_nb)
+```
+
+You can create all the diagnostic values as for linear regression.
+```{r}
+augment(family_fit_nb)
+```
+
+Let's plot this. Mind the geom_smooth() parameters!
+
+```{r}
+titanic %>% 
+    ggplot() +
+    aes(y = family, x = age) +
+    geom_point() +
+    geom_smooth(method = "glm", method.args = list(family = "poisson"))
+```
+
+When reporting poisson/negative binomial regression, you have to report the same things as in logistic regression.
+
+```{r}
+tab_model(family_fit_nb)
+```
+
+
+
+# Cumulative Link Model for Ordinal data
+
+```{r}
+install.packages("ordinal")
+install.packages("janitor")
+
+library(ordinal)
+library(janitor)
+
+```
+
+
+We will use a dataset about the ratings of NYC restaurants from A to C
+
+```{r}
+restaurants <- read_csv("https://data.cityofnewyork.us/api/views/43nn-pn8j/rows.csv")
+
+```
+
+```{r}
+# We drop some irrelevant variables, filter a few values, tidy variable names
+rest_clean <-
+  restaurants %>% 
+  janitor::clean_names() %>% 
+  select(boro, cuisine_description, critical_flag, score, grade) %>% 
+  drop_na() %>% 
+  filter(grade %in% c("A", "B", "C")) %>% 
+  filter(cuisine_description %in% c("African", "American", "Asian", "Latin", "Middle Eastern")) %>% 
+  filter(boro %in% c ("Bronx", "Brooklyn", "Manhattan", "Queens", "Staten Island"))
+
+head(rest_clean)
+```
+
+
+```{r}
+# dependent variable needs to be a factor
+rest_clean <- 
+  rest_clean %>% 
+  mutate(grade = as.factor(grade),
+         cuisine_description = fct_relevel(cuisine_description, "American"))
+
+# Building the cumulative link model
+# Comparing to American cousine, and the BRONX
+clm1 <- clm(grade ~ cuisine_description + boro, data = rest_clean)
+summary(clm1)
+```
+
+```{r}
+# Running post-hoc tests
+emmeans::emmeans(clm1, "cuisine_description", "boro")
+```
+
+Testing the model assumption, the proportional odd's ratio  with either the nominal_test or scale_test function. 
+
+```{r}
+nominal_test(clm1)
+scale_test(clm1)
+```
+
+Let's plot our data
+
+```{r}
+ggplot(rest_clean, aes(x = cuisine_description, y = grade)) +
+  geom_boxplot(size = .75) +
+  geom_jitter(alpha = .5) +
+  facet_wrap("boro") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1))
+```
+
+
