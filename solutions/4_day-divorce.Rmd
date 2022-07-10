@@ -1,0 +1,138 @@
+---
+title: "Marriage survival analyis"
+output: html_document
+---
+
+# Background
+The data on marriage dissolution in the U.S. based on a longitudinal survey. 
+
+## Source
+https://data.princeton.edu/pop509/project
+
+## Codebook
+`codebooks/sleep_exec_codebook.txt`
+
+# Tasks
+
+1) Fit a general model for divorce rate and report the median time for divorce.
+In the next steps you need to calculate new variables from existing ones.
+2) Check ethnicity difference effect where the race of the spouses (coded in `heblack` and `sheblack` variables do not match. 
+3) Consider husband's education using two dummy variables:  
+- When the husband has less than high school education (education less than 12 years).
+- When the husband has a college education (education at least 16 years)
+3) Consider the age difference between spouses. Create a model when
+- the husband is older at least by 10 years
+- the wife is older at least by 10 years.
+
+# Solution
+```{r setup}
+library(tidyverse)
+library(survival)
+library(survminer)
+marriage_raw <- read_csv(here::here("data/marriage.csv"))
+```
+
+# Transforming the data
+```{r}
+marriage <-
+  marriage_raw %>% 
+  mutate(mixedrace = heblack != sheblack,
+         dropout = hiseduc < 12,
+         college = hiseduc >= 16,
+         heolder = agediff < 10,
+         sheolder = agediff < -10) 
+```
+
+# Building the models
+
+## General model (no predictors)  
+
+```{r}
+marriage_surv <- 
+  survfit(Surv(time = time, event = divorced) ~ 1,
+          conf.type = "log-log",
+          data = marriage)
+
+summary(marriage_surv)
+
+ggsurvplot(marriage_surv, 
+           risk.table = TRUE, 
+           surv.median.line = "hv", 
+           conf.int = TRUE)
+```
+
+- The median time for divorce is at: 6 years.
+
+## Model and plot for husband's education dropout status
+```{r}
+dropout_surv <- 
+  survfit(Surv(time = time, event = divorced) ~ dropout,
+          conf.type = "log-log",
+          data = marriage)
+
+summary(dropout_surv)
+survdiff(Surv(time = time, event = divorced) ~ dropout,
+          data = marriage)
+
+ggsurvplot(dropout_surv, 
+           risk.table = TRUE, 
+           surv.median.line = "hv", 
+           conf.int = TRUE, 
+           pval = TRUE)
+```
+
+## Model and plot for husband's college education
+```{r}
+college_surv <- 
+  survfit(Surv(time = time, event = divorced) ~ college,
+          conf.type = "log-log",
+          data = marriage)
+
+summary(college_surv)
+survdiff(Surv(time = time, event = divorced) ~ college,
+          data = marriage)
+
+ggsurvplot(college_surv, 
+           risk.table = TRUE, 
+           surv.median.line = "hv", 
+           conf.int = TRUE,  
+           pval = TRUE)
+```
+
+## Model and plot marriage survival for age difference
+
+Do marriages end significantly earlier when the wife is at least 10 years older?
+```{r}
+heolder_surv <- 
+  survfit(Surv(time = time, event = divorced) ~ heolder,
+          conf.type = "log-log",
+          data = marriage)
+
+summary(heolder_surv)
+survdiff(Surv(time = time, event = divorced) ~ heolder,
+          data = marriage)
+
+ggsurvplot(heolder_surv, 
+           risk.table = TRUE, 
+           surv.median.line = "hv", 
+           conf.int = TRUE, 
+           pval = TRUE)
+```
+
+Do marriages end significantly earlier when the wife is at least 10 years older?
+```{r}
+sheolder_surv <- 
+  survfit(Surv(time = time, event = divorced) ~ sheolder,
+          conf.type = "log-log",
+          data = marriage)
+
+summary(sheolder_surv)
+survdiff(Surv(time = time, event = divorced) ~ sheolder,
+          data = marriage)
+
+ggsurvplot(sheolder_surv, 
+           risk.table = TRUE, 
+           surv.median.line = "hv", 
+           conf.int = TRUE, 
+           pval = TRUE)
+```
