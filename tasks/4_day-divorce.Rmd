@@ -1,0 +1,70 @@
+---
+title: "Marriage survival analyis"
+output: html_document
+---
+
+# Background
+The data on marriage dissolution in the U.S. based on a longitudinal survey. 
+
+## Source
+https://data.princeton.edu/pop509/project
+
+## Codebook
+`codebooks/sleep_exec_codebook.txt`
+
+# Tasks
+
+1) Fit a general model for divorce rate and report the median time for divorce.
+In the next steps you need to calculate new variables from existing ones.
+2) Check ethnicity difference effect where the race of the spouses (coded in `heblack` and `sheblack` variables do not match. 
+3) Consider husband's education using two dummy variables:  
+- When the husband has less than high school education (education less than 12 years).
+- When the husband has a college education (education at least 16 years)
+3) Consider the age difference between spouses. Create a model when
+- the husband is older at least by 10 years
+- the wife is older at least by 10 years.
+
+# Solution
+```{r setup}
+library(tidyverse)
+library(survival)
+library(survminer)
+marriage_raw <- read_csv(here::here("data/marriage.csv"))
+```
+
+# Transforming the data
+```{r}
+
+```
+
+# Building the models
+
+## General model (no predictors)  
+
+```{r}
+
+```
+
+- The median time for divorce is at: 
+
+## Model and plot for husband's education dropout status
+```{r}
+
+```
+
+## Model and plot for husband's college education
+```{r}
+
+```
+
+## Model and plot marriage survival for age difference
+
+Do marriages end significantly earlier when the wife is at least 10 years older?
+```{r}
+
+```
+
+Do marriages end significantly earlier when the wife is at least 10 years older?
+```{r}
+
+```

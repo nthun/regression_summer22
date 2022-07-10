@@ -1,0 +1,40 @@
+# Episode info
+season: number of season
+episode: number of episode in season
+episode_name: title of episode
+imdb_rating: rating on imdb 1-10 (OUTCOME)
+
+# Number of lines told by each character in the episode
+andy
+angela
+darryl
+dwight
+jim
+kelly
+kevin
+michael
+oscar
+pam
+phyllis
+ryan
+toby
+erin
+jan
+
+# Contributed to the episode (0/1)
+ken_kwapis
+greg_daniels
+b_j_novak
+paul_lieberstein
+mindy_kaling
+paul_feig
+gene_stupnitsky
+lee_eisenberg
+jennifer_celotta
+randall_einhorn
+brent_forrester
+jeffrey_blitz
+justin_spitzer
+
+
+

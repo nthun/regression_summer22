@@ -1,0 +1,333 @@
+---
+title: "DAY 2 - REGRESSION TIPS AND TRICKS"
+author: "Tamas Nagy"
+date: '2022-07-13'
+output: 
+  html_document:
+   theme: spacelab
+   code_download: true
+   toc: true
+   toc_float: true
+editor_options: 
+  chunk_output_type: console
+  markdown: 
+    wrap: sentence
+---
+
+```{r setup, results='hide'}
+# Sets global chunk options
+knitr::opts_chunk$set(echo = TRUE)
+
+# Load these packages
+suppressPackageStartupMessages(library(tidyverse))
+library(broom)
+library(performance)
+library(sjPlot)
+
+# Setting the default ggplot2 theme
+theme_set(theme_light()) 
+
+```
+
+# Dealing with assumption breaches 
+
+## Multicollinearity
+
+### Data multicollinearity 
+
+For data multicollinearity, you can choose to:  
+- use only one of the correlating predictors
+- or use some data aggregating method, e.g. PCA to aggregate similar variables. 
+
+### Structural multicollinearity 
+
+Happens if you use the same variable in different forms in your model. This happens with interactions, and with transformations of the variable (e.g. using polynomials, see later). Structural multicollinearity only happens with continuous variables, so you usually don't need to do anything with categorical variables. 
+
+For structural multicollinearity, you need to center (or standardize) your variables (standardization = centering + scaling).
+
+```{r}
+model_multi <- lm(abv ~ sugar * acid, data = cocktails)
+check_collinearity(model_multi)
+
+# Let's standardize the predictors
+
+model_std <- lm(abv ~ scale(sugar) * scale(acid), data = cocktails)
+check_collinearity(model_std)
+
+# Multicollinearity went away, and we didn't have to take out anything!
+
+```
+
+
+## Non-linearity of the relationship
+
+If we suspect that the relationship between our outcome and predictor is not linear, we can use polynomials. This means that we also include x^2 as a predictor. However, there are two problems with this. One is that by using the original variable and it's second exponential will introduce structural multicollinearity.
+
+```{r}
+# Generate random normal numbers with a mean of 10 and sd 1
+set.seed(123) # random seed for reproducibility
+x <- rnorm(10, mean = 10, sd = 1)
+x
+# What happens with x if we just raise to the power 2 vs. using poly(x, 2)?
+x^2
+
+# The poly() function returns all polynomials up to the specified number
+poly(x, 2)[,2] # We only look at the second order polynomial for now
+
+# Compare this to the numbers that are standardized and raised to power 2.
+as.numeric(scale(x)^2)
+```
+
+The difference is that poly creates so called "orthogonal" polynomials instead of raw polynomials. https://en.wikipedia.org/wiki/Orthogonal_polynomials
+It is better to use orthogonal polynomials than raw ones.
+
+## Heteroscedasticity
+
+One of the easiest way to calculate hereoscedasticity consistent standard errors is to use the `vcov.type` argument in the `sjPlot::tab_model()` function.
+There are several different robust estimation types. See help file for details.
+
+```{r}
+# Use heteroscedasticity consistent standard errors.
+tab_model(model_std, vcov.type = "HC3")
+
+```
+
+
+
+## Normality of residuals
+One of the ways to deal with normality breaches if you transform the outcome or predictor variable. Rank transform or log transform can often turn the distribution of residuals to normal.  
+However, mind that when you use a transformation, the interpretation of the predictor parameters will change. For e.g. when you use rank(), the slope value will refer to the unit change in x affecting the _rank_ of the outcome.  
+Often, it can be useful to choose a log value that is easier to interpret in everyday terms. Using log2() on the predictor show how much the outcome will change if the value of the predictor doubles. Mind that the base of the log is irrelevant in terms of the resulting. distribution!
+
+```{r}
+# Try these two things to generate a log normal distribution, than 
+x_ln <- rlnorm(1000)
+qplot(x_ln)
+
+# This is natural log
+log(x_ln) %>% 
+  qplot()
+
+# This is log2. They yield the same distribution!
+log2(x_ln) %>% 
+  qplot()
+```
+
+On the other hand, the rank transform will make the distribution to be uniform. This in itself is not necessarily a problem for the distribution of residuals in lm!
+
+```{r}
+rank(x_ln) %>% 
+  qplot()
+```
+
+You can also use bootstrapping to estimate the residuals. There are several ways to do this. For e.g. the `parameters::parameters()` and `sjPlot::tab_model()` function has a bootstrap argument.
+
+```{r}
+library(parameters)
+parameters(lm1, bootstrap = TRUE) %>% 
+  print_html()
+
+```
+
+You can also get bootstrapped confidence intervals using the `rsample::reg_intervals()` function.
+
+```{r}
+library(rsample)
+
+reg_intervals(abv ~ acid + sugar, 
+              data = cocktails, 
+              model_fn = "lm",
+              times = 1000)
+
+```
+
+You can also use "robust regression". Instead of OLS, robust regression uses iterated re-weighted least squares (IRLS) estimation. It is especially useful for smaller datasets with outliers and influential cases.
+
+```{r}
+library(MASS)
+rlm(abv ~ acid + sugar, data = cocktails) %>% 
+  summary()
+```
+
+## Dealing with outliers 
+
+Outliers can only influence your model if you have a small dataset. In general, you should only remove outliers and influential cases if you can prove that the data points are erroneous. You cannot simply remove outliers because they don't fit your model.
+
+You can single out observations with the slice() function
+
+```{r}
+cocktails %>% 
+  slice(c(9, 41, 42, 44, 45))
+```
+
+Or use the update() function to change the dataset underneath the model.
+We can rerun the lm without cases that have zero acid
+
+```{r fig.height=9, fig.width=8}
+acid_lm_clean <-
+  cocktails %>% 
+  filter(acid != 0) %>% 
+  update(new_mod, data = .)
+
+summary(acid_lm_clean)
+
+check_model(acid_lm_clean)
+```
+
+We can see that the distribution of residuals are still not perfect, which makes the reliability of the model shaky.
+
+We can also check the dfbeta and DFFit values to see how much the model changes when we remove a case
+
+```{r}
+dfbeta(acid_lm) %>% head() # Change in model parameters
+dffits(acid_lm) %>% head() # Change in residual
+```
+
+## Non-independent observations
+Non-independence can take multiple forms. When your data is nested (e.g. you measure the math performance of students in a class in a school), you have a nested dependence. When you have multiple measurements from the same person, you have a crossed dependence. In general, these cases should be handled by using Linear Mixed-Effect Models (LMEMs). 
+  However, by calculating aggregated statistics, you may be able to analyze the data using linear regression.
+  For example, if you have a pre-post within subject design, you can use the change scores (i.e. post - pre values), and use it as an outcome variable in lm. 
+  
+For analyzing pre-post designs, you can either use the "Difference-in-Differences approach, or use the baseline value as a covariate. https://learncuriously.wordpress.com/2021/06/18/pre-post-analysis/ 
+
+## Difference in differences approach
+
+Subtract the pre value from the post value will yield a change score. We can use this as the outcome. We are not including any predictors, and investigate if the the intercept is different from zero.
+
+```{r}
+# Dataset about effects of reality TV watching on self-esteem (source: https://teachpsychscience.org/),
+
+reality_raw <- read_csv(here::here("data/reality.csv"))
+
+reality <-
+  reality_raw %>% 
+  mutate(se_change = se_posttest - se_pretest)
+
+lm(se_change ~ 1, data = reality) %>% 
+  summary()
+
+```
+
+## Covariate approach
+
+As you can see, the results are not completely the same, but t values are in the same ballpark. 
+
+```{r}
+lm(se_posttest ~ 1 + se_pretest, data = reality) %>% 
+  summary()
+
+```
+
+
+## The outcome is not continuous  
+
+Unless you can make your outcome variable continuous, you cannot use linear regression. You should use Generalized Linear Regression (see later material)
+
+
+# Regularized regression
+
+For exploratory data analysis, machine learning methods provide the most robust results. We will use LASSO regression to predict which 
+
+We use the Office dataset, that contains data on the TV show: Office. 
+We will predict the imdb rating of the episodes, based on: 
+- season (certain seasons are better then others?)
+- episode (e.g. earlier or later episodes are better?)
+- the number of lines each character says in the episode
+- the writer's name
+- the director's name
+
+We will use the `tidymodels` infrastructure to conduct a LASSO regression.
+(source: https://juliasilge.com/blog/lasso-the-office/, data source: https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-03-17)
+The first step in an exploratory analysis is to assure that that we put aside a part of the data, that we can use for evaluation. We  zuse the remainder for traing the model.
+
+```{r}
+
+office <- read_csv("data/office.csv")
+
+office
+
+library(tidymodels)
+
+# Creating training and testing sets
+set.seed(2022)
+office_split <- initial_split(office, strata = season)
+office_train <- training(office_split)
+office_test <- testing(office_split)
+```
+
+
+```{r}
+# Creating a pre-processing recipe
+office_rec <- 
+  recipe(imdb_rating ~ ., data = office_train) %>%
+  # Specify variable role, so it is not included as a predictor
+  update_role(episode_name, new_role = "ID") %>%
+  # Drop variables with near zero variance
+  step_nzv(all_numeric(), -all_outcomes()) %>%
+  # Standardize all numeric variables
+  step_normalize(all_numeric(), -all_outcomes())
+```
+
+
+```{r}
+# Calculating the pre-processing steps
+office_prep <- 
+  office_rec %>%
+  prep(strings_as_factors = FALSE)
+
+# Checking the preprocessed data
+juice(office_prep)
+
+```
+
+
+```{r}
+lasso_spec <- 
+  linear_reg(penalty = 0.1, mixture = 1) %>%
+  set_engine("glmnet")
+
+wf <- 
+  workflow() %>%
+  add_recipe(office_rec)
+
+lasso_fit <- 
+  wf %>%
+  add_model(lasso_spec) %>%
+  fit(data = office_train)
+
+lasso_res <-
+  lasso_fit %>%
+  extract_fit_engine() %>% 
+  tidy() %>% 
+  arrange(step)
+
+lasso_res %>% 
+  add_count(term) %>% 
+  mutate(term = fct_reorder(term, n)) %>% 
+  ggplot() +
+  aes(x = step, y = term, fill = estimate, alpha = lambda) +
+  geom_tile(show.legend = FALSE) +
+  scale_y_discrete(name = NULL)
+
+
+```
+
+Variable importance
+
+```{r}
+library(vip)
+
+lasso_fit %>%
+  extract_fit_parsnip() %>%
+  vi(lambda = lowest_rmse$penalty) %>%
+  mutate(
+    Importance = abs(Importance),
+    Variable = fct_reorder(Variable, Importance)
+  ) %>%
+  ggplot(aes(x = Importance, y = Variable, fill = Sign)) +
+  geom_col() +
+  scale_x_continuous(expand = c(0, 0)) +
+  labs(y = NULL)
+```
+
+
