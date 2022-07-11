@@ -4,17 +4,17 @@ output: html_document
 ---
 
 # Background
-
+We investigated the effect of caffeine on subjective arousal in a double-blind placebo-controlled experiment. 
 
 ## Original study
-
+The study is not yet published.
 
 ## Codebook
 `codebooks/`
 
 # Task
 
-1) Build models
+1) Use the difference-in-differences method to calculate the outcome variable, and use linear regression to 
 
 
 
