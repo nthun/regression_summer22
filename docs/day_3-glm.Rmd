@@ -17,9 +17,11 @@ editor_options:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
-library(tidyverse)
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(here))
+suppressPackageStartupMessages(library(sjPlot))
 library(broom) # Tidying model output
-library(titanic) # This is for the dataset
+library(performance)
 
 theme_set(theme_light())
 ```
@@ -30,7 +32,8 @@ We will use the titanic dataset to predict who died and who survived.
 We use a model that includes sex, the price of the ticket, the number of spouses and sibilings, and the number of parents and children. We also include the interactions of the ticket price and sex.
 
 ```{r}
-# We will use the titanic dataset
+library(titanic) # This is for the dataset
+
 titanic <- 
     titanic_train %>% 
     rename_all(str_to_lower) %>% 
@@ -84,7 +87,6 @@ R2 cannot be calculated for glm as for linear regression, and also might not be 
 The `{performance}` package offers several calculation methods, and also chooses the best one for the model. For a more detailed discussion on pseudo R2s, see: https://stats.oarc.ucla.edu/other/mult-pkg/faq/general/faq-what-are-pseudo-r-squareds/. 
 
 ```{r}
-library(performance)
 r2(titanic_fit)
 ```
 
@@ -113,7 +115,7 @@ surv_roc
 ## Reporting logistic regression paramters
 
 ```{r}
-library(sjPlot)
+
 tab_model(titanic_fit,
           show.aic = TRUE,
           show.loglik = TRUE,
@@ -163,7 +165,6 @@ titanic %>%
 
 ```
 
-
 However the poisson regression is not appropriate for data that has a large dispersion. Dispersion should not be significantly larger than 1.
 We can test the dispersion and zero-inflation like this:
 
@@ -196,48 +197,55 @@ titanic %>%
 When reporting poisson/negative binomial regression, you have to report the same things as in logistic regression.
 
 ```{r}
-tab_model(family_fit_nb)
+tab_model(family_fit_nb, 
+          show.aic = TRUE)
 ```
 
 # Cumulative Link Model for Ordinal data
+
 We will use a dataset about the ratings of NYC restaurants from A to C
 ```{r}
+restaurants_raw <- read_csv(here("data/nyc_restaurants.csv"))
+
+restaurants_raw
+
+```
+
+In order to run an ordinal regression, we need to establish the order of values in the outcome variable by making it a factor. 
+
+```{r}
 library(ordinal)
-library(janitor)
+library(parameters)
 
-restaurants <- read_csv("https://data.cityofnewyork.us/api/views/43nn-pn8j/rows.csv")
-
-restaurants
-
-```
-
-```{r}
-# We drop some irrelevant variables, filter a few values, tidy variable names
-# TODO: move this to the dataset generation
-rest_clean <-
-  restaurants %>% 
-  janitor::clean_names() %>% 
-  select(boro, cuisine_description, critical_flag, score, grade) %>% 
-  drop_na() %>% 
-  filter(grade %in% c("A", "B", "C")) %>% 
-  filter(cuisine_description %in% c("African", "American", "Asian", "Latin", "Middle Eastern")) %>% 
-  filter(boro %in% c ("Bronx", "Brooklyn", "Manhattan", "Queens", "Staten Island"))
-
-head(rest_clean)
-```
-
-
-```{r}
-# dependent variable needs to be a factor
-rest_clean <- 
-  rest_clean %>% 
+restaurants <- 
+  restaurants_raw %>% 
   mutate(grade = as.factor(grade),
-         cuisine_description = fct_relevel(cuisine_description, "American"))
+         # Setting the baseline for the cousine decription to other
+         cuisine_description = fct_relevel(cuisine_description, "Other"),
+         boro = fct_relevel(boro, "Manhattan"))
 
 # Building the cumulative link model
-# Comparing to American cousine, and the BRONX
-clm1 <- clm(grade ~ cuisine_description + boro, data = rest_clean)
+clm1 <- clm(grade ~ cuisine_description + boro, data = restaurants)
 summary(clm1)
+
+tab_model(clm1)
+
+clm_coefs <- 
+  tidy(clm1, exponentiate = TRUE) %>% 
+  arrange(-estimate)
+
+model_parameters(clm1, exponentiate = TRUE) %>% 
+  as_tibble() %>% 
+  filter(Component == "location") %>% 
+  mutate(Parameter = fct_reorder(Parameter, Coefficient)) %>% 
+  ggplot() +
+  aes(y = Parameter, 
+      x = Coefficient, 
+      xmin = CI_low, xmax = CI_high) +
+  geom_vline(xintercept = 0, lty = "dashed") +
+  geom_pointrange() +
+  ylab(NULL)
+  
 ```
 
 ```{r}
@@ -245,7 +253,7 @@ summary(clm1)
 emmeans::emmeans(clm1, "cuisine_description", "boro")
 ```
 
-Testing the model assumption, the proportional odd's ratio  with either the nominal_test or scale_test function. 
+Testing the model assumption, the proportional odd's ratio  with either the `nominal_test()` or `scale_test()` function. 
 
 ```{r}
 nominal_test(clm1)
@@ -255,12 +263,11 @@ scale_test(clm1)
 Let's plot our data
 
 ```{r}
-ggplot(rest_clean) +
-  aes(x = cuisine_description, y = grade)
-  geom_boxplot(size = .75) +
-  geom_jitter(alpha = .5) +
+ggplot(restaurants) +
+  aes(y = cuisine_description, x = grade) +
+  geom_jitter(alpha = .1) +
   facet_wrap("boro") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1))
+  ylab(NULL)
 ```
 
 
