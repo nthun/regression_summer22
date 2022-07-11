@@ -20,14 +20,30 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Load these packages
 suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(here))
+suppressPackageStartupMessages(library(sjPlot))
 library(broom)
 library(performance)
-library(sjPlot)
 
 # Setting the default ggplot2 theme
 theme_set(theme_light()) 
 
 ```
+
+We first load the data and rebuild all models from previous day.
+```{r}
+cocktails <- read_tsv(here("data/cocktail_data.tsv"))
+
+lm1 <- lm(abv ~ acid + sugar, data = cocktails)
+lm2 <- lm(abv ~ acid * sugar, data = cocktails)
+lm3 <- lm(abv ~ acid : sugar, data = cocktails)
+lm4 <- 
+  cocktails %>% 
+  mutate(type = fct_relevel(type, "carbonated")) %>% 
+  lm(abv ~ acid : sugar + type, data = .)
+
+```
+
 
 # Dealing with assumption breaches 
 
@@ -46,18 +62,16 @@ Happens if you use the same variable in different forms in your model. This happ
 For structural multicollinearity, you need to center (or standardize) your variables (standardization = centering + scaling).
 
 ```{r}
-model_multi <- lm(abv ~ sugar * acid, data = cocktails)
-check_collinearity(model_multi)
+check_collinearity(lm2)
 
 # Let's standardize the predictors
 
 model_std <- lm(abv ~ scale(sugar) * scale(acid), data = cocktails)
 check_collinearity(model_std)
 
-# Multicollinearity went away, and we didn't have to take out anything!
-
 ```
 
+Multicollinearity went away, and we didn't have to take out anything!
 
 ## Non-linearity of the relationship
 
@@ -124,12 +138,14 @@ You can also use bootstrapping to estimate the residuals. There are several ways
 
 ```{r}
 library(parameters)
+tab_model(lm1, bootstrap = TRUE)
+
 parameters(lm1, bootstrap = TRUE) %>% 
   print_html()
 
 ```
 
-You can also get bootstrapped confidence intervals using the `rsample::reg_intervals()` function.
+You can also get bootstrapped confidence intervals using the `rsample::reg_intervals()` function. Note that because of the random nature of bootstrapping, the values in the tables will not be exactly the same!
 
 ```{r}
 library(rsample)
@@ -144,8 +160,8 @@ reg_intervals(abv ~ acid + sugar,
 You can also use "robust regression". Instead of OLS, robust regression uses iterated re-weighted least squares (IRLS) estimation. It is especially useful for smaller datasets with outliers and influential cases.
 
 ```{r}
-library(MASS)
-rlm(abv ~ acid + sugar, data = cocktails) %>% 
+# We don't load the MASS package as it overwrites some functions.
+MASS::rlm(abv ~ acid + sugar, data = cocktails) %>% 
   summary()
 ```
 
@@ -160,14 +176,15 @@ cocktails %>%
   slice(c(9, 41, 42, 44, 45))
 ```
 
-Or use the update() function to change the dataset underneath the model.
+Or use the `update()` function to change the dataset underneath the model.
 We can rerun the lm without cases that have zero acid
 
 ```{r fig.height=9, fig.width=8}
+
 acid_lm_clean <-
   cocktails %>% 
   filter(acid != 0) %>% 
-  update(new_mod, data = .)
+  update(lm1, data = .)
 
 summary(acid_lm_clean)
 
@@ -179,8 +196,8 @@ We can see that the distribution of residuals are still not perfect, which makes
 We can also check the dfbeta and DFFit values to see how much the model changes when we remove a case
 
 ```{r}
-dfbeta(acid_lm) %>% head() # Change in model parameters
-dffits(acid_lm) %>% head() # Change in residual
+dfbeta(lm1) %>% head() # Change in model parameters
+dffits(lm1) %>% head() # Change in residual
 ```
 
 ## Non-independent observations
@@ -195,9 +212,9 @@ For analyzing pre-post designs, you can either use the "Difference-in-Difference
 Subtract the pre value from the post value will yield a change score. We can use this as the outcome. We are not including any predictors, and investigate if the the intercept is different from zero.
 
 ```{r}
-# Dataset about effects of reality TV watching on self-esteem (source: https://teachpsychscience.org/),
+# Dataset about effects of reality TV watching on self-esteem (source: https://teachpsychscience.org/)
 
-reality_raw <- read_csv(here::here("data/reality.csv"))
+reality_raw <- read_csv(here("data/reality.csv"))
 
 reality <-
   reality_raw %>% 
@@ -208,56 +225,56 @@ lm(se_change ~ 1, data = reality) %>%
 
 ```
 
-## Covariate approach
-
-As you can see, the results are not completely the same, but t values are in the same ballpark. 
-
-```{r}
-lm(se_posttest ~ 1 + se_pretest, data = reality) %>% 
-  summary()
-
-```
-
-
 ## The outcome is not continuous  
 
 Unless you can make your outcome variable continuous, you cannot use linear regression. You should use Generalized Linear Regression (see later material)
 
 
-# Regularized regression
+# Regularized regression (LASSO)
 
-For exploratory data analysis, machine learning methods provide the most robust results. We will use LASSO regression to predict which 
+For exploratory data analysis, machine learning methods provide the most robust results. We will use LASSO regression to predict which predictors (features) are important for predicting the outcome. LASSO stands for least absolute shrinkage and selection operator.
 
-We use the Office dataset, that contains data on the TV show: Office. 
+We use the Office dataset, that contains data on the TV show Office episodes. 
 We will predict the imdb rating of the episodes, based on: 
 - season (certain seasons are better then others?)
 - episode (e.g. earlier or later episodes are better?)
 - the number of lines each character says in the episode
-- the writer's name
-- the director's name
+- the writers's name (dummied)
+- the directors's name (dummied)
 
-We will use the `tidymodels` infrastructure to conduct a LASSO regression.
+We will use the `{tidymodels}` infrastructure to conduct a LASSO regression.
 (source: https://juliasilge.com/blog/lasso-the-office/, data source: https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-03-17)
-The first step in an exploratory analysis is to assure that that we put aside a part of the data, that we can use for evaluation. We  zuse the remainder for traing the model.
+
+
+```{r}
+suppressPackageStartupMessages(library(tidymodels))
+
+# Loading data
+office <- read_csv(here("data/office.csv"))
+
+office
+```
+
+## Splitting data into training and testing sets
+
+The first step in an exploratory analysis is to assure that that we put aside a part of the data, that we can use for evaluation. We use the remainder for training the model.
+Splitting is stratified by season, so seasons are equally represented in both datasets.
 
 ```{r}
 
-office <- read_csv("data/office.csv")
-
-office
-
-library(tidymodels)
-
-# Creating training and testing sets
 set.seed(2022)
+# Splitting the data into training and test sets
 office_split <- initial_split(office, strata = season)
 office_train <- training(office_split)
 office_test <- testing(office_split)
 ```
 
+## Creating a pre-processing recipe
+
+We create a pre-processing blueprint, that can be applied to both the train and the test sets. This is just a blueprint, thus this pipe does not return a dataset.
 
 ```{r}
-# Creating a pre-processing recipe
+
 office_rec <- 
   recipe(imdb_rating ~ ., data = office_train) %>%
   # Specify variable role, so it is not included as a predictor
@@ -266,60 +283,89 @@ office_rec <-
   step_nzv(all_numeric(), -all_outcomes()) %>%
   # Standardize all numeric variables
   step_normalize(all_numeric(), -all_outcomes())
+
+office_rec
 ```
 
+To check how data will look like after the recipe is applied we first need to prepare the recipe and then we need to "juice" it. Prepping means to calculate the steps on the given data (e.g. calculating the mean and sd for normalizing, etc.), and juicing means to actually do it on the data.
 
 ```{r}
+# This block is not necessary for doing the analysis.
 # Calculating the pre-processing steps
 office_prep <- 
   office_rec %>%
-  prep(strings_as_factors = FALSE)
+  prep()
 
-# Checking the preprocessed data
+# Checking the pre-processed data
 juice(office_prep)
 
 ```
 
+## Create the model specification
+
+We use a linear regression model. The `mixture` defines that we will use a LASSO model (1 = LASSO, 0 = ridge). The `penalty` is the lambda parameter. In this analysis, we use a fixed value, but in more advanced analysis, we would try several values (hyperparameter tuning).
 
 ```{r}
+
 lasso_spec <- 
-  linear_reg(penalty = 0.1, mixture = 1) %>%
-  set_engine("glmnet")
+  linear_reg(penalty = 0.0233, mixture = 1) %>%
+    set_engine("glmnet")
 
-wf <- 
+```
+
+In the `{tidymodels}` framework, the pre-processing, the model specification, the data, and other things are put together into a workflow. We can use this workflow.
+
+```{r}
+office_wf <- 
   workflow() %>%
-  add_recipe(office_rec)
+  add_recipe(office_rec) %>%
+  add_model(lasso_spec)
 
+# Fitting the model
 lasso_fit <- 
-  wf %>%
-  add_model(lasso_spec) %>%
+  office_wf %>%
   fit(data = office_train)
+```
 
-lasso_res <-
+We can check the whole iterative process of including predictors at each step. 
+
+```{r}
+lasso_steps <-
   lasso_fit %>%
   extract_fit_engine() %>% 
   tidy() %>% 
   arrange(step)
 
-lasso_res %>% 
+lasso_steps %>% 
   add_count(term) %>% 
   mutate(term = fct_reorder(term, n)) %>% 
   ggplot() +
   aes(x = step, y = term, fill = estimate, alpha = lambda) +
   geom_tile(show.legend = FALSE) +
   scale_y_discrete(name = NULL)
+```
 
+Showing the predictors that remain in the final model. 
+
+```{r}
+lasso_fit %>%
+  extract_fit_parsnip() %>% 
+  tidy() %>% 
+  filter(estimate > 0) %>% 
+  arrange(-estimate)
 
 ```
 
-Variable importance
+## Variable importance
+
+It is also possible to tell the importance of each variable by calculating the relative importance score for all variables. 
 
 ```{r}
 library(vip)
 
 lasso_fit %>%
   extract_fit_parsnip() %>%
-  vi(lambda = lowest_rmse$penalty) %>%
+  vi() %>%
   mutate(
     Importance = abs(Importance),
     Variable = fct_reorder(Variable, Importance)
@@ -330,4 +376,11 @@ lasso_fit %>%
   labs(y = NULL)
 ```
 
+## Evaluating the model
 
+The final model evaluation has to be done on the test set. If the results on the test set are too different from the training set, we would know that we overfitted the data.
+
+```{r}
+last_fit(lasso_fit, office_split) %>%
+  collect_metrics()
+```
