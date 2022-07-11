@@ -189,12 +189,6 @@ Values for any variable should not be larger than 5.
 car::vif(new_mod)
 ```
 
-If the average VIF is larger than 5, it means that multicollinearity is biasing the model. 
-
-```{r}
-mean(car::vif(new_mod))
-```
-
 Measuring the independence of residuals
 
 ```{r}
@@ -274,7 +268,6 @@ Let's check the model
 tidy(lm4)
 ```
 
-
 # Model selection
 
 You can compare models if you use the same data and same estimation method (e.g. OLS in the case of regression).  
@@ -320,7 +313,7 @@ Let's also add standardized coefficients
 results_table_html <-
   tab_model(lm1,lm2,lm3,lm4, 
             show.std = TRUE, 
-            show.est = FALSE, 
+            show.est = FALSE 
   )
 
 results_table_html

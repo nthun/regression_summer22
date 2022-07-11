@@ -1,9 +1,0 @@
-id: unique identifier
-time: the length of marriage at measurement
-divorced: 1: divorced, 0: not divorced
-hiseduc: husband's education
-hereduc: wife's education
-heblack: is husband black?
-sheblack: is wife black?
-hisage: husband's age
-agediff: age difference between huband and wife (positive values mean that husband is older)

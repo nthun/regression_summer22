@@ -1,0 +1,35 @@
+---
+title: "DAY 4 - Furter regression types"
+author: "Tamas Nagy"
+date: '2022-07-13'
+output: 
+  html_document:
+   theme: spacelab
+   code_download: true
+   toc: true
+   toc_float: true
+editor_options: 
+  chunk_output_type: console
+  markdown: 
+    wrap: sentence
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+```
+
+
+Data source: https://data.princeton.edu/pop509/project
+
+```{r}
+library(survival)
+library(survminer)
+
+
+
+
+
+```
+
