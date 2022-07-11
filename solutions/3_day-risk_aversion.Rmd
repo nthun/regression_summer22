@@ -27,6 +27,8 @@ Create a single table that contains all parameter estimates, std. errors, t stat
 # Solution
 ```{r setup}
 library(tidyverse)
+library(performance)
+
 risk_data <- read_csv(here::here("data/riskaversion_data.csv"))
 ```
 
@@ -43,11 +45,33 @@ risk_model_data <-
 
 # Creating a model
 risk_model <- 
-  glm(choice ~ religion + age, family = "binomial", data = risk_model_data) %>% 
-  broom::tidy()
+  glm(choice ~ religion + age, family = "binomial", data = risk_model_data)
 
 # Making predictions
-pred <- predict(risk_model, risk_model_data, type = "response")
+risk_model_predict <-  predict(risk_model, type = "response")
+head(risk_model_predict)
+
+# Making ROC curve
+roc <- performance_roc(risk_model) 
+plot(roc)
+
+# Calculating AUC
+pROC::auc(risk_model_data$choice, risk_model_predict)
+# Since the value is close to .5 the model is not very good at making predictions
+
+# Checking assumptions
+# Check outliers
+performance::check_outliers(risk_model)
+
+# Check for linear relationship between the logit transformed outcome and the continuous predictor
+risk_model %>% 
+  broom::augment(type.predict = "response") %>% 
+  mutate(logit = log(.fitted / (1 - .fitted))) %>% 
+  ggplot() +
+  aes(x = logit, y = age) +
+  geom_point(size = 0.5, alpha = 0.5) +
+  geom_smooth(method = "loess") + 
+  theme_bw()
 ```
 
 # Printing the results in a table
@@ -56,6 +80,7 @@ pred <- predict(risk_model, risk_model_data, type = "response")
 library(gt) 
 
 risk_model %>% 
+  broom::tidy() %>% 
   gt() %>% 
   # Formatting numers to be 2 digits, except for p value (3 digits)
   fmt_number(c("estimate", "std.error", "statistic"), decimals = 2) %>% 

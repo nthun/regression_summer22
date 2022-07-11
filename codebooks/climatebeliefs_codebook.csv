@@ -7,5 +7,6 @@ climate_risk,integer,How much risk is associated with climate change (0 = none -
 dem_rep,factor,Political affiliation of the respondent (1 = democrat - 6 = republican)
 condition,factor,Which condition the participant was assigned to (0 = control; 1 = experimental manipulation)
 crt_score,numeric,CRT overall score
-mean_agree,numeric,Mean score of how much the participant agrees with the arguments from a scale 0 (not agreeing) - 100 (agreeing). 
+mean_agree,numeric,Mean score of how much the participant agrees with the arguments from a scale 0 (not agreeing) - 100 (agreeing).
 consistency,factor,"Consistency means whether the presented argument is consistent with the participants affiliation. Pro climate change argument is consistent with climate believer, while climate change denial is consistent with climate denier affiliation."
+science_sum,integer,Measure of belief in science in general.

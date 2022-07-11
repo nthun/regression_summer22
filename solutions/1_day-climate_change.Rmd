@@ -43,21 +43,10 @@ climate_data <- read_csv(here::here("data/climatebeliefs_data.csv"))
 # Cleaning the raw data
 climate_data_clean <- 
   climate_data %>% 
-  # Create a composit variable for belief in science in general
-  pivot_longer(contains("science"), values_drop_na = TRUE) %>% 
-  group_by(participant_id) %>% 
-  summarise(science_sum = sum(value)) %>% 
-  left_join(climate_data, by = "participant_id") %>% 
-  # Drop science belief individual variables to help undesirability
-  select(-matches("science(\\d+)")) %>% 
   # Calculate difference score from consistent and inconsistent arguments
-  pivot_wider(
-    names_from = consistency,
-    values_from = mean_agree
-  ) %>% 
   mutate(
     # The direction of the difference does not matter
-    difference = abs(consistent - inconsistent)
+    difference = abs(mean_agree_consistent - mean_agree_inconsistent)
   ) %>% 
   # Exclude participants with missing data
   filter_all(all_vars(!is.na(.)))
@@ -78,7 +67,15 @@ anova(confound_model, full_model)
 
 # Printing the results in a table
 ```{r}
+# Printing results using the gt package
+library(gt) 
 
-
+full_model %>% 
+  broom::tidy() %>% 
+  gt() %>% 
+  # Formatting numers to be 2 digits, except for p value (3 digits)
+  fmt_number(c("estimate", "std.error", "statistic"), decimals = 2) %>% 
+  fmt_number("p.value", decimals = 3) %>% 
+  tab_options(row_group.background.color = "grey50")
 ```
 

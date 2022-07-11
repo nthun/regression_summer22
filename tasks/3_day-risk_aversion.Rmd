@@ -20,6 +20,7 @@ In this task, you will have to test the main hypothesis a generalized linear reg
 # Task
 1) Build models
 You need to build generalized linear regression model testing our hypothesis.
+Also calculate the AUC and create a ROC curve.
 
 2) Report results
 Create a single table that contains all parameter estimates, std. errors, t statistics, and p values.
