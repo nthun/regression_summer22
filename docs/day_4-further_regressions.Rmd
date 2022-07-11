@@ -18,18 +18,85 @@ editor_options:
 knitr::opts_chunk$set(echo = TRUE)
 
 library(tidyverse)
+library(survival) # For survival analysis
+library(survminer) # For survival analysis
+
+theme_set(theme_light())
 ```
 
+# Survival analysis on Game of Thrones data
 
-Data source: https://data.princeton.edu/pop509/project
+Analysis question: Is there a smaller chance of survival in Game of Thrones after marriage?
+
+We are building a Cox proportional hazards regression on got character data with the outcome variable that shows if the character is alive or not at particular ages. 
 
 ```{r}
-library(survival)
-library(survminer)
+# Read GoT character data
+got_raw <- read_csv(here("data/got_characters.csv"))
 
-
-
-
+# Make a few transformations to prepare data for survival analysis
+got <- 
+  got_raw %>% 
+  drop_na(is_alive) %>% 
+  mutate(death_year = if_else(is_alive == TRUE & birth_year >= 200, 301, death_year),
+         status = if_else(is_alive == TRUE, 0, 1),
+         age = death_year - birth_year) %>% 
+  drop_na(death_year)
 
 ```
+
+## Fit a standard model without predictors
+
+We fit a survival model with no predictors (only time), and create the KM plot.
+Median age of dying can be calculated using the `surv_median()` function.
+```{r}
+survival_all <- survfit(Surv(age, status) ~ 1, data = got)
+ggsurvplot(survival_all, 
+           surv.median.line = "hv", 
+           conf.int = TRUE,
+           risk.table = TRUE)
+
+surv_median(survival_all)
+```
+
+# Check if gender and spouse predict different mortality
+
+We are looking for main effects of marital status (if the character has a spouse) and gender.
+We build three models, one with spouse, one with gender, and one with both.
+The lowest AIC value is for the spouse model, so we don't include gender in the final model.
+```{r}
+survival_model1 <- coxph(Surv(age, status) ~ has_spouse, data = got)
+survival_model2 <- coxph(Surv(age, status) ~ has_spouse + gender, data = got)
+survival_model3 <- coxph(Surv(age, status) ~ gender, data = got)
+    
+AIC(survival_model1, survival_model2, survival_model3)
+
+```
+
+# Evaluate the model
+
+We will check model summary, and the effect of having married.
+We can check if there are differences between the groups using the `surv_pvalue()` function.
+
+```{r}
+# Model summary
+summary(survival_model1)
+
+# We can make a forest plot of effects
+ggforest(survival_model1, data = got)
+
+# Refit the model for visualization and further calculations
+survival_model1 <- survfit(Surv(age, status) ~ has_spouse, data = got)
+
+# Plot the two groups
+ggsurvplot(survival_model1, 
+           surv.median.line = "hv", 
+           conf.int = TRUE,
+           pval = TRUE,
+           risk.table = TRUE)
+
+surv_median(survival_model1)
+surv_pvalue(survival_model1)
+```
+
 
