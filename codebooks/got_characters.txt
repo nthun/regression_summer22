@@ -1,0 +1,15 @@
+url: url for the character
+id: character id
+name: name of character
+gender: gender of character
+culture: culture of character
+spouse: spouse's url
+alias_length: How many aliases does the person have
+alias_names: Aliases
+has_spouse: Have a spouse?
+birth_year: Birth year
+death_year: Death year
+birth_place: Birth place
+death_place: Death place
+is_alive: is still alive (by the end of 5th book)
+age: Age (or age when died)   
