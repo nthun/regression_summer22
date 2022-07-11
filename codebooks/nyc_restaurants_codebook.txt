@@ -1,0 +1,7 @@
+camis: restaurant id
+dba: restaurant name
+boro: area of restaurant
+cuisine_description: cousine type
+critical_flag: did it recieve a critical violation flag?
+score: Total score for a particular inspection
+grade: Grade associated with the inspection; Grade A, Grade B, Grade C
