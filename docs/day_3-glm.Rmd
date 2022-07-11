@@ -1,7 +1,7 @@
 ---
-title: "day_3 - GENERALIZED LINEAR REGRESSION"
+title: "DAY 3 - GENERALIZED LINEAR REGRESSION"
 author: "Tamas Nagy"
-date: '2022-07-13'
+date: '2022-07-14'
 output: 
   html_document:
    theme: spacelab
@@ -18,8 +18,8 @@ editor_options:
 knitr::opts_chunk$set(echo = TRUE)
 
 library(tidyverse)
-library(broom)
-library(titanic)
+library(broom) # Tidying model output
+library(titanic) # This is for the dataset
 
 theme_set(theme_light())
 ```
@@ -36,28 +36,31 @@ titanic <-
     rename_all(str_to_lower) %>% 
     as_tibble() %>% 
     # We will center the fare variable
-    mutate(fare = scale(fare, scale = FALSE))
-    
-# Fit logistic binomial regression
-surv_fit <- glm(survived ~ fare  * sex + sibsp + parch, 
-                family = "binomial", 
-                data = titanic)
+    mutate(fare = scale(fare, scale = FALSE) %>% as.numeric()) 
 
-summary(surv_fit)
-tidy(surv_fit)
-glance(surv_fit)
+# Check codebook
+?titanic_train
+
+# Fit logistic binomial regression
+titanic_fit <- glm(survived ~ fare  * sex + sibsp + parch, 
+                   family = "binomial", 
+                   data = titanic)
+
+summary(titanic_fit)
+tidy(titanic_fit)
+glance(titanic_fit)
 ```
 To get the odds ratio, use the `exp()` function on the coefficients.
 
 We can also calculate confidence intervals for the ORs.
 ```{r}
-exp(confint(surv_fit))
+exp(confint(titanic_fit))
 ```
 
 But instead, we can use the `tidy()` function to exponentiate coefficients and provide confidence intervals. 
 
 ```{r}
-tidy(surv_fit, conf.int = TRUE, exponentiate = TRUE)
+tidy(titanic_fit, conf.int = TRUE, exponentiate = TRUE)
 ```
 
 Let's plot the data. Please mind that you need to tweek the arguments for `geom_smooth()` to fit a binomial logistic function.
@@ -77,48 +80,50 @@ ggplot(titanic) +
 
 ## Evaluating a logistic regression model
 
-R2 is not as easy to calculate for glm as for linear regression, and also might not be the most useful metric. The `performance` package offers several calculation methods, and also chooses the best one for the model.
+R2 cannot be calculated for glm as for linear regression, and also might not be the most useful metric. However, it is possible to calculate pseudo R2. 
+The `{performance}` package offers several calculation methods, and also chooses the best one for the model. For a more detailed discussion on pseudo R2s, see: https://stats.oarc.ucla.edu/other/mult-pkg/faq/general/faq-what-are-pseudo-r-squareds/. 
 
 ```{r}
 library(performance)
-r2(surv_fit)
+r2(titanic_fit)
 ```
 
 ## Model predictions 
 
-It is usually better to evaluate the predictions and classifications of the model. 
+To get the predictions of the model, we can use the `augment()` function from the `{broom}` package.
 The prediction of the GLM can either be on the scale of the predictors ("link"), or in the scale of the outcome ("response"). Thus for a binomial model the default predictions are of log-odds (probabilities on logit scale) and type = "response" gives the predicted probabilities. 
 
+```{r}
+augment(titanic_fit, type.predict = "response")
+```
+
+Calculating and plotting the ROC curve, and calculating the ROC AUC are easy with the `{performance}` package.
 
 ```{r}
-# TODO: Calculate AUC, confusion matrix
+surv_roc <- performance_roc(titanic_fit) 
 
-library(yardstick)
+# ROC curve
+plot(surv_roc)
 
-Deducer::rocplot(surv_fit)
-
-augment(surv_fit, type.predict = "response")
-
-
-
+# ROC AUC
+surv_roc
 
 ```
 
+## Reporting logistic regression paramters
 
-
-
-## Reporting logistic regression
 ```{r}
 library(sjPlot)
-tab_model(surv_fit,
+tab_model(titanic_fit,
           show.aic = TRUE,
           show.loglik = TRUE,
           collapse.se = TRUE
 )
+
 ```
 
 # Poisson regression
-Use poisson regression to predict a count-type variable (integer values, and totally left-skewed)
+Use poisson regression to predict a count-type variable (integer values, and totally left-skewed).
 We are predicting the number of family members on board, by age
 
 ```{r}
@@ -127,17 +132,16 @@ titanic <-
     mutate(family = sibsp + parch)
 
 # Check the distribution of family variable
-titanic %>% 
-    ggplot() +
-    aes(x = family) +
-    geom_histogram(bins = 10)
+qplot(titanic$family)
 ```
 
 Yep, definitely poisson distribution
 Fitting a poisson regression is not difficult, just use the family = "poisson" parameter.
 
 ```{r}
-family_fit_pois <- glm(family ~ age, family = "poisson", data = titanic)
+family_fit_pois <- 
+  glm(family ~ age, family = "poisson", data = titanic)
+
 ```
 
 
@@ -149,27 +153,34 @@ tidy(family_fit_pois, exponentiate = TRUE, conf.int = TRUE)
 glance(family_fit_pois)
 ```
 
-However the poisson regression is not apropriate for data that has a large dispersion. Dispersion should not be significantly larger than 1.
-We can test the dispersion like this:
-
 ```{r}
-library(performance)
+titanic %>% 
+  ggplot() +
+  aes(y = family, x = age) +
+  geom_point(alpha = .4) +
+  geom_smooth(method = "glm", 
+              method.args = list(family = "poisson"))
 
-check_overdispersion(family_fit_pois)
 ```
 
-We have to run a negative binomial regression, since dispersion is 1.9 (variance is more than 2x the mean). This parameter was calculated using quasipoisson family.
+
+However the poisson regression is not appropriate for data that has a large dispersion. Dispersion should not be significantly larger than 1.
+We can test the dispersion and zero-inflation like this:
 
 ```{r}
+check_overdispersion(family_fit_pois)
+check_zeroinflation(family_fit_pois)
+```
+
+We have to run a negative binomial regression, since dispersion is 2.2 (variance is more than 2x the mean). The model also shows zero-inflation. However, we will only discuss that later.
+
+```{r}
+# We won't load the MASS package, as it overwrites some functions
 family_fit_nb <- MASS::glm.nb(family ~ age, data = titanic)
+
 summary(family_fit_nb)
 tidy(family_fit_nb, exponentiate = TRUE, conf.int = TRUE)
 glance(family_fit_nb)
-```
-
-You can create all the diagnostic values as for linear regression.
-```{r}
-augment(family_fit_nb)
 ```
 
 Let's plot this. Mind the geom_smooth() parameters!
@@ -179,7 +190,7 @@ titanic %>%
     ggplot() +
     aes(y = family, x = age) +
     geom_point() +
-    geom_smooth(method = "glm", method.args = list(family = "poisson"))
+    geom_smooth(method = MASS::glm.nb)
 ```
 
 When reporting poisson/negative binomial regression, you have to report the same things as in logistic regression.
@@ -188,29 +199,21 @@ When reporting poisson/negative binomial regression, you have to report the same
 tab_model(family_fit_nb)
 ```
 
-
-
 # Cumulative Link Model for Ordinal data
-
+We will use a dataset about the ratings of NYC restaurants from A to C
 ```{r}
-install.packages("ordinal")
-install.packages("janitor")
-
 library(ordinal)
 library(janitor)
 
-```
-
-
-We will use a dataset about the ratings of NYC restaurants from A to C
-
-```{r}
 restaurants <- read_csv("https://data.cityofnewyork.us/api/views/43nn-pn8j/rows.csv")
+
+restaurants
 
 ```
 
 ```{r}
 # We drop some irrelevant variables, filter a few values, tidy variable names
+# TODO: move this to the dataset generation
 rest_clean <-
   restaurants %>% 
   janitor::clean_names() %>% 
@@ -252,7 +255,8 @@ scale_test(clm1)
 Let's plot our data
 
 ```{r}
-ggplot(rest_clean, aes(x = cuisine_description, y = grade)) +
+ggplot(rest_clean) +
+  aes(x = cuisine_description, y = grade)
   geom_boxplot(size = .75) +
   geom_jitter(alpha = .5) +
   facet_wrap("boro") +
