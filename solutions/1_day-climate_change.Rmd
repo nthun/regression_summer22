@@ -49,33 +49,33 @@ climate_data_clean <-
     difference = abs(mean_agree_consistent - mean_agree_inconsistent)
   ) %>% 
   # Exclude participants with missing data
-  filter_all(all_vars(!is.na(.)))
+  drop_na()
 ```
 
 # Building the models
 ```{r}
 # Creating a dataset that contains the result of the model in a tidy way
 # Creating the model with just the control variables
-confound_model <- lm(difference ~ crt_score + science_sum + climate_risk + age + gender, data = climate_data_clean)
+confound_model <- 
+  lm(difference ~ crt_score + science_sum + climate_risk + age + gender,
+     data = climate_data_clean)
 
 # Create full model
-full_model <- lm(difference ~ condition + crt_score + science_sum + climate_risk + age + gender, data = climate_data_clean)
+full_model <- 
+  lm(difference ~ condition + crt_score + science_sum + climate_risk + age + gender, 
+     data = climate_data_clean)
 
 # Comparing models
 anova(confound_model, full_model)
+AIC(confound_model, full_model)
 ```
 
 # Printing the results in a table
 ```{r}
 # Printing results using the gt package
-library(gt) 
+library(sjPlot)
+tab_model(confound_model, full_model,
+          show.aic = TRUE)
 
-full_model %>% 
-  broom::tidy() %>% 
-  gt() %>% 
-  # Formatting numers to be 2 digits, except for p value (3 digits)
-  fmt_number(c("estimate", "std.error", "statistic"), decimals = 2) %>% 
-  fmt_number("p.value", decimals = 3) %>% 
-  tab_options(row_group.background.color = "grey50")
 ```
 
