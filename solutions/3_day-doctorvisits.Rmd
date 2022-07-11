@@ -9,45 +9,73 @@ editor_options:
 In this study, we will use cross-section data from an Australian health survey between 1977 and 1978. Your task is to predict the number of illnesses in the past two weeks based on the self-reported health score, while controlling fo the income, age, and gender.
 
 ## Codebook
+```{r}
 ?AER::DoctorVisits
+```
 
 # Task
 1) Build models
-You need to build Poisson regression model for testing our hypothesis.
+You need to build Poisson regression model for testing the hypothesis.
 
 2) Report results
 Create a single table that contains all parameter estimates, std. errors, t statistics, and p values.
 
+3) Check assumptions and adjust analysis if necessary.
+
 # Solution
 ```{r setup}
 library(tidyverse)
-library(AER)
-data("DoctorVisits")
+library(performance)
+data("DoctorVisits", package = "AER")
 ```
 
 # Building the models
 ```{r}
 # Creating a dataset that contains the result of the model in a tidy way
-m_control <- glm(illness ~ age + gender + income, family = "poisson", data = DoctorVisits)
+m_control <- glm(illness ~ age + gender + income, 
+                 family = "poisson", 
+                 data = DoctorVisits)
+
 summary(m_control)
 
-m_full <- glm(illness ~ health + age + gender + income, family = "poisson", data = DoctorVisits)
+m_full <- glm(illness ~ health + age + gender + income, 
+              family = "poisson", 
+              data = DoctorVisits)
+
 summary(m_full)
 
-anova(m_control, m_full)
 ```
 
 # Printing the results in a table
 ```{r}
-# Printing results using the gt package
-library(gt) 
 
-m_full %>% 
-  broom::tidy() %>% 
-  gt() %>% 
-  # Formatting numers to be 2 digits, except for p value (3 digits)
-  fmt_number(c("estimate", "std.error", "statistic"), decimals = 2) %>% 
-  fmt_number("p.value", decimals = 3) %>% 
-  tab_options(row_group.background.color = "grey50")
+sjPlot::tab_model(m_control, m_full, 
+                  show.aic = TRUE)
+
 ```
+
+# Checking assumptions
+```{r}
+# Checking the distribution of the outcome
+qplot(DoctorVisits$illness)
+
+check_overdispersion(m_full)
+check_zeroinflation(m_full)
+```
+
+# Refitting full model using negative binomial zero inflated regression
+
+```{r}
+library(pscl)
+
+m_zinb <- zeroinfl(illness ~ health + age + gender + income, 
+                   dist = "negbin", 
+                   data = DoctorVisits)
+
+sjPlot::tab_model(m_zinb,
+                  show.aic = TRUE)
+
+```
+
+
 
