@@ -32,14 +32,12 @@ theme_set(theme_light())
 ```{r}
 # Read the cocktails dataset
 cocktails <- read_tsv(here::here("data/cocktail_data.tsv"))
-
 ```
 
+# Using the `lm()` formula
 
-# Using the lm() formula
-
-Doing a regression in R is super easy. Just use the lm() function.
-The first argument is the formula, thus if you want to pipe something in lm()
+Doing a regression in R is super easy. Just use the `lm()` function.
+The first argument is the formula, thus if you want to pipe something in `lm()`
 you need to expicitly name the data argument. E.g. data %>% lm(y ~ x, data = .)
 
 The **formula** is symbolic expression that defines a model.
@@ -69,7 +67,7 @@ However a lot is stored in the lm object. To be able to get them, store it in a 
 acid_lm <- lm(abv ~ acid, data = cocktails)
 ```
 
-The summary function shows the most important output from the model that are needed for reporting.
+The `summary()` function shows the most important output from the model that are needed for reporting.
 
 ```{r}
 summary(acid_lm)
@@ -98,23 +96,23 @@ The lm object is a large list, with lots of special information that we only nee
 
 ## Getting clean results
 
-To get clean results, use the broom package.
-The broom package creates tidy tibbles from the most important information of statistical result objects. It works for most regression types and other statistical outputs. 
-The broom package has three important functions.
+To get clean results, use the `{broom}` package.
+The `{broom}` package creates tidy tibbles from the most important information of statistical result objects. It works for most regression types and other statistical outputs. 
+The `{broom}` package has three important functions.
 
-- tidy() returns the model summary about the parameters in a neat data frame.
+- `tidy()` returns the model summary about the parameters in a neat data frame.
 
 ```{r}
 tidy(acid_lm)
 ```
 
-- glance() returns important model performance metrics.
+- `glance()` returns important model performance metrics.
 
 ```{r}
 glance(acid_lm)
 ```
 
-- augment() adds important new columns to your data frames, such as the residuals (.resid), and predicted values corresponding your independent variables. These can be useful for residual diagnostics, and plotting model predictions.í
+- `augment()` adds important new columns to your data frames, such as the residuals (.resid), and predicted values corresponding your independent variables. These can be useful for residual diagnostics, and plotting model predictions.í
 
 ```{r}
 augment(acid_lm)
@@ -122,7 +120,7 @@ augment(acid_lm)
 
 ## Getting standardized coefficients
 
-To get the standardized coefficients (scale free), you need to standardize the output and predictor variables. Use the scale() function on all variables in the model
+To get the standardized coefficients (scale free), you need to standardize the output and predictor variables. Use the `scale()` function on all variables in the model.
  
 ```{r}
 acid_lm_std <- lm(scale(abv) ~ scale(acid), data = cocktails)
@@ -138,7 +136,7 @@ cor(cocktails$abv, cocktails$acid)
 
 ## Predicting values based on the model
 
-Create predictions with new data. predict() returns a vector of predictions
+Create predictions with new data. `predict()` returns a vector of predictions
 ```{r}
 newdata <- tibble(acid = c(0.2, 0.3, 0.4))
 predict(acid_lm, newdata)
@@ -146,8 +144,8 @@ predict(acid_lm, newdata)
 
 ## Updating the model 
 
-Add more predictors using the update function
-You don't need to write out all things in your formula. By using the . you can tell the function to leave everything as it was. All other parts of the formula work the same way.
+Add more predictors using the `update()` function!
+You don't need to write out all things in your formula. By using the `.` you can tell the function to leave everything as it was. All other parts of the formula work the same way.
 Note: your original data is also kept in the lm object, so you don't even need to define that!
 
 
@@ -159,14 +157,14 @@ new_mod <- update(acid_lm, . ~ . + sugar)
 
 There are multiple ways to plot and investigate model assumptions in R
 I prefer to use solutions that make everything in one go.
-To explore the residuals, the performance package makes diagnostic plots, using the `check_model()` function.
+To explore the residuals, the `{performance}` package makes diagnostic plots, using the `check_model()` function.
 
 ```{r}
 library(performance)
 ```
 
-Sidenote: the performance package is part of the easystats package family, that is geared towards making the reporting of statistics more seamless and standardized. It can save a lot of time to use these packages!
-To install easystats, use the following line. Mind that easystats is not from CRAN!
+_Sidenote: the `{performance}` package is part of the `{easystats}` package family, that is geared towards making the reporting of statistics more seamless and standardized. It can save a lot of time to use these packages!
+To install `{easystats}`, use the following line. Mind that easystats is not from CRAN!_
 
 ```{r}
 # install.packages("easystats", repos = "https://easystats.r-universe.dev")
@@ -182,7 +180,7 @@ check_model(new_mod)
 
 To check heteroscetasticity inspect the residual diagnostic plots.
 Multicollinearity is also displayed if you have more than one predictor in your model.
-Measure multicollinearity using the variance inflaction factor (VIF)
+Measure multicollinearity using the variance inflation factor (VIF)
 Values for any variable should not be larger than 5.
 
 ```{r}
@@ -195,12 +193,11 @@ Measuring the independence of residuals
 car::dwt(new_mod)
 ```
 
-The homoscedasticity assumption can also be checked using the Bausch-Pagan test from the `lmtest` package.
+The homoscedasticity assumption can also be checked using the Bausch-Pagan test from the `{lmtest}` package.
 
 
 ```{r}
 lmtest::bptest(new_mod)
-
 ```
 
 It seems like model has some significant autocorrelation, so the residuals are not independent.
@@ -223,7 +220,7 @@ acid_lm_diag <- augment(new_mod)
 
 # Using multiple predictions 
 
-Let's create multiple modelts with several predictors
+Let's create multiple models with several predictors
 
 ```{r}
 lm1 <- lm(abv ~ acid + sugar, data = cocktails)
@@ -236,7 +233,7 @@ Get the confidence intervals for parameters
 confint(lm1, level = 0.95)
 ```
 
-Preferably, you can also get the confint using `broom::tidy()`
+Preferably, you can also get the confidence intervals using `broom::tidy()`
 
 ```{r}
 tidy(lm1, conf.int = TRUE, conf.level = .95)
@@ -253,7 +250,7 @@ lm_cat <- lm(abv ~ type, data = cocktails)
 
 ## Changing the baseline  
 
-To change the baseline, you need to convert the character type variable to factor and change the factor levels to set the baseline. E.g. change it to carbonated. I recommend using the tidyverse `fct_relevel()` function from the `forcats` package (it is automatically loaded when you load tidyverse).
+To change the baseline, you need to convert the character type variable to factor and change the factor levels to set the baseline. E.g. change it to carbonated. I recommend using the tidyverse `fct_relevel()` function from the `{forcats}` package (it is automatically loaded when you load tidyverse).
 
 ```{r}
 lm4 <- 
@@ -272,7 +269,7 @@ tidy(lm4)
 ## Post-hoc analysis
 
 We can calculate the marginal means, and check if the difference between the categorical levels is significant. 
-The `estimate_contrasts()` function from the  `{modelbased}` package can be used for both post-hoc tests and planned contrasts. For the 6 levels, we have to do `(6*5/2)` = 15 pairwise tests.
+The `estimate_contrasts()` function from the `{modelbased}` package can be used for both post-hoc tests and planned contrasts. For the 6 levels, we have to do `(6*5/2)` = 15 pairwise tests.
 The p value has to be adjusted for multiple comparisons (FDR correction). 
 
 ```{r}
@@ -290,7 +287,6 @@ R comes with a variety of functions that can generate different kinds of contras
 
 Treatment contrast matrix
 ```{r}
-
 contr.treatment(n = 6)
 ```
 
@@ -328,7 +324,6 @@ lm_cat <- lm(abv ~ type, data = cocktails,
              contrasts = list(type = contr.sum(n = 6)))
 
 summary(lm_cat)
-
 ```
 
 # Model selection
@@ -344,7 +339,7 @@ It is preferable to use the smallest AIC and BIC value. If there are less than t
 glance(lm4)
 ```
 
-You can also compare the logLik of models using the anova() function. It returns an F value, which is significant if there is a difference.
+You can also compare the logLik of models using the `anova()` function. It returns an F value, which is significant if there is a difference.
 
 ```{r}
 anova(lm1, lm3)
@@ -359,9 +354,9 @@ anova(lm1, lm2, lm3, lm4)
 
 Based on the comparisons, there is no significant difference. So we should choose the simplest model, that has the smallest df! It is model number 3!  
 
-To report the results of regression, you have to use a table, according to APA. To create such a table, the easiest is to use the sjPlot package, that collects all information from the models (predictors and model summary), and creates a nice table.  
+To report the results of regression, you have to use a table, according to APA. To create such a table, the easiest is to use the `{sjPlot}` package, that collects all information from the models (predictors and model summary), and creates a nice table.  
 
-To get the table in the console, use the type = "text" argument.
+To get the table in the console, use the `type = "text"` argument.
 ```{r}
 library(sjPlot)
 tab_model(lm1, lm2, title = "Results")
