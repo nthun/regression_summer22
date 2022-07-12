@@ -1,0 +1,101 @@
+---
+title: "Religion and well-being"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# Background
+In this study, called the Many Analysts Religion Project, or MARP, we investigated if religiosity was associated with increased well-being. 
+
+We measured well-being in several ways: we were interested in physical, psychological, social and overall well-being. In this task, you need to run several linear regression analyses for each type of well-being in question.
+
+## Original study
+https://www.researchgate.net/publication/361844635_A_many-analysts_approach_to_the_relation_between_religiosity_and_well-being
+
+## Codebook
+`codebooks/marp_codebook.txt`
+
+# Task
+
+1) Build models
+Check the codebook for the names of outcomes and predictors.  
+You need to build linear regression models for each outcome. The models should contain each well-being variable separately, i.e. you need separate models for each outcome. You do not need to use the `country`, `cnorm_mean` and `ethnicity` variables.
+An example model would look like: `wb_overall_mean ~ gender + age + education + religiosity`
+
+2) Create a single table that contains all parameter estimates, std. errors, t statistics, and p values.
+
+# Solution
+```{r setup}
+library(tidyverse)
+
+marp_data <- 
+  #read_csv(here::here("/data/marp_processed.csv"))
+  read_csv("C:/regression_summer22-main/data/marp_processed.csv")
+```
+
+# Building the models
+```{r}
+#model of physical well-being
+phys <- lm(wb_phys_mean ~ religiosity + age + gender + education + ses +
+              denom_lump, data = marp_data)
+
+#check assumptions with the performance package
+check_model(phys)
+
+#psychological well-being
+psy <- lm(wb_psych_mean ~ religiosity + age + gender + education + ses +
+              denom_lump, data = marp_data)
+
+check_model(psy)
+
+#social well-being
+soc <- lm(wb_soc_mean ~ religiosity + age + gender + education + ses +
+              denom_lump, data = marp_data)
+
+check_model(soc)
+
+#overall well-being
+overall <- lm(wb_overall_mean ~ religiosity + age + gender + education + ses +
+              denom_lump, data = marp_data)
+
+check_model(overall)
+```
+
+# Printing the results in a table
+```{r}
+# Printing results using the gt package
+library(gt) 
+
+phys %>% 
+  broom::tidy() %>% 
+  gt() %>% 
+  # Formatting numbers to be 2 digits, except for p value (3 digits)
+  fmt_number(c("estimate", "std.error", "statistic"), decimals = 2) %>% 
+  fmt_number("p.value", decimals = 3) %>% 
+  tab_options(row_group.background.color = "grey50")
+
+psy %>% 
+  broom::tidy() %>% 
+  gt() %>% 
+  # Formatting numbers to be 2 digits, except for p value (3 digits)
+  fmt_number(c("estimate", "std.error", "statistic"), decimals = 2) %>% 
+  fmt_number("p.value", decimals = 3) %>% 
+  tab_options(row_group.background.color = "grey50")
+
+soc %>% 
+  broom::tidy() %>% 
+  gt() %>% 
+  # Formatting numbers to be 2 digits, except for p value (3 digits)
+  fmt_number(c("estimate", "std.error", "statistic"), decimals = 2) %>% 
+  fmt_number("p.value", decimals = 3) %>% 
+  tab_options(row_group.background.color = "grey50")
+
+overall %>% 
+  broom::tidy() %>% 
+  gt() %>% 
+  # Formatting numbers to be 2 digits, except for p value (3 digits)
+  fmt_number(c("estimate", "std.error", "statistic"), decimals = 2) %>% 
+  fmt_number("p.value", decimals = 3) %>% 
+  tab_options(row_group.background.color = "grey50")
+```
