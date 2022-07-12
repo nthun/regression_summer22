@@ -26,11 +26,12 @@ An example model would look like: `wb_overall_mean ~ gender + age + education + 
 2) Create a single table that contains all parameter estimates, std. errors, t statistics, and p values.
 
 # Solution
-```{r setup}
+```{r}
 library(tidyverse)
+library(performance)
 
 marp_data <- 
-  read_csv(here::here("/data/marp_processed.csv"))
+  read_csv(here::here("data/marp_processed.csv"))
 ```
 
 # Building the models
@@ -39,62 +40,37 @@ marp_data <-
 phys <- lm(wb_phys_mean ~ religiosity + age + gender + education + ses +
               denom_lump, data = marp_data)
 
-#check assumptions with the performance package
-check_model(phys)
 
 #psychological well-being
 psy <- lm(wb_psych_mean ~ religiosity + age + gender + education + ses +
               denom_lump, data = marp_data)
 
-check_model(psy)
-
 #social well-being
 soc <- lm(wb_soc_mean ~ religiosity + age + gender + education + ses +
               denom_lump, data = marp_data)
-
-check_model(soc)
 
 #overall well-being
 overall <- lm(wb_overall_mean ~ religiosity + age + gender + education + ses +
               denom_lump, data = marp_data)
 
-check_model(overall)
 ```
+
+
+# Assumption checks
+```{r}
+#check assumptions with the performance package
+check_model(phys)
+check_model(psy)
+check_model(soc)
+check_model(overall)
+
+```
+
 
 # Printing the results in a table
 ```{r}
-# Printing results using the gt package
-library(gt) 
+library(sjPlot) 
 
-phys %>% 
-  broom::tidy() %>% 
-  gt() %>% 
-  # Formatting numbers to be 2 digits, except for p value (3 digits)
-  fmt_number(c("estimate", "std.error", "statistic"), decimals = 2) %>% 
-  fmt_number("p.value", decimals = 3) %>% 
-  tab_options(row_group.background.color = "grey50")
+tab_model(phys, psy, soc, overall)
 
-psy %>% 
-  broom::tidy() %>% 
-  gt() %>% 
-  # Formatting numbers to be 2 digits, except for p value (3 digits)
-  fmt_number(c("estimate", "std.error", "statistic"), decimals = 2) %>% 
-  fmt_number("p.value", decimals = 3) %>% 
-  tab_options(row_group.background.color = "grey50")
-
-soc %>% 
-  broom::tidy() %>% 
-  gt() %>% 
-  # Formatting numbers to be 2 digits, except for p value (3 digits)
-  fmt_number(c("estimate", "std.error", "statistic"), decimals = 2) %>% 
-  fmt_number("p.value", decimals = 3) %>% 
-  tab_options(row_group.background.color = "grey50")
-
-overall %>% 
-  broom::tidy() %>% 
-  gt() %>% 
-  # Formatting numbers to be 2 digits, except for p value (3 digits)
-  fmt_number(c("estimate", "std.error", "statistic"), decimals = 2) %>% 
-  fmt_number("p.value", decimals = 3) %>% 
-  tab_options(row_group.background.color = "grey50")
 ```
