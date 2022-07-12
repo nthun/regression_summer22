@@ -9,7 +9,9 @@ editor_options:
 In this study, we will use cross-section data from an Australian health survey between 1977 and 1978. Your task is to predict the number of illnesses in the past two weeks based on the self-reported health score, while controlling fo the income, age, and gender.
 
 ## Codebook
+```{r}
 ?AER::DoctorVisits
+```
 
 # Task
 1) Build models
@@ -21,19 +23,27 @@ Create a single table that contains all parameter estimates, std. errors, t stat
 # Solution
 ```{r setup}
 library(tidyverse)
-library(AER)
-data("DoctorVisits")
+library(performance)
+data("DoctorVisits", package = "AER")
 ```
 
 # Building the models
 ```{r}
-# Creating a dataset that contains the result of the model in a tidy way
 
 ```
 
 # Printing the results in a table
 ```{r}
-# Printing results using the gt package
+
+```
+
+# Checking assumptions
+```{r}
+
+```
+
+# Adjustments to the model (if needed)
+```{r}
 
 ```
 
