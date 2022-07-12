@@ -42,7 +42,7 @@ titanic <-
     mutate(fare = scale(fare, scale = FALSE) %>% as.numeric()) 
 
 # Check codebook
-?titanic_train
+# ?titanic_train
 
 # Fit logistic binomial regression
 titanic_fit <- glm(survived ~ fare  * sex + sibsp + parch, 
@@ -124,6 +124,12 @@ tab_model(titanic_fit,
 
 ```
 
+# Multinomial regression
+```{r}
+# TODO!
+```
+
+
 # Poisson regression
 Use poisson regression to predict a count-type variable (integer values, and totally left-skewed).
 We are predicting the number of family members on board, by age
@@ -173,6 +179,8 @@ check_overdispersion(family_fit_pois)
 check_zeroinflation(family_fit_pois)
 ```
 
+# Negative binomial regression
+
 We have to run a negative binomial regression, since dispersion is 2.2 (variance is more than 2x the mean). The model also shows zero-inflation. However, we will only discuss that later.
 
 ```{r}
@@ -184,7 +192,7 @@ tidy(family_fit_nb, exponentiate = TRUE, conf.int = TRUE)
 glance(family_fit_nb)
 ```
 
-Let's plot this. Mind the geom_smooth() parameters!
+Let's plot this. Mind the `geom_smooth()` parameters!
 
 ```{r}
 titanic %>% 
@@ -200,6 +208,28 @@ When reporting poisson/negative binomial regression, you have to report the same
 tab_model(family_fit_nb, 
           show.aic = TRUE)
 ```
+
+# Zero-inflated models
+
+As we saw earlier, the data shows zero-inflation that should be addressed.
+The ZI model effectively fits two regressions: one binomial regression where we model if there were at least one observation. The other is a count model where we are predicting a number that is larger than zero.
+It is possible to use different predictors for the two models separated by `|` (not mandatory). The model coefficients can be exponentiated and interpreted as Risk Ratios.
+
+```{r}
+library(pscl)
+
+titanic_zinb <- zeroinfl(family ~ age | age + fare, 
+                        dist = "negbin",
+                        data = titanic)
+
+summary(titanic_zinb)
+# The following function does the exponentiation by default
+tab_model(titanic_zinb)
+
+```
+
+Notice the Log(theta) predictor in the model summary. This is a feature of negative binomial regression, and it means the dispersion term in the model. 
+Read more about it here: https://stats.stackexchange.com/questions/10419/what-is-theta-in-a-negative-binomial-regression-fitted-with-r.
 
 # Cumulative Link Model for Ordinal data
 
@@ -248,24 +278,21 @@ model_parameters(clm1, exponentiate = TRUE) %>%
   
 ```
 
-```{r}
-# Running post-hoc tests
-emmeans::emmeans(clm1, "cuisine_description", "boro")
-```
-
 Testing the model assumption, the proportional odd's ratio  with either the `nominal_test()` or `scale_test()` function. 
-
 ```{r}
 nominal_test(clm1)
 scale_test(clm1)
 ```
 
-Let's plot our data
+Let's plot the data
 
 ```{r}
-ggplot(restaurants) +
-  aes(y = cuisine_description, x = grade) +
-  geom_jitter(alpha = .1) +
+restaurants %>% 
+  count(cuisine_description, boro, grade) %>% 
+  ggplot() +
+  aes(y = cuisine_description, x = grade, fill = n) +
+  geom_tile(alpha = .9) +
+  scale_fill_viridis_c() +
   facet_wrap("boro") +
   ylab(NULL)
 ```
