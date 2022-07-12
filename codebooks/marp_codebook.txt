@@ -1,0 +1,15 @@
+variable
+subject: subject ID
+country: country where subject lives
+age: age of the subject in years
+gender: Male/Female/Non-binary
+education: education in levels; 1-7, 1 indicating the lowest level of education, 7 indicating the highest level of education
+ses: subjective socioeconomic status as ladder (1 = bottom, 10 = top)
+ethnicity: ethnicity
+religiosity: religiosity score calculated from 9 scales with PCA
+cnorm_mean: perceived cultural norms of religiosity; scale of 0 to 1, with indicating low perceived cultural importance of religiosity and 1 indicating high perceived cultural importance of religiosity (country level)
+denom_lump: which religious denomination the subject is a member of
+wb_phys_mean: physical well-being score
+wb_psych_mean: psychological well-being score
+wb_soc_mean: social well-being score
+wb_overall_mean: overall well-being score
