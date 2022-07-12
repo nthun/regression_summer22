@@ -139,16 +139,18 @@ You can also use bootstrapping to estimate the residuals. There are several ways
 ```{r}
 library(parameters)
 tab_model(lm1, bootstrap = TRUE)
+# Note: sjPlot may have problems with the newest R version. The problem is solved in the github version of the package, so install it:
+#devtools::install_github("strengejacke/sjPlot")
 
 parameters(lm1, bootstrap = TRUE) %>% 
   print_html()
-
 ```
 
 You can also get bootstrapped confidence intervals using the `rsample::reg_intervals()` function. Note that because of the random nature of bootstrapping, the values in the tables will not be exactly the same!
 
 ```{r}
 library(rsample)
+set.seed(134) # Setting random seed for reproducibility
 
 reg_intervals(abv ~ acid + sugar, 
               data = cocktails, 
@@ -298,7 +300,6 @@ office_prep <-
 
 # Checking the pre-processed data
 juice(office_prep)
-
 ```
 
 ## Create the model specification
@@ -306,11 +307,9 @@ juice(office_prep)
 We use a linear regression model. The `mixture` defines that we will use a LASSO model (1 = LASSO, 0 = ridge). The `penalty` is the lambda parameter. In this analysis, we use a fixed value, but in more advanced analysis, we would try several values (hyperparameter tuning).
 
 ```{r}
-
 lasso_spec <- 
   linear_reg(penalty = 0.0233, mixture = 1) %>%
     set_engine("glmnet")
-
 ```
 
 In the `{tidymodels}` framework, the pre-processing, the model specification, the data, and other things are put together into a workflow. We can use this workflow.
@@ -353,7 +352,6 @@ lasso_fit %>%
   tidy() %>% 
   filter(estimate > 0) %>% 
   arrange(-estimate)
-
 ```
 
 ## Variable importance
