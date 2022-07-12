@@ -26,33 +26,6 @@ theme_set(theme_light())
 
 ```
 
-# Main questions
-
-In this blind analysis, we are going to address 2 research questions:
-
-1) Do religious people report higher well-being? 
-2) Does the relation between religiosity and well-being depend on how important people consider religion to be in their country (i.e., perceived cultural norms of religion)?
-
-# Blinded data
-
-The point of blinded data is to let analysts explore the data without the danger of p-hacking. Therefore, only the relationship of the outcomes and predctor variables are destroyed by shuffling, and the remainder is kept intact. 
-This means that: 
-
-- Data reduction techinques (PCA, EFA) will yield valid results.
-- Outiers, missing data can be observed and treated.
-- Confounders can be explored, meaning that not only univariate distributions but correlations are also kept intact.
-- Country level means should remain intact
-
-## Analysis issues to resolve
-
-In order to best address the hypotheses, we need to decide a few things. 
-
-- Operationalization of variables: How should we conceptualize key variables?
-- Outliers how should we handle them?
-- Choose statistical model (multilevel?)
-  - Confounders (which ones to use?)
-  - Moderators 
-  - Lumping levels for nominal variables
 
 # Read and pre-process data
 
@@ -61,10 +34,7 @@ At this point, we only exclude participants who did not pass the attention check
 ```{r}
 # Read raw data
 marp_data <- 
-  #read_csv(here::here("data/MARP_data.csv"))
-  read_csv("C:/regression_summer22-main/data/MARP_data.csv")
-  
-
+  read_csv(here::here("data/MARP_data.csv"))
 
 ```
 
@@ -474,9 +444,9 @@ marp_selected <- marp_nodiag %>%
          cnorm_mean, denom_lump, wb_phys_mean, wb_psych_mean, wb_soc_mean,
          wb_overall_mean)
 
-#write_csv(marp_nodiag, "/data/marp_processed.csv")
+#write_csv(marp_nodiag, here::here("/data/marp_processed.csv"))
 
 #tibble(variable = names(marp_selected), description = NULL) %>% 
-#  write_csv("/codebooks/marp_codebook.txt")
+#  write_csv(here::here("/codebooks/marp_codebook.txt"))
 
 ```
