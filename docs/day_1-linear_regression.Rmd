@@ -326,6 +326,25 @@ lm_cat <- lm(abv ~ type, data = cocktails,
 summary(lm_cat)
 ```
 
+We can also customize the contrast matrix, and create aggregated categories.
+For example, in the following code, we make a custom matrix that aggregates category 5 with 1:4, and compares it to category 6.
+```{r}
+
+contrast_sum <- contr.sum(n = 6)
+contrast_sum[6, ] <- -2
+contrast_sum[5, ] <- 1
+contrast_sum <- contrast_sum[,-5]
+
+contrast_sum
+
+lm_cat <- lm(abv ~ type, data = cocktails,
+             contrasts = list(type = contrast_sum))
+
+summary(lm_cat)
+
+```
+
+
 # Model selection
 
 You can compare models if you use the same data and same estimation method (e.g. OLS in the case of regression).  
