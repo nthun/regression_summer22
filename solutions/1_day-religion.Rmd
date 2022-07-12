@@ -30,8 +30,7 @@ An example model would look like: `wb_overall_mean ~ gender + age + education + 
 library(tidyverse)
 
 marp_data <- 
-  #read_csv(here::here("/data/marp_processed.csv"))
-  read_csv("C:/regression_summer22-main/data/marp_processed.csv")
+  read_csv(here::here("/data/marp_processed.csv"))
 ```
 
 # Building the models
