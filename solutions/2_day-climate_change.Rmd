@@ -46,7 +46,7 @@ climate_data_clean <-
   # Calculate difference score from consistent and inconsistent arguments
   mutate(
     # The direction of the difference does not matter
-    difference = abs(mean_agree_consistent - mean_agree_inconsistent)
+    difference = mean_agree_consistent - mean_agree_inconsistent
   ) %>% 
   # Exclude participants with missing data
   drop_na()
