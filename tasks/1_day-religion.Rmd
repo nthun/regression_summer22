@@ -29,12 +29,12 @@ An example model would look like: `wb_overall_mean ~ gender + age + education + 
 # Solution
 ```{r setup}
 library(tidyverse)
-marp_data <- read_csv(here::here("data/marp_data.csv"))
+marp_data <- read_csv(here::here("data/marp_processed.csv"))
 ```
 
 # Building the models
 ```{r}
-
+marp_data %>% glimpse()
 ```
 
 # Assumption checks
