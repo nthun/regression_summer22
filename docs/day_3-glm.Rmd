@@ -14,13 +14,13 @@ editor_options:
     wrap: sentence
 ---
 
-```{r setup, include=FALSE}
+```{r setup}
 knitr::opts_chunk$set(echo = TRUE)
 
 suppressPackageStartupMessages(library(tidyverse))
 suppressPackageStartupMessages(library(here))
 suppressPackageStartupMessages(library(sjPlot))
-library(broom) # Tidying model output
+library(broom)
 library(performance)
 
 theme_set(theme_light())
@@ -124,14 +124,66 @@ tab_model(titanic_fit,
 
 ```
 
-# Multinomial regression
+# Multinomial logistic regression
+
+In multinomial regression, we are performing classification for an outcome that can take more than two nominal values that cannot be ordered.
+We are going to classify penguins from the `{palmerpenguins}` dataset into three possible categories. Data source: https://allisonhorst.github.io/palmerpenguins/    
+
 ```{r}
-# TODO!
+library(palmerpenguins)
+library(nnet)# Contains the multinom function
+
+penguins
+
+# The number of obervations for each species
+penguins %>% 
+  count(species)
+
+penguin_mn <- multinom(species ~ bill_length_mm +
+                       flipper_length_mm, 
+                       data = penguins)
+summary(penguin_mn)
 ```
 
+The `summary()` function for a `multinom` object is not that informative, e.g. we don't get tests statistics and p values. We can get those using the `tidy()` function, or `tab_model()`.  
+  What is immediately obvious is that we get more than one sets of coefficients and std.errors. This is because coefficients are calculated for each outcome with respect to the baseline category.  
+  A one-unit increase in the predictor variable is associated with the increase in the log odds of classifying a penguin into one category compared to the baseline category.  
+  Instead of using the default coefficients, it is easier to interpret them as odds ratios after we exponentiate them.
 
-# Poisson regression
-Use poisson regression to predict a count-type variable (integer values, and totally left-skewed).
+```{r}
+tidy(penguin_mn, exponentiate = TRUE, conf.int = TRUE)
+tab_model(penguin_mn)
+```
+
+The model performance can be measured in multiple ways. We can calculate pseudo R2, look at the confusion matrix. 
+
+```{r}
+library(yardstick) # for model performance functions
+
+r2(penguin_mn)
+
+penguins %>% 
+  mutate(pred = predict(penguin_mn, .)) %>% 
+  conf_mat(truth = species, estimate = pred) %>% 
+  autoplot(type = "heatmap")
+
+```
+
+We can also calculate and visualize the ROC curve, and ROC AUC.
+```{r}
+# TODO: multiclass ROC?
+# penguin_roc <- performance_roc(penguin_mn) 
+
+# ROC curve
+# plot(penguin_roc)
+
+# ROC AUC
+# penguin_roc
+```
+
+# Count regression (Poisson)
+
+Use Poisson regression to predict a count-type variable (integer values, and totally left-skewed).
 We are predicting the number of family members on board, by age
 
 ```{r}
@@ -143,8 +195,8 @@ titanic <-
 qplot(titanic$family)
 ```
 
-Yep, definitely poisson distribution
-Fitting a poisson regression is not difficult, just use the family = "poisson" parameter.
+Yep, definitely Poisson distribution
+Fitting a Poisson regression is not difficult, just use the `family = "poisson"` parameter.
 
 ```{r}
 family_fit_pois <- 
@@ -171,7 +223,7 @@ titanic %>%
 
 ```
 
-However the poisson regression is not appropriate for data that has a large dispersion. Dispersion should not be significantly larger than 1.
+However the Poisson regression is not appropriate for data that has a large dispersion. Dispersion should not be significantly larger than 1.
 We can test the dispersion and zero-inflation like this:
 
 ```{r}
@@ -202,7 +254,7 @@ titanic %>%
     geom_smooth(method = MASS::glm.nb)
 ```
 
-When reporting poisson/negative binomial regression, you have to report the same things as in logistic regression.
+When reporting Poisson/negative binomial regression, you have to report the same things as in logistic regression.
 
 ```{r}
 tab_model(family_fit_nb, 
