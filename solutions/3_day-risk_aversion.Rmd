@@ -6,11 +6,11 @@ editor_options:
 ---
 
 # Background
-In this study, we investigated how age and religion influences risk aversion. Studies show that older adults make safer choices than younger adults and religious people people also make safer choices than non religious people. We do not assume an interaction between age and religiosity. We will try to confirm these previous findings in this study.
+In this study, we investigated how age and religion influences risk aversion. Studies show that older adults make safer choices than younger adults and religious people  also make safer choices than non-religious people. We do not assume an interaction between age and religiosity. We will try to confirm these previous findings in this study.
 
 In the study, the participants had to complete a two-choice risky decision making paradigm, a gambling task. The two choices that were presented to the participants had different risk-gain proportions. One choice was always more risky than the other with higher benefit.
 
-We measured religiosity with a 10 point Likert-type scale.
+We measured religiosity with a 10-point Likert-type scale.
 
 In this task, you will have to test the main hypothesis a generalized linear regression.
 
@@ -24,67 +24,46 @@ You need to build generalized linear regression model testing our hypothesis.
 2) Report results
 Create a single table that contains all parameter estimates, std. errors, t statistics, and p values.
 
+3) Create an ROC curve and report the AUC
+
 # Solution
 ```{r setup}
 library(tidyverse)
 library(performance)
 
-risk_data <- read_csv(here::here("data/riskaversion_data.csv"))
+risk_data_raw <- read_csv(here::here("data/riskaversion_data.csv"))
 ```
 
-# Building the models
+## Data preprocesing
 ```{r}
-# Creating a dataset that contains the result of the model in a tidy way
-# Data manipulation
 risk_model_data <- 
-  risk_data %>% 
-  mutate(
-    choice = as.factor(choice),
-    choice = fct_relevel(choice, "safe", "risky")
+  risk_data_raw %>% 
+  # Setting the "safe" as the baseline, convert to binary
+  mutate(choice = recode(choice, "safe" = 0, "risky" = 1))
   )
-
-# Creating a model
-risk_model <- 
-  glm(choice ~ religion + age, family = "binomial", data = risk_model_data)
-
-# Making predictions
-risk_model_predict <-  predict(risk_model, type = "response")
-head(risk_model_predict)
-
-# Making ROC curve
-roc <- performance_roc(risk_model) 
-plot(roc)
-
-# Calculating AUC
-pROC::auc(risk_model_data$choice, risk_model_predict)
-# Since the value is close to .5 the model is not very good at making predictions
-
-# Checking assumptions
-# Check outliers
-performance::check_outliers(risk_model)
-
-# Check for linear relationship between the logit transformed outcome and the continuous predictor
-risk_model %>% 
-  broom::augment(type.predict = "response") %>% 
-  mutate(logit = log(.fitted / (1 - .fitted))) %>% 
-  ggplot() +
-  aes(x = logit, y = age) +
-  geom_point(size = 0.5, alpha = 0.5) +
-  geom_smooth(method = "loess") + 
-  theme_bw()
 ```
 
-# Printing the results in a table
+## Creating a model
 ```{r}
-# Printing results using the gt package
-library(gt) 
+risk_model <- 
+  glm(choice ~ religion + age, 
+      family = "binomial", 
+      data = risk_model_data)
 
-risk_model %>% 
-  broom::tidy() %>% 
-  gt() %>% 
-  # Formatting numers to be 2 digits, except for p value (3 digits)
-  fmt_number(c("estimate", "std.error", "statistic"), decimals = 2) %>% 
-  fmt_number("p.value", decimals = 3) %>% 
-  tab_options(row_group.background.color = "grey50")
+summary(risk_model)
+
+```
+
+## Creating ROC curve, reporting ROC AUC
+```{r}
+risk_roc <- performance_roc(risk_model) 
+plot(risk_roc, print.auc = TRUE)
+risk_roc
+
+```
+
+## Printing the results in a table
+```{r}
+sjPlot::tab_model(risk_model, show.aic = TRUE, show.stat = TRUE)
 ```
 

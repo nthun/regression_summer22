@@ -6,11 +6,11 @@ editor_options:
 ---
 
 # Background
-In this study, we investigated how age and religion influences risk aversion. Studies show that older adults make safer choices than younger adults and religious people people also make safer choices than non religious people. We do not assume an interaction between age and religiosity. We will try to confirm these previous findings in this study.
+In this study, we investigated how age and religion influences risk aversion. Studies show that older adults make safer choices than younger adults and religious people  also make safer choices than non-religious people. We do not assume an interaction between age and religiosity. We will try to confirm these previous findings in this study.
 
 In the study, the participants had to complete a two-choice risky decision making paradigm, a gambling task. The two choices that were presented to the participants had different risk-gain proportions. One choice was always more risky than the other with higher benefit.
 
-We measured religiosity with a 10 point Likert-type scale.
+We measured religiosity with a 10-point Likert-type scale.
 
 In this task, you will have to test the main hypothesis a generalized linear regression.
 
@@ -20,26 +20,38 @@ In this task, you will have to test the main hypothesis a generalized linear reg
 # Task
 1) Build models
 You need to build generalized linear regression model testing our hypothesis.
-Also calculate the AUC and create a ROC curve.
 
 2) Report results
 Create a single table that contains all parameter estimates, std. errors, t statistics, and p values.
 
+3) Create a ROC curve and report the AUC
+
 # Solution
 ```{r setup}
 library(tidyverse)
-risk_data <- read_csv(here::here("data/riskaversion_data.csv"))
+library(performance)
+
+risk_data_raw <- read_csv(here::here("data/riskaversion_data.csv"))
 ```
 
-# Building the models
+## Data preprocesing
 ```{r}
-# Creating a dataset that contains the result of the model in a tidy way
 
 ```
 
-# Printing the results in a table
+## Creating a model
 ```{r}
 
+
+```
+
+## Creating ROC curve, reporting ROC AUC
+```{r}
+
+```
+
+## Printing the results in a table
+```{r}
 
 ```
 
