@@ -1,0 +1,58 @@
+---
+title: "Wine quality"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# Background
+In this dataset, several parameters of different bottles of wine were recorded. These bottles were rated by professional wine experts. They rated the `quality` of a wine on an ordinal scale: 1 - poor, 2 - average, 3 - excellent.
+
+
+# Task
+
+
+1) Standardize variables
+You need to standardize your continuous predictors.
+
+2) Build models
+You need to define and calculate an ordinal regression model. This model should contain every predictor in the dataset. Also create a model where `density` is not used, one where `pH` is not used, and one where neither `density` nor `pH` are used.
+
+3) Compare models
+Create tables that contain all parameter estimates, std. errors, t statistics, and p values.
+Also create a table that contains model diagnostics, and choose the best model based on AIC.
+
+
+
+# Solution
+```{r setup}
+library(tidyverse)
+library(broom)
+library(performance)
+library(ordinal)
+library(sjPlot)
+
+wine_data <- read_csv(here::here("data/wine_quality.csv"))
+```
+
+# Standardize continuous variables
+
+```{r}
+
+```
+
+# Building the models
+```{r}
+
+```
+
+# Compare models
+
+```{r}
+
+```
+
+# Printing the results
+```{r}
+
+```
