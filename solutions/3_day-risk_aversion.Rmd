@@ -40,7 +40,6 @@ risk_model_data <-
   risk_data_raw %>% 
   # Setting the "safe" as the baseline, convert to binary
   mutate(choice = recode(choice, "safe" = 0, "risky" = 1))
-  )
 ```
 
 ## Creating a model
