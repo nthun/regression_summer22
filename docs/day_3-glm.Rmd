@@ -68,7 +68,7 @@ tidy(titanic_fit, conf.int = TRUE, exponentiate = TRUE)
 
 Let's plot the data. Please mind that you need to tweek the arguments for `geom_smooth()` to fit a binomial logistic function.
 
-# Plotting logistic regression
+## Plotting logistic regression
 ```{r}
 # In this plot, we will only include sex and ticket price as predictors.
 ggplot(titanic) +
@@ -99,6 +99,9 @@ The prediction of the GLM can either be on the scale of the predictors ("link"),
 augment(titanic_fit, type.predict = "response")
 ```
 
+
+## Creating an ROC curve
+
 Calculating and plotting the ROC curve, and calculating the ROC AUC are easy with the `{performance}` package.
 
 ```{r}
@@ -112,7 +115,7 @@ surv_roc
 
 ```
 
-## Reporting logistic regression paramters
+## Reporting logistic regression parameters
 
 ```{r}
 
@@ -155,6 +158,8 @@ tidy(penguin_mn, exponentiate = TRUE, conf.int = TRUE)
 tab_model(penguin_mn)
 ```
 
+
+## Confusion matrix
 The model performance can be measured in multiple ways. We can calculate pseudo R2, look at the confusion matrix. 
 
 ```{r}
@@ -163,22 +168,42 @@ library(yardstick) # for model performance functions
 r2(penguin_mn)
 
 penguins %>% 
-  mutate(pred = predict(penguin_mn, .)) %>% 
+  mutate(pred = predict(penguin_mn, newdata = .)) %>% 
   conf_mat(truth = species, estimate = pred) %>% 
   autoplot(type = "heatmap")
 
 ```
 
-We can also calculate and visualize the ROC curve, and ROC AUC.
+We can also calculate and visualize the ROC curve, and ROC AUC. This is a bit more complicated for multiclass ROC, as we need to calculate a ROC for pairwise classifications. 
+
+## Multiclass roc curve
 ```{r}
-# TODO: multiclass ROC?
-# penguin_roc <- performance_roc(penguin_mn) 
+library(pROC) # Can calculate multiclass ROC, but plotting requires cutomization
+library(patchwork) # Tool for putting togeter multiple plots
 
 # ROC curve
-# plot(penguin_roc)
+# Create predictions (probabilities)
+penguin_prob <-
+  penguins %>% 
+  mutate(pred = predict(penguin_mn, newdata = ., type = "prob")) 
 
-# ROC AUC
-# penguin_roc
+# Calculate the ROC tables
+penguin_roc <-
+  multiclass.roc(penguin_prob$species, penguin_prob$pred)
+
+# Create ROC plots
+roc_plots <- 
+  map2(penguin_roc[['rocs']], names(penguin_roc[['rocs']]),
+       ~ggroc(.x) + 
+        ggtitle(.y))
+
+# Put all plots into a single plot
+roc_plots[[1]] + roc_plots[[2]] + plot_spacer() + roc_plots[[3]] +
+plot_layout(ncol = 2, guides = "collect") 
+
+# Multiclass ROC AUC
+penguin_roc
+
 ```
 
 # Count regression (Poisson)
@@ -213,6 +238,8 @@ tidy(family_fit_pois, exponentiate = TRUE, conf.int = TRUE)
 glance(family_fit_pois)
 ```
 
+## Plotting Poisson regression
+
 ```{r}
 titanic %>% 
   ggplot() +
@@ -222,6 +249,8 @@ titanic %>%
               method.args = list(family = "poisson"))
 
 ```
+
+## Checking assumptions
 
 However the Poisson regression is not appropriate for data that has a large dispersion. Dispersion should not be significantly larger than 1.
 We can test the dispersion and zero-inflation like this:
@@ -285,6 +314,7 @@ Read more about it here: https://stats.stackexchange.com/questions/10419/what-is
 
 # Cumulative Link Model for Ordinal data
 
+We predict ordered categories.
 We will use a dataset about the ratings of NYC restaurants from A to C
 ```{r}
 restaurants_raw <- read_csv(here("data/nyc_restaurants.csv"))
@@ -331,12 +361,13 @@ model_parameters(clm1, exponentiate = TRUE) %>%
 ```
 
 Testing the model assumption, the proportional odd's ratio  with either the `nominal_test()` or `scale_test()` function. 
+
 ```{r}
 nominal_test(clm1)
 scale_test(clm1)
 ```
 
-Let's plot the data
+Let's plot the data!
 
 ```{r}
 restaurants %>% 
