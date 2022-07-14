@@ -101,7 +101,7 @@ ggsurvplot(college_surv,
 
 ## Model and plot marriage survival for age difference
 
-Do marriages end significantly earlier when the wife is at least 10 years older?
+Do marriages end significantly earlier when the husband is at least 10 years older?
 ```{r}
 heolder_surv <- 
   survfit(Surv(time = time, event = divorced) ~ heolder,
