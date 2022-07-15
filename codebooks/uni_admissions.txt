@@ -1,0 +1,9 @@
+serial_no id
+gre_score   GRE Scores ( out of 340 )
+toefl_score TOEFL Scores ( out of 120 )
+university_rating   University Rating of the student's Bachelor degree ( out of 5 )
+sop Statement of Purpose score( out of 5 )
+lor Letter of Recommendation score ( out of 5 )
+cgpa    Undergraduate GPA ( out of 10 )
+research    Research Experience ( either 0 or 1 )
+chance_of_admit Chance of Admit ( ranging from 0 to 1 )
