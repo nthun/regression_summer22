@@ -1,0 +1,66 @@
+---
+title: "University admissions"
+output: html_document
+---
+
+# Background
+
+This dataset contains information on applicant chances of getting into a graduate programs. The dataset contains several predictors that may predict the chance of admission.
+
+## Source
+https://www.kaggle.com/datasets/mohansacharya/graduate-admissions
+
+## Codebook
+`codebooks/uni_admissions.txt`
+
+# Tasks
+
+1) Build a Beta regression model to predict admission chance.
+
+2) Report the results. Check multicollinearity.
+
+# Solution
+```{r setup}
+library(tidyverse)
+library(betareg)
+admissions <- read_csv(here::here("data/uni_admissions.csv"))
+```
+
+# Explore data
+
+```{r}
+# Create a histogram of the outcome
+qplot(admissions$chance_of_admit)
+
+library(GGally)
+admissions %>% 
+  select(gre_score:chance_of_admit) %>% 
+  ggpairs()  
+
+```
+
+
+# Building the model
+
+```{r}
+admission_mod <- 
+  betareg(chance_of_admit ~ gre_score + toefl_score + university_rating + 
+                            sop + lor + research, 
+          data = admissions)
+
+summary(admission_mod)
+tidy(admission_mod, conf.int = TRUE)
+
+# Checking multicollinearity
+performance::check_collinearity(admission_mod)
+
+```
+
+# Reporting results
+
+```{r}
+
+tab_model(admission_mod)
+
+```
+
