@@ -17,12 +17,81 @@ editor_options:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
-library(tidyverse)
+suppressPackageStartupMessages(library(tidyverse))
 library(survival) # For survival analysis
 library(survminer) # For survival analysis
+library(betareg) # Beta regression
+library(here)
+library(sjPlot)
+library(broom)
 
 theme_set(theme_light())
 ```
+
+# Beta regression on proportions
+
+We will use a dataset that contains data from households. We are trying to predict the proportion of spending on food compared to all income by income and number of persons in the household.
+
+```{r}
+# This tutorial is based on Cribari-Neto, F., & Zeileis, A. (2010). Beta Regression in R. Journal of Statistical Software, 34, 1–24. https://doi.org/10.18637/jss.v034.i02
+
+data("FoodExpenditure", package = "betareg")
+# Codebook:
+# ?FoodExpenditure
+
+# Some data cleaning
+food <- 
+  FoodExpenditure %>% 
+  as_tibble() %>% 
+  mutate(food_prop = food/income)
+
+food
+```
+
+We build two beta regressions. In the first, the predictor will be the income, in the other, we also add the number of people in the household.
+
+```{r}
+fe_beta1 <- betareg(food_prop ~ income,     
+                     data = food)
+
+fe_beta2 <- betareg(food_prop ~ income + persons,     
+                     data = food)
+
+summary(fe_beta1)
+
+```
+
+## Interpreting the results
+
+The coefficient can be interpreted as log of proportions that. After exponential transformation, the coefficients correspond to "Proportion Ratio".
+For e.g. 50% food ratio means that the other 50% is spent on something else. Thus the ratio is 0.5/0.5 = 1.
+A value of .99 means that one unit change in the predictor will result in a 1% decrease in the outcome. The value of 1.13 for people means that increase of one person in the household will increase the food proportion by 13%.
+
+```{r}
+tab_model(fe_beta1, fe_beta2, 
+          show.aic = TRUE, 
+          show.loglik = TRUE)
+```
+
+## The difference from linear regression results
+
+Plotting the results. We can use the binomial family as the transformation that we need is the same (logit). When we compare it to a 
+
+```{r}
+food %>% 
+  # Add betareg predictions to the dataset
+  mutate(pred = predict(fe_beta1, .)) %>% 
+  ggplot() +
+  aes(x = income, y = food_prop) +
+  geom_point(size = 2.5) +
+  geom_line(aes(y = pred), color = "red", alpha = .5, size = 1.2) +
+  # Add a linear regression line for comparison
+  geom_smooth(method = lm, color = "blue", alpha = .5, lty = "dashed")
+
+
+```
+
+When the values are between mostly 0.2 and 0.8, the model is almost exactly the same as a linear regression! So the beta regression is only needed when the data is more dispersed.
 
 # Survival analysis on Game of Thrones data
 
@@ -51,6 +120,7 @@ We fit a survival model with no predictors (only time), and create the KM plot.
 Median age of dying can be calculated using the `surv_median()` function.
 ```{r}
 survival_all <- survfit(Surv(age, status) ~ 1, data = got)
+
 ggsurvplot(survival_all, 
            surv.median.line = "hv", 
            conf.int = TRUE,
@@ -59,7 +129,7 @@ ggsurvplot(survival_all,
 surv_median(survival_all)
 ```
 
-# Check if gender and spouse predict different mortality
+## Check if gender and spouse predict different mortality
 
 We are looking for main effects of marital status (if the character has a spouse) and gender.
 We build three models, one with spouse, one with gender, and one with both.
@@ -73,7 +143,7 @@ AIC(survival_model1, survival_model2, survival_model3)
 
 ```
 
-# Evaluate the model
+## Evaluate the model
 
 We will check model summary, and the effect of having married.
 We can check if there are differences between the groups using the `surv_pvalue()` function.
